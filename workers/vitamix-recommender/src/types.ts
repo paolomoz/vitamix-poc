@@ -302,7 +302,7 @@ export type BlockType =
   | 'columns'
   | 'text'
   // New blocks for improved user experience
-  | 'quick-answer'        // TL;DR for decisive users
+  | 'quick-answer'        // Simple direct answer for quick questions
   | 'support-triage'      // Help frustrated customers
   | 'budget-breakdown'    // Price/value transparency
   | 'accessibility-specs' // Physical/ergonomic specs

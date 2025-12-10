@@ -1,57 +1,56 @@
-/* Engineering Specs Block Styles */
+/* Engineering Specs Block - Vitamix Design System */
 
 .engineering-specs {
-  padding: 2rem;
+  padding: var(--spacing-section-sm, 3rem) var(--spacing-lg, 1.5rem);
   max-width: 800px;
-  margin: 2rem auto;
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  margin: 0 auto;
 }
 
 .engineering-specs-header {
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #1f2937;
-  padding-bottom: 1rem;
+  margin-bottom: var(--spacing-xl, 2rem);
+  border-bottom: 2px solid var(--color-brand-dark, #1a1a1a);
+  padding-bottom: var(--spacing-md, 1rem);
 }
 
 .engineering-specs-icon {
-  color: #1f2937;
-  margin-bottom: 0.5rem;
+  color: var(--color-brand-dark, #1a1a1a);
+  margin-bottom: var(--spacing-sm, 0.5rem);
 }
 
 .engineering-specs-icon svg {
   width: 32px;
   height: 32px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
 }
 
 .engineering-specs-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-size: var(--font-size-3xl, 1.875rem);
+  font-weight: 300;
+  color: var(--color-brand-dark, #1a1a1a);
   margin: 0;
-  font-family: inherit;
 }
 
 .engineering-specs-subtitle {
-  font-size: 0.9rem;
-  color: #6b7280;
-  margin: 0.5rem 0 0;
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-dark-gray, #666);
+  margin: var(--spacing-xs, 0.25rem) 0 0;
   font-style: italic;
 }
 
 .engineering-specs-table {
-  background: #f9fafb;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 2rem;
+  background: var(--color-off-white, #f5f5f5);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
+  margin-bottom: var(--spacing-xl, 2rem);
 }
 
 .spec-row {
   display: grid;
-  grid-template-columns: 200px 1fr auto;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  grid-template-columns: 180px 1fr auto;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-sm, 0.5rem) var(--spacing-md, 1rem);
+  border-bottom: 1px solid var(--color-light-gray, #e5e5e5);
   align-items: center;
 }
 
@@ -60,53 +59,52 @@
 }
 
 .spec-row:nth-child(even) {
-  background: #fff;
+  background: var(--color-white, #fff);
 }
 
 .spec-label {
-  font-weight: 600;
-  color: #374151;
-  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-charcoal, #333);
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 .spec-value {
-  color: #1f2937;
+  color: var(--color-brand-dark, #1a1a1a);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 .spec-notes {
-  font-size: 0.8rem;
-  color: #6b7280;
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-dark-gray, #666);
   font-style: italic;
 }
 
 .engineering-methodology {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 4px;
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
+  background: var(--color-white, #fff);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
+  padding: var(--spacing-lg, 1.5rem);
+  margin-bottom: var(--spacing-lg, 1.5rem);
 }
 
 .engineering-methodology h4 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #374151;
-  margin: 0 0 0.75rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  color: var(--color-brand-red, #c41230);
+  margin: 0 0 var(--spacing-sm, 0.5rem);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
 }
 
 .engineering-methodology ul {
   margin: 0;
-  padding-left: 1.25rem;
-  font-size: 0.85rem;
-  color: #6b7280;
+  padding-left: var(--spacing-lg, 1.5rem);
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-dark-gray, #666);
 }
 
 .engineering-methodology li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-xs, 0.25rem);
   line-height: 1.5;
 }
 
@@ -115,7 +113,8 @@
 }
 
 .engineering-methodology strong {
-  color: #374151;
+  color: var(--color-charcoal, #333);
+  font-weight: 500;
 }
 
 .engineering-download {
@@ -125,43 +124,44 @@
 .download-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: #2563eb;
+  gap: var(--spacing-sm, 0.5rem);
+  color: var(--color-brand-red, #c41230);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm, 0.875rem);
   font-weight: 500;
-  padding: 0.75rem 1.25rem;
-  border: 1px solid #2563eb;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+  padding: var(--spacing-sm, 0.5rem) var(--spacing-md, 1rem);
+  border: 1px solid var(--color-brand-red, #c41230);
+  transition: all var(--transition-normal, 0.2s ease);
 }
 
 .download-link:hover {
-  background: #2563eb;
-  color: white;
+  background: var(--color-brand-red, #c41230);
+  color: var(--color-white, #fff);
 }
 
 .download-link svg {
   flex-shrink: 0;
+  width: 20px;
+  height: 20px;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (width < 600px) {
   .engineering-specs {
-    padding: 1rem;
+    padding: var(--spacing-lg, 1.5rem) var(--spacing-md, 1rem);
   }
 
   .spec-row {
     grid-template-columns: 1fr;
-    gap: 0.25rem;
+    gap: var(--spacing-xs, 0.25rem);
   }
 
   .spec-label {
-    font-size: 0.8rem;
-    color: #6b7280;
+    font-size: var(--font-size-xs, 0.75rem);
+    color: var(--color-dark-gray, #666);
   }
 
   .spec-notes {
-    margin-top: 0.25rem;
+    margin-top: var(--spacing-xs, 0.25rem);
   }
 }

@@ -1,108 +1,88 @@
 /**
  * Quick Answer Block
- * Provides a TL;DR response for decisive users who want direct answers
- * without overwhelming them with information.
+ * Simple, direct answer for questions that can be answered quickly.
+ * Displays at the top with optional expandable "Tell me more" section.
  */
 
 export default function decorate(block) {
   // Expected structure from AI:
-  // Row 1: Product name
-  // Row 2: Reason (short)
-  // Row 3: Price
-  // Row 4: CTA URL
-  // Row 5 (optional): "Tell me more" content
+  // Row 1: Headline (short, direct answer)
+  // Row 2: Brief explanation
+  // Row 3 (optional): Expanded details for "Tell me more"
 
   const rows = [...block.children];
-  if (rows.length < 4) {
-    console.warn('quick-answer: Expected at least 4 rows');
+  if (rows.length < 2) {
+    console.warn('quick-answer: Expected at least 2 rows');
     return;
   }
 
-  const productName = rows[0]?.textContent?.trim() || 'Vitamix';
-  const reason = rows[1]?.textContent?.trim() || 'It\'s perfect for your needs.';
-  const price = rows[2]?.textContent?.trim() || '';
-  const ctaUrl = rows[3]?.querySelector('a')?.href || rows[3]?.textContent?.trim() || '#';
-  const moreContent = rows[4]?.innerHTML || '';
+  const headline = rows[0]?.textContent?.trim() || 'Here\'s your answer.';
+  const explanation = rows[1]?.textContent?.trim() || '';
+  const expandedDetails = rows[2]?.textContent?.trim() || '';
 
   // Clear the block
   block.innerHTML = '';
 
-  // Create the quick answer card
+  // Create card container
   const card = document.createElement('div');
   card.className = 'quick-answer-card';
 
   // Icon
   const icon = document.createElement('div');
   icon.className = 'quick-answer-icon';
-  icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>';
+  icon.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+    </svg>
+  `;
   card.appendChild(icon);
 
-  // Label
-  const label = document.createElement('span');
-  label.className = 'quick-answer-label';
-  label.textContent = 'Quick Answer';
-  card.appendChild(label);
+  // Badge
+  const badge = document.createElement('span');
+  badge.className = 'quick-answer-badge';
+  badge.textContent = 'QUICK ANSWER';
+  card.appendChild(badge);
 
-  // Main answer
-  const answer = document.createElement('div');
-  answer.className = 'quick-answer-main';
+  // Headline
+  const headlineEl = document.createElement('h2');
+  headlineEl.className = 'quick-answer-headline';
+  headlineEl.textContent = headline;
+  card.appendChild(headlineEl);
 
-  const productEl = document.createElement('h2');
-  productEl.className = 'quick-answer-product';
-  productEl.textContent = `Get the ${productName}.`;
-  answer.appendChild(productEl);
-
-  const reasonEl = document.createElement('p');
-  reasonEl.className = 'quick-answer-reason';
-  reasonEl.textContent = reason;
-  answer.appendChild(reasonEl);
-
-  card.appendChild(answer);
-
-  // Price and CTA row
-  const actions = document.createElement('div');
-  actions.className = 'quick-answer-actions';
-
-  if (price) {
-    const priceEl = document.createElement('span');
-    priceEl.className = 'quick-answer-price';
-    priceEl.textContent = price;
-    actions.appendChild(priceEl);
+  // Explanation
+  if (explanation) {
+    const explanationEl = document.createElement('p');
+    explanationEl.className = 'quick-answer-explanation';
+    explanationEl.textContent = explanation;
+    card.appendChild(explanationEl);
   }
 
-  const cta = document.createElement('a');
-  cta.className = 'quick-answer-cta button primary';
-  cta.href = ctaUrl;
-  cta.target = '_blank';
-  cta.textContent = 'Buy Now';
-  actions.appendChild(cta);
-
-  card.appendChild(actions);
-
-  // "Tell me more" expander (if content provided)
-  if (moreContent) {
+  // Expandable "Tell me more" section
+  if (expandedDetails) {
     const expander = document.createElement('div');
     expander.className = 'quick-answer-expander';
 
-    const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'quick-answer-toggle';
-    toggleBtn.innerHTML = 'Tell me more <span class="toggle-icon">↓</span>';
-    toggleBtn.setAttribute('aria-expanded', 'false');
+    const toggle = document.createElement('button');
+    toggle.className = 'quick-answer-toggle';
+    toggle.innerHTML = `
+      <span class="toggle-text">TELL ME MORE</span>
+      <span class="toggle-icon">↑</span>
+    `;
 
-    const moreSection = document.createElement('div');
-    moreSection.className = 'quick-answer-more';
-    moreSection.innerHTML = moreContent;
-    moreSection.hidden = true;
+    const content = document.createElement('div');
+    content.className = 'quick-answer-details';
+    content.textContent = expandedDetails;
 
-    toggleBtn.addEventListener('click', () => {
-      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-      toggleBtn.setAttribute('aria-expanded', !isExpanded);
-      moreSection.hidden = isExpanded;
-      toggleBtn.querySelector('.toggle-icon').textContent = isExpanded ? '↓' : '↑';
+    toggle.addEventListener('click', () => {
+      const isExpanded = expander.classList.toggle('expanded');
+      toggle.querySelector('.toggle-text').textContent = isExpanded ? 'SHOW LESS' : 'TELL ME MORE';
+      toggle.querySelector('.toggle-icon').textContent = isExpanded ? '↓' : '↑';
     });
 
-    expander.appendChild(toggleBtn);
-    expander.appendChild(moreSection);
+    expander.appendChild(toggle);
+    expander.appendChild(content);
     card.appendChild(expander);
   }
 

@@ -1,212 +1,201 @@
-/* Support Triage Block Styles */
+/* Support Triage Block - Vitamix Design System */
 
 .support-triage {
-  padding: 2rem;
-  max-width: 600px;
-  margin: 2rem auto;
+  padding: var(--spacing-section-sm, 3rem) var(--spacing-lg, 1.5rem);
+  max-width: var(--max-width-content, 1200px);
+  margin: 0 auto;
 }
 
 .support-triage-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid #4a90d9;
+  background: var(--color-white, #fff);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
 }
 
 .support-triage-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  padding: var(--spacing-xl, 2rem);
+  border-bottom: 1px solid var(--color-light-gray, #e5e5e5);
 }
 
 .support-triage-icon {
-  color: #4a90d9;
-  flex-shrink: 0;
+  color: var(--color-brand-red, #c41230);
+  margin-bottom: var(--spacing-sm, 0.5rem);
 }
 
 .support-triage-icon svg {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
 }
 
 .support-triage-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-brand-red, #c41230);
+  margin: 0 0 var(--spacing-sm, 0.5rem);
 }
 
 .support-triage-empathy {
-  margin-bottom: 1.5rem;
-}
-
-.support-triage-issue {
-  display: inline-block;
-  background: #e8f2fc;
-  color: #2563eb;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  margin-bottom: 0.75rem;
-}
-
-.support-triage-message {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: var(--font-size-xl, 1.25rem);
+  font-weight: 300;
+  color: var(--color-brand-dark, #1a1a1a);
+  line-height: 1.5;
   margin: 0;
+}
+
+.support-issue-badge {
+  display: inline-block;
+  background: var(--color-off-white, #f5f5f5);
+  color: var(--color-charcoal, #333);
+  padding: var(--spacing-xs, 0.25rem) var(--spacing-sm, 0.5rem);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: var(--spacing-md, 1rem);
+}
+
+.support-resolution {
+  padding: var(--spacing-lg, 1.5rem) var(--spacing-xl, 2rem);
+  background: var(--color-off-white, #f5f5f5);
+}
+
+.resolution-icon {
+  color: #22c55e;
+  margin-right: var(--spacing-sm, 0.5rem);
+}
+
+.resolution-content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm, 0.5rem);
+}
+
+.resolution-content p {
+  margin: 0;
+  color: var(--color-charcoal, #333);
+  font-size: var(--font-size-base, 1rem);
   line-height: 1.6;
 }
 
-.support-triage-resolution {
+.support-actions {
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-xl, 2rem);
+  border-bottom: 1px solid var(--color-light-gray, #e5e5e5);
 }
 
-.resolution-check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  background: #22c55e;
-  color: white;
-  border-radius: 50%;
+.support-action-primary {
+  display: inline-block;
+  background-color: var(--color-brand-red, #c41230);
+  color: var(--color-white, #fff);
+  border: none;
+  padding: 0.75rem 1.5rem;
   font-size: 0.875rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.support-triage-resolution span:last-child {
-  color: #166534;
   font-weight: 500;
-  line-height: 1.5;
-}
-
-.support-triage-actions {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.support-triage-cta {
-  flex: 1;
-  min-width: 180px;
-  padding: 0.875rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: background-color var(--transition-normal, 0.2s ease);
+  flex: 1;
+  text-align: center;
 }
 
-.support-triage-cta.primary {
-  background: #4a90d9;
-  color: white;
+.support-action-primary:hover {
+  background-color: var(--color-brand-red-dark, #a30f28);
 }
 
-.support-triage-cta.primary:hover {
-  background: #3b7dc4;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
+.support-action-secondary {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--color-brand-dark, #1a1a1a);
+  color: var(--color-brand-dark, #1a1a1a);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all var(--transition-normal, 0.2s ease);
+  flex: 1;
+  text-align: center;
 }
 
-.support-triage-cta.secondary {
-  background: #f1f5f9;
-  color: #475569;
-  border: 1px solid #e2e8f0;
+.support-action-secondary:hover {
+  background-color: var(--color-brand-dark, #1a1a1a);
+  color: var(--color-white, #fff);
 }
 
-.support-triage-cta.secondary:hover {
-  background: #e2e8f0;
-}
-
-.support-triage-troubleshoot {
-  border-top: 1px solid #eee;
-  padding-top: 1rem;
-  margin-bottom: 1rem;
+.support-troubleshoot {
+  padding: var(--spacing-lg, 1.5rem) var(--spacing-xl, 2rem);
 }
 
 .troubleshoot-toggle {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: none;
+  gap: var(--spacing-sm, 0.5rem);
+  background: transparent;
   border: none;
-  padding: 0.75rem 0;
-  font-size: 0.95rem;
-  color: #666;
+  color: var(--color-brand-red, #c41230);
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 500;
   cursor: pointer;
-  transition: color 0.2s ease;
+  padding: 0;
+  text-decoration: underline;
 }
 
 .troubleshoot-toggle:hover {
-  color: #4a90d9;
-}
-
-.toggle-arrow {
-  transition: transform 0.2s ease;
+  color: var(--color-brand-red-dark, #a30f28);
 }
 
 .troubleshoot-content {
-  background: #f8fafc;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 0.5rem;
+  padding-top: var(--spacing-md, 1rem);
 }
 
-.troubleshoot-content ol,
-.troubleshoot-content ul {
+.troubleshoot-content ol {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: var(--spacing-lg, 1.5rem);
+  color: var(--color-charcoal, #333);
 }
 
 .troubleshoot-content li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
+  margin-bottom: var(--spacing-sm, 0.5rem);
+  line-height: 1.6;
 }
 
-.troubleshoot-content li:last-child {
-  margin-bottom: 0;
-}
-
-.support-triage-note {
+.support-footer {
+  padding: var(--spacing-md, 1rem) var(--spacing-xl, 2rem);
+  background: var(--color-off-white, #f5f5f5);
   text-align: center;
-  font-size: 0.85rem;
-  color: #888;
+}
+
+.support-hours {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-dark-gray, #666);
   margin: 0;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (width < 600px) {
   .support-triage {
-    padding: 1rem;
+    padding: var(--spacing-lg, 1.5rem) var(--spacing-md, 1rem);
   }
 
-  .support-triage-card {
-    padding: 1.5rem;
+  .support-triage-header,
+  .support-resolution,
+  .support-actions,
+  .support-troubleshoot {
+    padding-left: var(--spacing-lg, 1.5rem);
+    padding-right: var(--spacing-lg, 1.5rem);
   }
 
-  .support-triage-header {
+  .support-actions {
     flex-direction: column;
-    text-align: center;
-  }
-
-  .support-triage-actions {
-    flex-direction: column;
-  }
-
-  .support-triage-cta {
-    min-width: 100%;
   }
 }

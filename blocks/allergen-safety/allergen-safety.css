@@ -1,102 +1,103 @@
-/* Allergen Safety Block Styles */
+/* Allergen Safety Block - Vitamix Design System */
 
 .allergen-safety {
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
+  padding: var(--spacing-section-sm, 3rem) var(--spacing-lg, 1.5rem);
+  max-width: var(--max-width-content, 1200px);
+  margin: 0 auto;
 }
 
 .allergen-safety-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: var(--spacing-md, 1rem);
+  margin-bottom: var(--spacing-lg, 1.5rem);
 }
 
 .allergen-safety-icon {
-  color: #dc2626;
-  background: #fef2f2;
-  padding: 0.75rem;
-  border-radius: 50%;
+  color: var(--color-brand-red, #c41230);
 }
 
 .allergen-safety-icon svg {
   width: 40px;
   height: 40px;
-  display: block;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
 }
 
 .allergen-safety-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: var(--font-size-4xl, 2.25rem);
+  font-weight: 300;
+  color: var(--color-brand-dark, #1a1a1a);
   margin: 0;
 }
 
 /* Notice */
 .allergen-notice {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  border-left: 4px solid #dc2626;
-  border-radius: 8px;
-  padding: 1.25rem;
-  margin-bottom: 2rem;
+  background: var(--color-off-white, #f5f5f5);
+  border-left: 4px solid var(--color-brand-red, #c41230);
+  padding: var(--spacing-lg, 1.5rem);
+  margin-bottom: var(--spacing-xl, 2rem);
 }
 
 .allergen-notice strong {
   display: block;
-  color: #991b1b;
-  margin-bottom: 0.5rem;
+  color: var(--color-brand-dark, #1a1a1a);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs, 0.25rem);
 }
 
 .allergen-notice p {
   margin: 0;
-  color: #b91c1c;
+  color: var(--color-charcoal, #333);
   line-height: 1.6;
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 /* Sections */
 .allergen-sections {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: var(--spacing-lg, 1.5rem);
+  margin-bottom: var(--spacing-xl, 2rem);
 }
 
 .allergen-section {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: var(--color-white, #fff);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
+  padding: var(--spacing-lg, 1.5rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
 }
 
 .section-icon {
   font-size: 1.5rem;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm, 0.5rem);
 }
 
 .section-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #374151;
-  margin: 0 0 1rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-brand-red, #c41230);
+  margin: 0 0 var(--spacing-md, 1rem);
 }
 
 .section-content {
-  color: #6b7280;
+  color: var(--color-dark-gray, #666);
   line-height: 1.6;
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 .section-content ol,
 .section-content ul {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: var(--spacing-lg, 1.5rem);
 }
 
 .section-content li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm, 0.5rem);
 }
 
 .section-content li:last-child {
@@ -104,99 +105,101 @@
 }
 
 .section-content strong {
-  color: #374151;
+  color: var(--color-charcoal, #333);
+  font-weight: 500;
 }
 
 .section-content p {
-  margin: 0 0 0.75rem;
+  margin: 0 0 var(--spacing-sm, 0.5rem);
 }
 
 /* Container options */
 .allergen-containers {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  background: var(--color-off-white, #f5f5f5);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
+  padding: var(--spacing-lg, 1.5rem);
+  margin-bottom: var(--spacing-lg, 1.5rem);
 }
 
 .allergen-containers h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #374151;
-  margin: 0 0 0.5rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-brand-red, #c41230);
+  margin: 0 0 var(--spacing-xs, 0.25rem);
 }
 
 .allergen-containers > p {
-  color: #6b7280;
-  margin: 0 0 1rem;
-  font-size: 0.95rem;
+  color: var(--color-dark-gray, #666);
+  margin: 0 0 var(--spacing-md, 1rem);
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 .container-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-sm, 0.5rem);
+  margin-bottom: var(--spacing-md, 1rem);
 }
 
 .container-option {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 0.75rem;
+  background: var(--color-white, #fff);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
+  padding: var(--spacing-sm, 0.5rem);
   text-align: center;
 }
 
 .option-size {
   display: block;
-  font-weight: 700;
-  color: #1f2937;
-  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-brand-dark, #1a1a1a);
+  font-size: var(--font-size-lg, 1.125rem);
 }
 
 .option-use {
   display: block;
-  font-size: 0.8rem;
-  color: #6b7280;
-  margin-top: 0.25rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-dark-gray, #666);
+  margin-top: var(--spacing-xs, 0.25rem);
 }
 
 .containers-link {
   display: inline-block;
-  color: #2563eb;
+  color: var(--color-brand-red, #c41230);
   font-weight: 500;
-  text-decoration: none;
-  font-size: 0.95rem;
+  text-decoration: underline;
+  font-size: var(--font-size-sm, 0.875rem);
+  transition: color var(--transition-normal, 0.2s ease);
 }
 
 .containers-link:hover {
-  text-decoration: underline;
+  color: var(--color-brand-red-dark, #a30f28);
 }
 
 /* Consult note */
 .allergen-consult {
   text-align: center;
-  padding: 1rem;
-  background: #fefce8;
-  border: 1px solid #fef08a;
-  border-radius: 8px;
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-off-white, #f5f5f5);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
 }
 
 .allergen-consult p {
   margin: 0;
-  color: #854d0e;
-  font-size: 0.95rem;
+  color: var(--color-charcoal, #333);
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 .allergen-consult strong {
-  color: #713f12;
+  color: var(--color-brand-dark, #1a1a1a);
+  font-weight: 500;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (width < 600px) {
   .allergen-safety {
-    padding: 1rem;
+    padding: var(--spacing-lg, 1.5rem) var(--spacing-md, 1rem);
   }
 
   .allergen-safety-header {

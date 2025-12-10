@@ -458,28 +458,20 @@ First child is the image, second child is the content.
 </div>`,
 
     'quick-answer': `
-## HTML Template (TL;DR for decisive users):
-Generate a quick, direct answer. Structure:
-- Row 1: Product name (just the name)
-- Row 2: One sentence reason why this is the best choice
-- Row 3: Price (e.g., "$449")
-- Row 4: Link to product page
-- Row 5 (optional): More details if they want to expand
+## HTML Template (simple direct answer):
+Generate a simple, direct answer for yes/no or quick confirmation questions. Structure:
+- Row 1: Short headline answer (e.g., "Get the Vitamix.", "Yes, absolutely.", "It's worth it.")
+- Row 2: Brief explanation (1-2 sentences why)
+- Row 3 (optional): Expanded details for "Tell me more" section
 
 <div>
-  <div>Vitamix E320</div>
+  <div>Get the Vitamix.</div>
 </div>
 <div>
-  <div>It's reliable, affordable, and handles everything you described perfectly.</div>
+  <div>Yes, Vitamix excels at this exact task, allowing for variable speed control to get the right texture and a powerful motor to handle cooked proteins.</div>
 </div>
 <div>
-  <div>$449</div>
-</div>
-<div>
-  <div><a href="PRODUCT_URL_FROM_CONTEXT">View Product</a></div>
-</div>
-<div>
-  <div>The E320 has a 2.2 HP motor, 64oz container, and a simple dial control that makes it easy to operate.</div>
+  <div>With its variable speed control and powerful motor, Vitamix is the perfect choice for handling a variety of tasks, including blending cooked proteins to the perfect consistency.</div>
 </div>`,
 
     'support-triage': `

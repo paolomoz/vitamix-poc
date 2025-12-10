@@ -59,7 +59,7 @@ CRITICAL - Your reasoning will be shown directly to users. Write like you're tal
 | faq | Common questions - for support |
 | follow-up | Suggestion chips for next actions (always include at end) |
 | cta | Call-to-action button - for conversion |
-| quick-answer | TL;DR for decisive users - use when they want direct answers |
+| quick-answer | Simple direct answer - for yes/no questions or quick confirmations |
 | support-triage | Help frustrated customers - for product issues/warranty |
 | budget-breakdown | Price/value transparency - for budget-conscious users |
 | accessibility-specs | Physical/ergonomic specs - for mobility/accessibility concerns |
@@ -88,11 +88,11 @@ Keywords: "problem", "broken", "frustrated", "warranty", "return", "issue", "not
 - Prioritize empathy and resolution over sales
 - Block sequence: support-triage, faq, follow-up
 
-### 2. Quick/Decisive User Detection
-Keywords: "just tell me", "which one", "best for", "don't have time", "tell me what to get"
-- Lead with quick-answer block
-- Minimize other blocks - they want brevity
-- Block sequence: quick-answer, follow-up (optionally product-recommendation if they want details)
+### 2. Simple Yes/No or Quick Questions
+Keywords: "can vitamix", "will it", "does it", "is it worth", "should I", "can I"
+- Lead with quick-answer block for direct confirmation
+- Use for questions that can be answered simply
+- Block sequence: quick-answer, follow-up (add product-recommendation if they need details)
 
 ### 3. Medical/Accessibility Queries
 Keywords: "arthritis", "disability", "dysphagia", "stroke", "mobility", "grip", "heavy", "aging"
@@ -111,7 +111,7 @@ Keywords: "gift", "for my", "birthday", "wedding", "christmas", "present"
 - Focus on recipient's needs, not the buyer's expertise
 - Offer "safe bet" recommendations
 - Surface gift card option
-- Block sequence: hero, quick-answer or product-recommendation, product-cards, follow-up
+- Block sequence: hero, product-recommendation, product-cards, follow-up
 
 ### 6. Commercial/B2B Queries
 Keywords: "restaurant", "business", "commercial", "bulk", "b2b", "professional kitchen"
@@ -386,11 +386,11 @@ function getFallbackReasoningResult(
     specs: ['hero', 'specs-table', 'comparison-table', 'follow-up'],
     reviews: ['hero', 'testimonials', 'product-recommendation', 'follow-up'],
     price: ['hero', 'budget-breakdown', 'product-cards', 'follow-up'],
-    recommendation: ['quick-answer', 'product-recommendation', 'follow-up'],
+    recommendation: ['product-recommendation', 'follow-up'],
     // New intent types
     support: ['support-triage', 'faq', 'follow-up'],
     partnership: ['hero', 'feature-highlights', 'testimonials', 'follow-up'],
-    gift: ['hero', 'quick-answer', 'product-cards', 'follow-up'],
+    gift: ['hero', 'product-recommendation', 'product-cards', 'follow-up'],
     medical: ['empathy-hero', 'accessibility-specs', 'product-recommendation', 'follow-up'],
     accessibility: ['empathy-hero', 'accessibility-specs', 'product-recommendation', 'follow-up'],
   };

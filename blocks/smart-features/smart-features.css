@@ -1,89 +1,91 @@
-/* Smart Features Block Styles */
+/* Smart Features Block - Vitamix Design System */
 
 .smart-features {
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
+  padding: var(--spacing-section-sm, 3rem) var(--spacing-lg, 1.5rem);
+  max-width: var(--max-width-content, 1200px);
+  margin: 0 auto;
 }
 
 .smart-features-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: var(--spacing-md, 1rem);
+  margin-bottom: var(--spacing-2xl, 3rem);
 }
 
 .smart-features-icon {
-  color: #6366f1;
-  background: #eef2ff;
-  padding: 0.75rem;
-  border-radius: 50%;
+  color: var(--color-brand-red, #c41230);
 }
 
 .smart-features-icon svg {
   width: 40px;
   height: 40px;
-  display: block;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
 }
 
 .smart-features-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: var(--font-size-4xl, 2.25rem);
+  font-weight: 300;
+  color: var(--color-brand-dark, #1a1a1a);
   margin: 0;
 }
 
 .smart-section {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e5e7eb;
+  background: var(--color-white, #fff);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
+  padding: var(--spacing-lg, 1.5rem);
+  margin-bottom: var(--spacing-lg, 1.5rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
 }
 
 .smart-section h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0 0 1rem;
-  color: #374151;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 var(--spacing-md, 1rem);
+  color: var(--color-brand-red, #c41230);
 }
 
 .section-content {
-  color: #6b7280;
+  color: var(--color-dark-gray, #666);
   line-height: 1.6;
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 .section-content ul {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: var(--spacing-lg, 1.5rem);
 }
 
 .section-content li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm, 0.5rem);
 }
 
 .smart-compare-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: var(--spacing-lg, 1.5rem);
+  margin-bottom: var(--spacing-lg, 1.5rem);
 }
 
 .smart-can {
-  border-radius: 12px;
-  padding: 1.5rem;
+  padding: var(--spacing-lg, 1.5rem);
 }
 
 .smart-can h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 0 1rem;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 var(--spacing-md, 1rem);
 }
 
 .can-do {
-  background: #f0fdf4;
-  border: 1px solid #86efac;
+  background: var(--color-off-white, #f5f5f5);
+  border-left: 4px solid #22c55e;
 }
 
 .can-do h3 {
@@ -91,12 +93,12 @@
 }
 
 .can-do .can-content {
-  color: #15803d;
+  color: var(--color-charcoal, #333);
 }
 
 .cant-do {
-  background: #fef3c7;
-  border: 1px solid #fcd34d;
+  background: var(--color-off-white, #f5f5f5);
+  border-left: 4px solid var(--color-star-gold, #ffd700);
 }
 
 .cant-do h3 {
@@ -104,28 +106,28 @@
 }
 
 .cant-do .can-content {
-  color: #a16207;
+  color: var(--color-charcoal, #333);
 }
 
 .can-content ul {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: var(--spacing-lg, 1.5rem);
 }
 
 .can-content li {
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm, 0.5rem);
   line-height: 1.5;
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 .smart-assessment {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: var(--spacing-md, 1rem);
+  background: var(--color-off-white, #f5f5f5);
+  border: 1px solid var(--color-light-gray, #e5e5e5);
+  padding: var(--spacing-lg, 1.5rem);
+  margin-bottom: var(--spacing-lg, 1.5rem);
 }
 
 .assessment-icon {
@@ -134,19 +136,21 @@
 }
 
 .assessment-content {
-  color: #475569;
+  color: var(--color-charcoal, #333);
 }
 
 .assessment-content strong {
   display: block;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #334155;
+  font-size: var(--font-size-base, 1rem);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs, 0.25rem);
+  color: var(--color-brand-dark, #1a1a1a);
 }
 
 .assessment-content p {
   margin: 0;
   line-height: 1.6;
+  font-size: var(--font-size-sm, 0.875rem);
 }
 
 .smart-models {
@@ -154,32 +158,35 @@
 }
 
 .smart-models h4 {
-  font-size: 0.9rem;
-  color: #64748b;
-  margin: 0 0 1rem;
+  font-size: var(--font-size-xs, 0.75rem);
   font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-dark-gray, #666);
+  margin: 0 0 var(--spacing-md, 1rem);
 }
 
 .model-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--spacing-sm, 0.5rem);
   justify-content: center;
 }
 
 .model-badge {
-  background: #6366f1;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  background: var(--color-brand-red, #c41230);
+  color: var(--color-white, #fff);
+  padding: var(--spacing-sm, 0.5rem) var(--spacing-md, 1rem);
+  font-size: var(--font-size-xs, 0.75rem);
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (width < 600px) {
   .smart-features {
-    padding: 1rem;
+    padding: var(--spacing-lg, 1.5rem) var(--spacing-md, 1rem);
   }
 
   .smart-features-header {
@@ -193,6 +200,5 @@
 
   .smart-assessment {
     flex-direction: column;
-    text-align: center;
   }
 }
