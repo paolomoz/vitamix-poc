@@ -18,6 +18,9 @@ import {
 // Experiment mode (progressive rendering)
 import { isExperimentRequest, initExperiment } from './experiment.js';
 
+// Session context for query history
+import { SessionContextManager } from './session-context.js';
+
 // Worker URLs
 const GENERATIVE_WORKER_URL = 'https://vitamix-generative.paolo-moz.workers.dev';
 const FAST_WORKER_URL = 'https://vitamix-generative-fast.paolo-moz.workers.dev';
@@ -669,8 +672,9 @@ async function renderVitamixRecommenderPage() {
   const statusEl = main.querySelector('.generation-status');
   const content = main.querySelector('#generation-content');
 
-  // Connect to SSE stream with preset parameter
-  const streamUrl = `${VITAMIX_RECOMMENDER_URL}/generate?query=${encodeURIComponent(query)}&slug=${encodeURIComponent(slug)}&preset=${encodeURIComponent(preset)}`;
+  // Connect to SSE stream with preset parameter and session context
+  const contextParam = SessionContextManager.buildEncodedContextParam();
+  const streamUrl = `${VITAMIX_RECOMMENDER_URL}/generate?query=${encodeURIComponent(query)}&slug=${encodeURIComponent(slug)}&preset=${encodeURIComponent(preset)}&ctx=${contextParam}`;
   const eventSource = new EventSource(streamUrl);
   let blockCount = 0;
   const generatedBlocks = [];
@@ -822,6 +826,15 @@ async function renderVitamixRecommenderPage() {
     if (h1) {
       document.title = `${h1.textContent} | Vitamix`;
     }
+
+    // Save query to session context for follow-up queries
+    SessionContextManager.addQuery({
+      query,
+      timestamp: Date.now(),
+      intent: data.intent?.intentType || 'general',
+      entities: data.intent?.entities || { products: [], ingredients: [], goals: [] },
+      generatedPath: `/discover/${slug}`,
+    });
   });
 
   eventSource.addEventListener('error', (e) => {

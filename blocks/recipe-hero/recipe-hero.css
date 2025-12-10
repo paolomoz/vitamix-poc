@@ -1,70 +1,199 @@
+/* Recipe Hero Block - Featured recipe with clean card layout */
 .recipe-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  padding: 40px 24px;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: center;
+  padding: 48px 24px;
 }
 
-.recipe-hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+/* Section Header */
+.recipe-hero__header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.recipe-hero-content h1 {
-  font-size: 42px;
+.recipe-hero__headline {
+  font-size: 2.25rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 16px;
+  margin: 0 0 16px 0;
   line-height: 1.2;
 }
 
-.recipe-hero-description {
-  font-size: 18px;
-  line-height: 1.6;
+.recipe-hero__section-desc {
+  font-size: 1.125rem;
   color: #555;
-  margin-bottom: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
-.recipe-hero-meta {
+/* Recipe Card */
+.recipe-hero__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Single column card when only content */
+.recipe-hero__card:has(.recipe-hero__content--full) {
+  grid-template-columns: 1fr;
+}
+
+/* Image Section */
+.recipe-hero__image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.recipe-hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.recipe-hero__image:hover img {
+  transform: scale(1.03);
+}
+
+.recipe-hero__image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.recipe-hero__image picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Section */
+.recipe-hero__content {
+  padding: 40px 48px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recipe-hero__content--full {
+  text-align: center;
+  align-items: center;
+  padding: 48px;
+}
+
+.recipe-hero__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.recipe-hero__text {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 0 24px 0;
+  line-height: 1.7;
+}
+
+/* CTA Button */
+.recipe-hero__cta {
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
-  font-size: 14px;
-  color: #666;
+  padding: 14px 28px;
+  background: #c41230;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  max-width: fit-content;
+  box-shadow: 0 4px 12px rgba(196, 18, 48, 0.25);
 }
 
-.recipe-hero-meta::before {
-  content: none;
+.recipe-hero__cta:hover {
+  background: #d91a3c;
+  box-shadow: 0 6px 20px rgba(196, 18, 48, 0.35);
+  transform: translateY(-2px);
 }
 
-@media (width < 900px) {
+.recipe-hero__cta::after {
+  content: '→';
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.recipe-hero__cta:hover::after {
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
   .recipe-hero {
+    padding: 32px 16px;
+  }
+
+  .recipe-hero__header {
+    margin-bottom: 32px;
+  }
+
+  .recipe-hero__headline {
+    font-size: 1.75rem;
+  }
+
+  .recipe-hero__section-desc {
+    font-size: 1rem;
+  }
+
+  .recipe-hero__card {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 0;
   }
 
-  .recipe-hero-content h1 {
-    font-size: 32px;
+  .recipe-hero__image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .recipe-hero__content {
+    padding: 32px 24px;
+  }
+
+  .recipe-hero__title {
+    font-size: 1.5rem;
   }
 }
 
-@media (width < 600px) {
-  .recipe-hero {
-    padding: 24px 16px;
+@media (max-width: 600px) {
+  .recipe-hero__headline {
+    font-size: 1.5rem;
   }
 
-  .recipe-hero-content h1 {
-    font-size: 28px;
+  .recipe-hero__content {
+    padding: 24px 20px;
   }
 
-  .recipe-hero-description {
-    font-size: 16px;
+  .recipe-hero__title {
+    font-size: 1.25rem;
+  }
+
+  .recipe-hero__text {
+    font-size: 0.9375rem;
+  }
+
+  .recipe-hero__cta {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
   }
 }

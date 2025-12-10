@@ -78,7 +78,7 @@
 }
 
 .hero .button {
-  display: inline-block;
+  display: none; /* Hidden for now - will unhide when meaningful */
   padding: 0.75rem 2rem;
   background: var(--color-brand-red);
   color: var(--color-white);
