@@ -10,6 +10,9 @@ export default function decorate(block) {
   if (existingCards.length > 0) {
     block.classList.add('recipe-cards-grid');
 
+    // Add card count for CSS grid layout
+    block.dataset.cardCount = existingCards.length;
+
     // Preserve and style the header if present
     const header = block.querySelector('.rcheader');
     if (header) {
@@ -72,6 +75,9 @@ export default function decorate(block) {
         block.appendChild(card);
       });
 
+      // Add card count for CSS grid layout
+      block.dataset.cardCount = items.length;
+
       return;
     }
   }
@@ -132,6 +138,7 @@ export default function decorate(block) {
   if (cards.length > 0) {
     block.innerHTML = '';
     block.classList.add('recipe-cards-grid');
+    block.dataset.cardCount = cards.length;
     cards.forEach((card) => block.appendChild(card));
   }
 }

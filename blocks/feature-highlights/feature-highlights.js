@@ -68,6 +68,9 @@ export default function decorate(block) {
     }
   });
 
+  // Add card count for CSS grid layout
+  grid.dataset.cardCount = grid.children.length;
+
   // Clear block but preserve header
   block.textContent = '';
   if (header) {

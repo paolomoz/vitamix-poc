@@ -130,6 +130,7 @@ export default function decorate(block) {
     // Already structured - wrap in ul if not already
     if (!block.querySelector('ul')) {
       const ul = document.createElement('ul');
+      ul.dataset.cardCount = existingCards.length;
       existingCards.forEach((card) => {
         const li = document.createElement('li');
         li.className = card.className;
@@ -141,6 +142,9 @@ export default function decorate(block) {
         block.appendChild(header);
       }
       block.appendChild(ul);
+    } else {
+      const ul = block.querySelector('ul');
+      ul.dataset.cardCount = existingCards.length;
     }
     // Ensure links have proper styling
     block.querySelectorAll('a.button').forEach((link) => {
@@ -258,6 +262,9 @@ export default function decorate(block) {
     li.appendChild(bodyDiv);
     ul.appendChild(li);
   });
+
+  // Add card count for CSS grid layout
+  ul.dataset.cardCount = ul.children.length;
 
   block.textContent = '';
   if (header) {

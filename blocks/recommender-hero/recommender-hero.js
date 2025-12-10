@@ -15,6 +15,7 @@
 
 /**
  * Handle form submission - navigates to generation URL
+ * Uses the q parameter and respects the speed/quality toggle from header
  * @param {Event} event - Submit event
  * @param {HTMLFormElement} form - The form element
  */
@@ -33,11 +34,19 @@ function handleSubmit(event, form) {
   // Show loading state
   submitButton.disabled = true;
   submitButton.classList.add('loading');
-  const originalText = submitButton.textContent;
   submitButton.textContent = 'Finding your match...';
 
-  // Navigate to generation URL
-  const url = `/?generate=${encodeURIComponent(query)}`;
+  // Get AI mode from sessionStorage (set by header speed/quality toggle)
+  // Default to 'speed' for faster results
+  const aiMode = sessionStorage.getItem('ai-mode') || 'speed';
+
+  // Determine preset based on AI mode:
+  // - quality: preset=production (Claude for reasoning, Cerebras for content)
+  // - speed: preset=all-cerebras (Cerebras for everything, faster)
+  const preset = aiMode === 'speed' ? 'all-cerebras' : 'production';
+
+  // Navigate with q parameter and preset
+  const url = `/?q=${encodeURIComponent(query)}&preset=${preset}`;
   window.location.href = url;
 }
 

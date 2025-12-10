@@ -16,6 +16,7 @@ export default function decorate(block) {
   const existingCards = block.querySelectorAll('.use-case-card');
   if (existingCards.length > 0) {
     block.classList.add('use-case-cards-grid');
+    block.dataset.cardCount = existingCards.length;
     return;
   }
 
@@ -76,6 +77,7 @@ export default function decorate(block) {
       block.appendChild(header);
     }
     block.classList.add('use-case-cards-grid');
+    block.dataset.cardCount = cards.length;
     cards.forEach((card) => block.appendChild(card));
   }
 }

@@ -117,7 +117,7 @@ body:has(.recommender-hero) {
 .recommender-hero button[type="submit"] {
   padding: 18px 32px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: #1a1a1a;
@@ -126,6 +126,7 @@ body:has(.recommender-hero) {
   cursor: pointer;
   transition: background-color 0.2s ease;
   white-space: nowrap;
+  margin: 0;
 }
 
 .recommender-hero button[type="submit"]:hover {

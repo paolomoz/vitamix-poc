@@ -6,8 +6,9 @@
 
 .feature-highlights {
   padding: 4rem 1.5rem;
-  max-width: 1200px;
+  max-width: var(--max-width-wide, 1400px);
   margin: 0 auto;
+  width: 100%;
 }
 
 /* Header */
@@ -44,8 +45,36 @@
 
 .feature-highlights-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  justify-content: center;
+}
+
+/* 2 cards: 1 row with 2 columns */
+.feature-highlights-grid[data-card-count="2"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 cards: 1 row with 3 columns */
+.feature-highlights-grid[data-card-count="3"] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 4 cards: 1 row with 4 columns */
+.feature-highlights-grid[data-card-count="4"] {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 5-6 cards: 2 rows with 3 columns each */
+.feature-highlights-grid[data-card-count="5"],
+.feature-highlights-grid[data-card-count="6"] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 7-8 cards: 2 rows with 4 columns each */
+.feature-highlights-grid[data-card-count="7"],
+.feature-highlights-grid[data-card-count="8"] {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .feature-highlight-card {
@@ -121,16 +150,33 @@
 
 /* Responsive */
 @media (width < 900px) {
-  .feature-highlights-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 0 auto;
+  /* Tablet: max 2 columns */
+  .feature-highlights-grid,
+  .feature-highlights-grid[data-card-count="3"],
+  .feature-highlights-grid[data-card-count="4"],
+  .feature-highlights-grid[data-card-count="5"],
+  .feature-highlights-grid[data-card-count="6"],
+  .feature-highlights-grid[data-card-count="7"],
+  .feature-highlights-grid[data-card-count="8"] {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (width < 600px) {
   .feature-highlights {
     padding: 3rem 1rem;
+  }
+
+  /* Mobile: single column */
+  .feature-highlights-grid,
+  .feature-highlights-grid[data-card-count="2"],
+  .feature-highlights-grid[data-card-count="3"],
+  .feature-highlights-grid[data-card-count="4"],
+  .feature-highlights-grid[data-card-count="5"],
+  .feature-highlights-grid[data-card-count="6"],
+  .feature-highlights-grid[data-card-count="7"],
+  .feature-highlights-grid[data-card-count="8"] {
+    grid-template-columns: 1fr;
   }
 
   .feature-highlight-content {

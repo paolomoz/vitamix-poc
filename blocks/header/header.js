@@ -184,7 +184,7 @@ export default async function decorate(block) {
   // Add AI mode toggle (Speed = Cerebras, Quality = Claude)
   const aiModeToggle = document.createElement('div');
   aiModeToggle.className = 'nav-ai-toggle';
-  const savedMode = sessionStorage.getItem('ai-mode') || 'quality';
+  const savedMode = sessionStorage.getItem('ai-mode') || 'speed';
   aiModeToggle.innerHTML = `
     <button type="button" class="ai-toggle-option${savedMode === 'speed' ? ' active' : ''}" data-value="speed" title="Fast generation with Cerebras">Speed</button>
     <button type="button" class="ai-toggle-option${savedMode === 'quality' ? ' active' : ''}" data-value="quality" title="Quality generation with Claude">Quality</button>
