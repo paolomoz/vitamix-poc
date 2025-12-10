@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2025-12-09T18:52:25.303Z",
+  "products": {
+    "ascent-x5-smartprep-kitchen-system": {
+      "primary": "/content/images/products/ascent-x5-smartprep-kitchen-system/primary.png",
+      "gallery": [
+        "/content/images/products/ascent-x5-smartprep-kitchen-system/gallery-1.jpg",
+        "/content/images/products/ascent-x5-smartprep-kitchen-system/gallery-2.jpg",
+        "/content/images/products/ascent-x5-smartprep-kitchen-system/gallery-3.jpg"
+      ]
+    },
+    "ascent-x4-gourmet-smartprep-kitchen-system": {
+      "primary": "/content/images/products/ascent-x4-gourmet-smartprep-kitchen-system/primary.png",
+      "gallery": [
+        "/content/images/products/ascent-x4-gourmet-smartprep-kitchen-system/gallery-1.jpg",
+        "/content/images/products/ascent-x4-gourmet-smartprep-kitchen-system/gallery-2.png"
+      ]
+    },
+    "ascent-x2-smartprep-kitchen-system": {
+      "primary": "/content/images/products/ascent-x2-smartprep-kitchen-system/primary.png",
+      "gallery": [
+        "/content/images/products/ascent-x2-smartprep-kitchen-system/gallery-1.jpg"
+      ]
+    },
+    "ascent-x5-stainless-steel": {
+      "primary": "/content/images/products/ascent-x5-stainless-steel/primary.png",
+      "gallery": []
+    },
+    "ascent-x5": {
+      "primary": "/content/images/products/ascent-x5/primary.png",
+      "gallery": [
+        "/content/images/products/ascent-x5/gallery-1.png",
+        "/content/images/products/ascent-x5/gallery-2.png",
+        "/content/images/products/ascent-x5/gallery-3.png"
+      ]
+    },
+    "ascent-x4": {
+      "primary": "/content/images/products/ascent-x4/primary.png",
+      "gallery": [
+        "/content/images/products/ascent-x4/gallery-1.png",
+        "/content/images/products/ascent-x4/gallery-2.png",
+        "/content/images/products/ascent-x4/gallery-3.png"
+      ]
+    },
+    "ascent-x3": {
+      "primary": "/content/images/products/ascent-x3/primary.png",
+      "gallery": [
+        "/content/images/products/ascent-x3/gallery-1.png",
+        "/content/images/products/ascent-x3/gallery-2.png",
+        "/content/images/products/ascent-x3/gallery-3.png"
+      ]
+    },
+    "ascent-x2": {
+      "primary": "/content/images/products/ascent-x2/primary.png",
+      "gallery": [
+        "/content/images/products/ascent-x2/gallery-1.png",
+        "/content/images/products/ascent-x2/gallery-2.png",
+        "/content/images/products/ascent-x2/gallery-3.png"
+      ]
+    },
+    "5200-stainless-steel": {
+      "primary": "/content/images/products/5200-stainless-steel/primary.jpg",
+      "gallery": []
+    },
+    "5200-legacy-bundle": {
+      "primary": "/content/images/products/5200-legacy-bundle/primary.jpg",
+      "gallery": [
+        "/content/images/products/5200-legacy-bundle/gallery-1.jpg",
+        "/content/images/products/5200-legacy-bundle/gallery-2.jpg"
+      ]
+    },
+    "5200-standard-getting-started": {
+      "primary": "/content/images/products/5200-standard-getting-started/primary.jpg",
+      "gallery": [
+        "/content/images/products/5200-standard-getting-started/gallery-1.jpg",
+        "/content/images/products/5200-standard-getting-started/gallery-2.jpg",
+        "/content/images/products/5200-standard-getting-started/gallery-3.jpg"
+      ]
+    },
+    "e310-personal-cup-adapter": {
+      "primary": "/content/images/products/e310-personal-cup-adapter/primary.png",
+      "gallery": [
+        "/content/images/products/e310-personal-cup-adapter/gallery-1.jpg",
+        "/content/images/products/e310-personal-cup-adapter/gallery-2.jpg",
+        "/content/images/products/e310-personal-cup-adapter/gallery-3.jpg"
+      ]
+    }
+  }
+}

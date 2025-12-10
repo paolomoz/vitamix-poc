@@ -1,0 +1,114 @@
+🚀 Vitamix Content Crawler (AI-Powered)
+
+Content directory: /Users/paolo/excat/vitamix-poc/content
+API: AWS Bedrock
+Model: us.anthropic.claude-3-5-haiku-20241022-v1:0
+Region: us-east-1
+Recipe URLs: 1680
+Accessory URLs: 37
+Product URLs: 32
+
+
+📦 Crawling Products with AI Extraction...
+
+[1/32] 5200-legacy-bundle
+  Fetching: https://www.vitamix.com/us/en_us/products/5200-legacy-bundle
+  ✓ 5200 Legacy Bundle - $599.95
+[2/32] 5200-standard-getting-started
+  Fetching: https://www.vitamix.com/us/en_us/products/5200-standard-getting-started
+  ✓ 5200 Standard - Getting Started - $449.95
+[3/32] a2300
+  Fetching: https://www.vitamix.com/us/en_us/products/a2300
+  ✓ A2300 - $549.95
+[4/32] a2300-family-pack
+  Fetching: https://www.vitamix.com/us/en_us/products/a2300-family-pack
+  ✓ A2300 Family Pack - $699.95
+[5/32] a2300-super-bundle
+  Fetching: https://www.vitamix.com/us/en_us/products/a2300-super-bundle
+  ✓ Ascent® Series A2300 Super Bundle - $814.95
+[6/32] a2500-plus-aer-disc-container
+  Fetching: https://www.vitamix.com/us/en_us/products/a2500-plus-aer-disc-container
+  ✓ A2500 + Aer® Disc Container - $699.95
+[7/32] ascent-x2
+  Fetching: https://www.vitamix.com/us/en_us/products/ascent-x2
+  ✓ Ascent® X2 - $499.95
+[8/32] ascent-x2-smartprep-kitchen-system
+  Fetching: https://www.vitamix.com/us/en_us/products/ascent-x2-smartprep-kitchen-system
+  ✓ Ascent® X2 SmartPrep™ Kitchen System - $699.95
+[9/32] ascent-x3
+  Fetching: https://www.vitamix.com/us/en_us/products/ascent-x3
+  ✓ Ascent X3 - $599.95
+[10/32] ascent-x4
+  Fetching: https://www.vitamix.com/us/en_us/products/ascent-x4
+  ✓ Ascent® X4 - $649.95
+[11/32] ascent-x4-gourmet-smartprep-kitchen-system
+  Fetching: https://www.vitamix.com/us/en_us/products/ascent-x4-gourmet-smartprep-kitchen-system
+  ✓ Ascent® X4 Gourmet SmartPrep Kitchen System - $849.95
+[12/32] ascent-x5
+  Fetching: https://www.vitamix.com/us/en_us/products/ascent-x5
+  ✓ Ascent® X5 - $699.95
+[13/32] ascent-x5-smartprep-kitchen-system
+  Fetching: https://www.vitamix.com/us/en_us/products/ascent-x5-smartprep-kitchen-system
+  ✓ Ascent® X5 SmartPrep™ Kitchen System - $899.95
+[14/32] certified-reconditioned-a2500
+  Fetching: https://www.vitamix.com/us/en_us/products/certified-reconditioned-a2500
+  ✓ Certified Reconditioned A2500 - $449.95
+[15/32] certified-reconditioned-a3500
+  Fetching: https://www.vitamix.com/us/en_us/products/certified-reconditioned-a3500
+  ✓ Certified Reconditioned A3500 - $549.95
+[16/32] certified-reconditioned-explorian
+  Fetching: https://www.vitamix.com/us/en_us/products/certified-reconditioned-explorian
+  ✓ Certified Reconditioned Explorian® Series - $319.95
+[17/32] certified-reconditioned-explorian-with-programs
+  Fetching: https://www.vitamix.com/us/en_us/products/certified-reconditioned-explorian-with-programs
+  ✓ Certified Reconditioned Explorian® with Programs - $379.95
+[18/32] certified-reconditioned-s50
+  Fetching: https://www.vitamix.com/us/en_us/products/certified-reconditioned-s50
+  ✓ Certified Reconditioned S50 - $339.95
+[19/32] certified-reconditioned-standard
+  Fetching: https://www.vitamix.com/us/en_us/products/certified-reconditioned-standard
+  ✓ Certified Reconditioned Standard - $349.95
+[20/32] creations-gallery
+  Fetching: https://www.vitamix.com/us/en_us/products/creations-gallery
+  ✓ Creations Gallery - $499.95
+[21/32] creations-ii
+  Fetching: https://www.vitamix.com/us/en_us/products/creations-ii
+  ✓ Creations II - $479.95
+[22/32] e310
+  Fetching: https://www.vitamix.com/us/en_us/products/e310
+  ✓ E310 - $299.95
+[23/32] e310-and-pca-bundle
+  Fetching: https://www.vitamix.com/us/en_us/products/e310-and-pca-bundle
+  ✓ E310 + Personal Cup Adapter - $419.95
+[24/32] e320-and-pca-explorian-blender
+  Fetching: https://www.vitamix.com/us/en_us/products/e320-and-pca-explorian-blender
+  ✓ E320 + Personal Cup Adapter - $349.95
+[25/32] propel-750-classic-bundle
+  Fetching: https://www.vitamix.com/us/en_us/products/propel-750-classic-bundle
+  ✓ Propel® 750 Classic Bundle - $549.95
+[26/32] propel-series-510
+  Fetching: https://www.vitamix.com/us/en_us/products/propel-series-510
+  ✓ Propel® 510 - $349.95
+[27/32] propel-series-750
+  Fetching: https://www.vitamix.com/us/en_us/products/propel-series-750
+  ✓ Propel® 750 - $479.95
+[28/32] s55
+  Fetching: https://www.vitamix.com/us/en_us/products/s55
+  ✓ S55 - $449.95
+[29/32] turboblend-three-speed
+  Fetching: https://www.vitamix.com/us/en_us/products/turboblend-three-speed
+  ✓ TurboBlend Three Speed - $399.95
+[30/32] turboblend-two-speed
+  Fetching: https://www.vitamix.com/us/en_us/products/turboblend-two-speed
+  ✓ TurboBlend Two Speed Deluxe - $524.95
+[31/32] v1200-super-pack
+  Fetching: https://www.vitamix.com/us/en_us/products/v1200-super-pack
+  ✓ V1200 Super Pack - $669.95
+[32/32] vitamix-onetm
+  Fetching: https://www.vitamix.com/us/en_us/products/vitamix-onetm
+  ✓ Vitamix ONE™ - $249.95
+
+✅ Saved 32 products
+
+🎉 Crawl complete!
+

@@ -1,0 +1,302 @@
+🚀 Vitamix Content Crawler (AI-Powered)
+
+Content directory: /Users/paolo/excat/vitamix-poc/content
+Using Claude for extraction
+Recipe URLs: 125
+Accessory URLs: 40
+Product URLs: 21
+
+
+🥤 Crawling Recipes with AI Extraction...
+
+[1/125] basic-green-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/basic-green-smoothie
+  ✓ Basic Green Smoothie
+[2/125] all-green-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/all-green-smoothie
+  ✓ All Green Smoothie
+[3/125] tropical-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/tropical-smoothie
+  ✓ Tropical Smoothie
+[4/125] mango-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/mango-smoothie
+  ✓ Mango Smoothie
+[5/125] four-fruit-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/four-fruit-smoothie
+  ✓ Four Fruit Smoothie
+[6/125] everything-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/everything-smoothie
+  ✓ Everything Smoothie
+[7/125] strawberry-oatmeal-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/strawberry-oatmeal-smoothie
+  ✓ Strawberry Oatmeal Smoothie [Vitamix ONE]
+[8/125] peanut-butter-berry-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/peanut-butter-berry-smoothie
+  ✓ Peanut Butter Berry Smoothie
+[9/125] post-workout-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/post-workout-smoothie
+  ✓ Post Workout Smoothie
+[10/125] nuts-and-grains-breakfast-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/nuts-and-grains-breakfast-smoothie
+  ✓ Nuts and Grains Breakfast Smoothie
+[11/125] gold-medal-smoothie
+  Fetching: https://www.vitamix.com/us/en_us/recipes/gold-medal-smoothie
+  ✓ Gold Medal Smoothie
+[12/125] tomato-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/tomato-soup
+  ✓ Tomato Soup
+[13/125] butternut-squash-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/butternut-squash-soup
+  ✓ Butternut Squash Soup
+[14/125] broccoli-cheese-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/broccoli-cheese-soup
+  ✓ Broccoli "Cheese" Soup
+[15/125] tortilla-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/tortilla-soup
+  ✓ Tortilla Soup
+[16/125] potato-leek-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/potato-leek-soup
+  Error extracting https://www.vitamix.com/us/en_us/recipes/potato-leek-soup: Failed to fetch https://www.vitamix.com/us/en_us/recipes/potato-leek-soup: 404
+[17/125] pumpkin-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/pumpkin-soup
+  ✓ Pumpkin Soup
+[18/125] curried-carrot-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/curried-carrot-soup
+  ✓ Curried Carrot Soup
+[19/125] thyme-for-tomato-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/thyme-for-tomato-soup
+  ✓ Thyme for Tomato Soup
+[20/125] asparagus-and-cashew-cream-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/asparagus-and-cashew-cream-soup
+  ✓ Asparagus and Cashew Cream Soup
+[21/125] coconut-red-curry-squash-soup
+  Fetching: https://www.vitamix.com/us/en_us/recipes/coconut-red-curry-squash-soup
+  ✓ Coconut Red Curry Squash Soup
+[22/125] vanilla-ice-cream
+  Fetching: https://www.vitamix.com/us/en_us/recipes/vanilla-ice-cream
+  Error extracting https://www.vitamix.com/us/en_us/recipes/vanilla-ice-cream: Failed to fetch https://www.vitamix.com/us/en_us/recipes/vanilla-ice-cream: 404
+[23/125] frozen-hot-chocolate
+  Fetching: https://www.vitamix.com/us/en_us/recipes/frozen-hot-chocolate
+  Error extracting https://www.vitamix.com/us/en_us/recipes/frozen-hot-chocolate: Failed to fetch https://www.vitamix.com/us/en_us/recipes/frozen-hot-chocolate: 404
+[24/125] fruit-sorbet
+  Fetching: https://www.vitamix.com/us/en_us/recipes/fruit-sorbet
+  ✓ Fruit Sorbet
+[25/125] peach-sorbet
+  Fetching: https://www.vitamix.com/us/en_us/recipes/peach-sorbet
+  ✓ Peach Sorbet
+[26/125] mango-sorbet
+  Fetching: https://www.vitamix.com/us/en_us/recipes/mango-sorbet
+  ✓ Mango Sorbet
+[27/125] orange-sorbet
+  Fetching: https://www.vitamix.com/us/en_us/recipes/orange-sorbet
+  ✓ Orange Sorbet
+[28/125] berry-sorbet-with-mixed-spices
+  Fetching: https://www.vitamix.com/us/en_us/recipes/berry-sorbet-with-mixed-spices
+  ✓ Berry Sorbet with Mixed Spices
+[29/125] strawberry-mango-coconut-sorbet
+  Fetching: https://www.vitamix.com/us/en_us/recipes/strawberry-mango-coconut-sorbet
+  ✓ Strawberry Mango Coconut Sorbet
+[30/125] spiked-honeydew-sorbet
+  Fetching: https://www.vitamix.com/us/en_us/recipes/spiked-honeydew-sorbet
+  ✓ Spiked Honeydew Sorbet
+[31/125] peach-soy-sherbet
+  Fetching: https://www.vitamix.com/us/en_us/recipes/peach-soy-sherbet
+  ✓ Peach Soy Sherbet
+[32/125] peach-soy-sherbet-vitamix-one
+  Fetching: https://www.vitamix.com/us/en_us/recipes/peach-soy-sherbet-vitamix-one
+  ✓ Peach Soy Sherbet [Vitamix ONE]
+[33/125] fresh-fruit-and-yogurt-pops
+  Fetching: https://www.vitamix.com/us/en_us/recipes/fresh-fruit-and-yogurt-pops
+  Error extracting https://www.vitamix.com/us/en_us/recipes/fresh-fruit-and-yogurt-pops: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwes9dVPyberN7F6WzBg"}
+[34/125] hummus
+  Fetching: https://www.vitamix.com/us/en_us/recipes/hummus
+  Error extracting https://www.vitamix.com/us/en_us/recipes/hummus: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwesFPWihPXD7BG3Y6ka"}
+[35/125] cauliflower-hummus
+  Fetching: https://www.vitamix.com/us/en_us/recipes/cauliflower-hummus
+  Error extracting https://www.vitamix.com/us/en_us/recipes/cauliflower-hummus: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwesM5KZTAoT4vWzmybF"}
+[36/125] butternut-squash-hummus
+  Fetching: https://www.vitamix.com/us/en_us/recipes/butternut-squash-hummus
+  Error extracting https://www.vitamix.com/us/en_us/recipes/butternut-squash-hummus: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwesT6y1cREdbvohks3W"}
+[37/125] guacamole
+  Fetching: https://www.vitamix.com/us/en_us/recipes/guacamole
+  Error extracting https://www.vitamix.com/us/en_us/recipes/guacamole: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwesYtDszyejUSwNkn3v"}
+[38/125] guacamole-vitamix-one
+  Fetching: https://www.vitamix.com/us/en_us/recipes/guacamole-vitamix-one
+  Error extracting https://www.vitamix.com/us/en_us/recipes/guacamole-vitamix-one: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwesebGwWqobe264TnBp"}
+[39/125] guacamole-food-processor
+  Fetching: https://www.vitamix.com/us/en_us/recipes/guacamole-food-processor
+  Error extracting https://www.vitamix.com/us/en_us/recipes/guacamole-food-processor: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwesmdgzBphc6xnNxXMH"}
+[40/125] guacamole-immersion-blender
+  Fetching: https://www.vitamix.com/us/en_us/recipes/guacamole-immersion-blender
+  Error extracting https://www.vitamix.com/us/en_us/recipes/guacamole-immersion-blender: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwessJkNGUia1arPh4TH"}
+[41/125] guacamole-mini-chopper-attachment
+  Fetching: https://www.vitamix.com/us/en_us/recipes/guacamole-mini-chopper-attachment
+  Error extracting https://www.vitamix.com/us/en_us/recipes/guacamole-mini-chopper-attachment: Failed to fetch https://www.vitamix.com/us/en_us/recipes/guacamole-mini-chopper-attachment: 404
+[42/125] green-pea-guacamole
+  Fetching: https://www.vitamix.com/us/en_us/recipes/green-pea-guacamole
+  Error extracting https://www.vitamix.com/us/en_us/recipes/green-pea-guacamole: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwet52wbDXUZeRDMiSpA"}
+[43/125] tropical-avocado-salsa
+  Fetching: https://www.vitamix.com/us/en_us/recipes/tropical-avocado-salsa
+  Error extracting https://www.vitamix.com/us/en_us/recipes/tropical-avocado-salsa: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwetAuR6Dm9uHz48MZ7c"}
+[44/125] salsa-mexicano
+  Fetching: https://www.vitamix.com/us/en_us/recipes/salsa-mexicano
+  Error extracting https://www.vitamix.com/us/en_us/recipes/salsa-mexicano: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwetGw4YygRtdP9Wnc9A"}
+[45/125] avocado-yogurt-dip
+  Fetching: https://www.vitamix.com/us/en_us/recipes/avocado-yogurt-dip
+  Error extracting https://www.vitamix.com/us/en_us/recipes/avocado-yogurt-dip: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwetNd7RG91nfzLwvzV9"}
+[46/125] sweetcorn-fritters-with-feta-guacamole-and-salsa
+  Fetching: https://www.vitamix.com/us/en_us/recipes/sweetcorn-fritters-with-feta-guacamole-and-salsa
+  Error extracting https://www.vitamix.com/us/en_us/recipes/sweetcorn-fritters-with-feta-guacamole-and-salsa: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwetUyrNoWUHXGGoFha1"}
+[47/125] whole-fruit-margarita
+  Fetching: https://www.vitamix.com/us/en_us/recipes/whole-fruit-margarita
+  Error extracting https://www.vitamix.com/us/en_us/recipes/whole-fruit-margarita: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwetan78e91i2ncxTJ7E"}
+[48/125] strawberry-daiquiri
+  Fetching: https://www.vitamix.com/us/en_us/recipes/strawberry-daiquiri
+  Error extracting https://www.vitamix.com/us/en_us/recipes/strawberry-daiquiri: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwetgW99rvE9QVV1rENA"}
+[49/125] marinara-sauce
+  Fetching: https://www.vitamix.com/us/en_us/recipes/marinara-sauce
+  Error extracting https://www.vitamix.com/us/en_us/recipes/marinara-sauce: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweto9VscVFoLsStEFjz"}
+[50/125] marinara-sauce-immersion-blender
+  Fetching: https://www.vitamix.com/us/en_us/recipes/marinara-sauce-immersion-blender
+  Error extracting https://www.vitamix.com/us/en_us/recipes/marinara-sauce-immersion-blender: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwetuDsDagihvU4Ub71Q"}
+[51/125] marinara-sauce-food-processor-attachment
+  Fetching: https://www.vitamix.com/us/en_us/recipes/marinara-sauce-food-processor-attachment
+  Error extracting https://www.vitamix.com/us/en_us/recipes/marinara-sauce-food-processor-attachment: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwetztS99zdmcrhEdqQ9"}
+[52/125] classic-marinara-sauce-immersion-blender
+  Fetching: https://www.vitamix.com/us/en_us/recipes/classic-marinara-sauce-immersion-blender
+  Error extracting https://www.vitamix.com/us/en_us/recipes/classic-marinara-sauce-immersion-blender: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweu78EKubPesC1VX1K9"}
+[53/125] fresh-tomato-sauce
+  Fetching: https://www.vitamix.com/us/en_us/recipes/fresh-tomato-sauce
+  Error extracting https://www.vitamix.com/us/en_us/recipes/fresh-tomato-sauce: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuCkKeSws4KzzcCE8Z"}
+[54/125] fresh-tomato-sauce-vitamix-one
+  Fetching: https://www.vitamix.com/us/en_us/recipes/fresh-tomato-sauce-vitamix-one
+  Error extracting https://www.vitamix.com/us/en_us/recipes/fresh-tomato-sauce-vitamix-one: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuK45i9g8Kq5irvmTC"}
+[55/125] easy-tomato-sauce
+  Fetching: https://www.vitamix.com/us/en_us/recipes/easy-tomato-sauce
+  Error extracting https://www.vitamix.com/us/en_us/recipes/easy-tomato-sauce: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuQm8ErBTAXYDBS5nw"}
+[56/125] tomatillo-sauce
+  Fetching: https://www.vitamix.com/us/en_us/recipes/tomatillo-sauce
+  Error extracting https://www.vitamix.com/us/en_us/recipes/tomatillo-sauce: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuWQD7nRU1d9gpDMf7"}
+[57/125] thai-curry-carrot-sauce
+  Fetching: https://www.vitamix.com/us/en_us/recipes/thai-curry-carrot-sauce
+  Error extracting https://www.vitamix.com/us/en_us/recipes/thai-curry-carrot-sauce: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuc7FjZHA94egFbbJD"}
+[58/125] red-curry-sauce
+  Fetching: https://www.vitamix.com/us/en_us/recipes/red-curry-sauce
+  Error extracting https://www.vitamix.com/us/en_us/recipes/red-curry-sauce: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuhnZcVjQDGv7LDNN9"}
+[59/125] red-curry-pizza-sauce
+  Fetching: https://www.vitamix.com/us/en_us/recipes/red-curry-pizza-sauce
+  Error extracting https://www.vitamix.com/us/en_us/recipes/red-curry-pizza-sauce: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuoWrTtvwYEsFXBR1e"}
+[60/125] chipotle-peanut-sauce
+  Fetching: https://www.vitamix.com/us/en_us/recipes/chipotle-peanut-sauce
+  Error extracting https://www.vitamix.com/us/en_us/recipes/chipotle-peanut-sauce: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuuDehTReeMPwDSmpw"}
+[61/125] pineapple-prawn-curry
+  Fetching: https://www.vitamix.com/us/en_us/recipes/pineapple-prawn-curry
+  Error extracting https://www.vitamix.com/us/en_us/recipes/pineapple-prawn-curry: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweuzqF7R3X47bL11KTU"}
+[62/125] curry-spice-roasted-pumpkin-seeds
+  Fetching: https://www.vitamix.com/us/en_us/recipes/curry-spice-roasted-pumpkin-seeds
+  Error extracting https://www.vitamix.com/us/en_us/recipes/curry-spice-roasted-pumpkin-seeds: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwev6TpkQSqZmgEZ7uwn"}
+[63/125] tomato-vinaigrette
+  Fetching: https://www.vitamix.com/us/en_us/recipes/tomato-vinaigrette
+  Error extracting https://www.vitamix.com/us/en_us/recipes/tomato-vinaigrette: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwevCBcc5TbX8mFXZMNc"}
+[64/125] basic-vinaigrette
+  Fetching: https://www.vitamix.com/us/en_us/recipes/basic-vinaigrette
+  Error extracting https://www.vitamix.com/us/en_us/recipes/basic-vinaigrette: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwevHoTD52ZY8kTJEUtH"}
+[65/125] raspberry-vinaigrette
+  Fetching: https://www.vitamix.com/us/en_us/recipes/raspberry-vinaigrette
+  Error extracting https://www.vitamix.com/us/en_us/recipes/raspberry-vinaigrette: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwevPguu4FwmHxomtdXU"}
+[66/125] parmesan-balsamic-vinaigrette
+  Fetching: https://www.vitamix.com/us/en_us/recipes/parmesan-balsamic-vinaigrette
+  Error extracting https://www.vitamix.com/us/en_us/recipes/parmesan-balsamic-vinaigrette: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwevVPxV92F3r1mRNQE2"}
+[67/125] oil-free-cherry-vinaigrette
+  Fetching: https://www.vitamix.com/us/en_us/recipes/oil-free-cherry-vinaigrette
+  Error extracting https://www.vitamix.com/us/en_us/recipes/oil-free-cherry-vinaigrette: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwevbkCZUQPDiiUGSsMk"}
+[68/125] sweet-and-spicy-vinaigrette
+  Fetching: https://www.vitamix.com/us/en_us/recipes/sweet-and-spicy-vinaigrette
+  Error extracting https://www.vitamix.com/us/en_us/recipes/sweet-and-spicy-vinaigrette: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwevi4DZCKXWbeZ6kC7B"}
+[69/125] mayonnaise
+  Fetching: https://www.vitamix.com/us/en_us/recipes/mayonnaise
+  Error extracting https://www.vitamix.com/us/en_us/recipes/mayonnaise: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwevopVGt6niuCvPX5Kw"}
+[70/125] aioli
+  Fetching: https://www.vitamix.com/us/en_us/recipes/aioli
+  Error extracting https://www.vitamix.com/us/en_us/recipes/aioli: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwevuignonB719cZJLhM"}
+[71/125] garlic-aioli
+  Fetching: https://www.vitamix.com/us/en_us/recipes/garlic-aioli
+  Error extracting https://www.vitamix.com/us/en_us/recipes/garlic-aioli: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwew1pJc8jKkAQJLJvrn"}
+[72/125] avocado-cilantro-mayonnaise
+  Fetching: https://www.vitamix.com/us/en_us/recipes/avocado-cilantro-mayonnaise
+  Error extracting https://www.vitamix.com/us/en_us/recipes/avocado-cilantro-mayonnaise: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwew8LxnStE9zPrPsbys"}
+[73/125] warm-balsamic-potato-salad
+  Fetching: https://www.vitamix.com/us/en_us/recipes/warm-balsamic-potato-salad
+  Error extracting https://www.vitamix.com/us/en_us/recipes/warm-balsamic-potato-salad: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwewEfiHEdKummUbYc5N"}
+[74/125] turkey-sage-and-butternut-squash-baby-food
+  Fetching: https://www.vitamix.com/us/en_us/recipes/turkey-sage-and-butternut-squash-baby-food
+  Error extracting https://www.vitamix.com/us/en_us/recipes/turkey-sage-and-butternut-squash-baby-food: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwewLRjpMV2fjkYW71q5"}
+[75/125] curried-squash-and-peas-baby-food
+  Fetching: https://www.vitamix.com/us/en_us/recipes/curried-squash-and-peas-baby-food
+  Error extracting https://www.vitamix.com/us/en_us/recipes/curried-squash-and-peas-baby-food: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwewTugxXgxxPNsRhMbD"}
+[76/125] cherries-and-butternut-squash-with-millet-baby-food
+  Fetching: https://www.vitamix.com/us/en_us/recipes/cherries-and-butternut-squash-with-millet-baby-food
+  Error extracting https://www.vitamix.com/us/en_us/recipes/cherries-and-butternut-squash-with-millet-baby-food: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwewZfTqks12XGnZXAgf"}
+[77/125] almond-milk
+  Fetching: https://www.vitamix.com/us/en_us/recipes/almond-milk
+  Error extracting https://www.vitamix.com/us/en_us/recipes/almond-milk: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwewfqYXhF1z7pJZ9S4h"}
+[78/125] almond-milk-vitamix-one
+  Fetching: https://www.vitamix.com/us/en_us/recipes/almond-milk-vitamix-one
+  Error extracting https://www.vitamix.com/us/en_us/recipes/almond-milk-vitamix-one: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwewmSPNthjMgx8ojPTK"}
+[79/125] cashew-milk
+  Fetching: https://www.vitamix.com/us/en_us/recipes/cashew-milk
+  Error extracting https://www.vitamix.com/us/en_us/recipes/cashew-milk: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwews6iFsUieiioD5HUG"}
+[80/125] cashew-milk-immersion-blender
+  Fetching: https://www.vitamix.com/us/en_us/recipes/cashew-milk-immersion-blender
+  Error extracting https://www.vitamix.com/us/en_us/recipes/cashew-milk-immersion-blender: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwewy77fG555ksKdNG5V"}
+[81/125] oat-milk
+  Fetching: https://www.vitamix.com/us/en_us/recipes/oat-milk
+  Error extracting https://www.vitamix.com/us/en_us/recipes/oat-milk: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwex5BjbsCd9c6q98PfP"}
+[82/125] oat-milk-immersion-blender
+  Fetching: https://www.vitamix.com/us/en_us/recipes/oat-milk-immersion-blender
+  Error extracting https://www.vitamix.com/us/en_us/recipes/oat-milk-immersion-blender: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwexBFcCkvmm5rWSWVEi"}
+[83/125] homemade-almond-milk-yogurt
+  Fetching: https://www.vitamix.com/us/en_us/recipes/homemade-almond-milk-yogurt
+  Error extracting https://www.vitamix.com/us/en_us/recipes/homemade-almond-milk-yogurt: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwexH8L4UFEoMD6YEKXi"}
+[84/125] whole-wheat-bread
+  Fetching: https://www.vitamix.com/us/en_us/recipes/whole-wheat-bread
+  Error extracting https://www.vitamix.com/us/en_us/recipes/whole-wheat-bread: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwexPHASoZAVzWXnRAaG"}
+[85/125] whole-wheat-pizza-dough
+  Fetching: https://www.vitamix.com/us/en_us/recipes/whole-wheat-pizza-dough
+  Error extracting https://www.vitamix.com/us/en_us/recipes/whole-wheat-pizza-dough: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwexUs2CG7cD8Qp3i9gg"}
+[86/125] whole-wheat-pizza-dough-food-processor-attachment
+  Fetching: https://www.vitamix.com/us/en_us/recipes/whole-wheat-pizza-dough-food-processor-attachment
+  Error extracting https://www.vitamix.com/us/en_us/recipes/whole-wheat-pizza-dough-food-processor-attachment: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwexb93qTJiE19xUXPYf"}
+[87/125] whole-grain-loaf-bread-food-processor-attachment
+  Fetching: https://www.vitamix.com/us/en_us/recipes/whole-grain-loaf-bread-food-processor-attachment
+  Error extracting https://www.vitamix.com/us/en_us/recipes/whole-grain-loaf-bread-food-processor-attachment: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwexgrqQ8cSYHk45q5if"}
+[88/125] whole-wheat-pastry-dough-food-processor-attachment
+  Fetching: https://www.vitamix.com/us/en_us/recipes/whole-wheat-pastry-dough-food-processor-attachment
+  Error extracting https://www.vitamix.com/us/en_us/recipes/whole-wheat-pastry-dough-food-processor-attachment: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwexnqzuCSUi82jg1Hci"}
+[89/125] whole-wheat-flour
+  Fetching: https://www.vitamix.com/us/en_us/recipes/whole-wheat-flour
+  Error extracting https://www.vitamix.com/us/en_us/recipes/whole-wheat-flour: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwextW5AGzt1XXvN8oKQ"}
+[90/125] oat-flour
+  Fetching: https://www.vitamix.com/us/en_us/recipes/oat-flour
+  Error extracting https://www.vitamix.com/us/en_us/recipes/oat-flour: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwexz8f7H69afunnJmYy"}
+[91/125] chickpea-flour
+  Fetching: https://www.vitamix.com/us/en_us/recipes/chickpea-flour
+  Error extracting https://www.vitamix.com/us/en_us/recipes/chickpea-flour: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVwey6TQskxYCkv2zGwQA"}
+[92/125] all-purpose-gluten-free-flour
+  Fetching: https://www.vitamix.com/us/en_us/recipes/all-purpose-gluten-free-flour
+  Error extracting https://www.vitamix.com/us/en_us/recipes/all-purpose-gluten-free-flour: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweyCmfbTchpcCba4gtC"}
+[93/125] cappuccino
+  Fetching: https://www.vitamix.com/us/en_us/recipes/cappuccino
+  Error extracting https://www.vitamix.com/us/en_us/recipes/cappuccino: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweyKBP629kMzWCTUD7g"}
+[94/125] cold-brew-cappuccino
+  Fetching: https://www.vitamix.com/us/en_us/recipes/cold-brew-cappuccino
+  Error extracting https://www.vitamix.com/us/en_us/recipes/cold-brew-cappuccino: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweyRVPpryujV6W9zF7V"}
+[95/125] cappuccino-shake
+  Fetching: https://www.vitamix.com/us/en_us/recipes/cappuccino-shake
+  Error extracting https://www.vitamix.com/us/en_us/recipes/cappuccino-shake: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweyX9iWwgtKCheM9Q2t"}
+[96/125] caramel-espresso-frappe
+  Fetching: https://www.vitamix.com/us/en_us/recipes/caramel-espresso-frappe
+  Error extracting https://www.vitamix.com/us/en_us/recipes/caramel-espresso-frappe: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweycxxb4RZ4zUFNjbuZ"}
+[97/125] chocolate-espresso-cold-foam
+  Fetching: https://www.vitamix.com/us/en_us/recipes/chocolate-espresso-cold-foam
+  Error extracting https://www.vitamix.com/us/en_us/recipes/chocolate-espresso-cold-foam: Claude API error: 400 - {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CVweyiwPDatJrVYcdrRbp"}

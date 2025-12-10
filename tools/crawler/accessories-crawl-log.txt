@@ -1,0 +1,130 @@
+🚀 Vitamix Content Crawler (AI-Powered)
+
+Content directory: /Users/paolo/excat/vitamix-poc/content
+API: AWS Bedrock
+Model: us.anthropic.claude-3-5-haiku-20241022-v1:0
+Region: us-east-1
+Recipe URLs: 1680
+Accessory URLs: 37
+Product URLs: 32
+
+
+🔧 Crawling Accessories with AI Extraction...
+
+[1/37] 2-speed-immersion-blender-whisk-attachment
+  Fetching: https://www.vitamix.com/us/en_us/products/2-speed-immersion-blender-whisk-attachment
+  ✓ 2-Speed Immersion Blender + Whisk Attachment - $99.95
+[2/37] 20-ounce-travel-cup
+  Fetching: https://www.vitamix.com/us/en_us/products/20-ounce-travel-cup
+  ✓ 20-ounce Travel Cup - $29.95
+[3/37] 24-ounce-tumbler
+  Fetching: https://www.vitamix.com/us/en_us/products/24-ounce-tumbler
+  ✓ 24-ounce Tumbler - $29.95
+[4/37] 32-ounce-container
+  Fetching: https://www.vitamix.com/us/en_us/products/32-ounce-container
+  ✓ 32-ounce Container - $149.95
+[5/37] 32-ounce-dry-grains-container
+  Fetching: https://www.vitamix.com/us/en_us/products/32-ounce-dry-grains-container
+  ✓ 32-ounce Dry Grains Container - $149.95
+[6/37] 4-piece-deluxe-immersion-blender-bundle
+  Fetching: https://www.vitamix.com/us/en_us/products/4-piece-deluxe-immersion-blender-bundle
+  ✓ 5-Speed Immersion Blender 4-Piece Deluxe Bundle - $259.95
+[7/37] 48-ounce-color-containers-with-self-detect
+  Fetching: https://www.vitamix.com/us/en_us/products/48-ounce-color-containers-with-self-detect
+  ✓ 48-ounce Color Container with SELF-DETECT® - $99.95
+[8/37] 48-ounce-container
+  Fetching: https://www.vitamix.com/us/en_us/products/48-ounce-container
+  ✓ 48-ounce Container - $159.95
+[9/37] 48-ounce-container-with-self-detect
+  Fetching: https://www.vitamix.com/us/en_us/products/48-ounce-container-with-self-detect
+  ✓ 48-ounce Container with SELF-DETECT® - $169.95
+[10/37] 48-ounce-dry-grains-container-with-self-detect
+  Fetching: https://www.vitamix.com/us/en_us/products/48-ounce-dry-grains-container-with-self-detect
+  ✓ 48-ounce Dry Grains Container with SELF-DETECT® - $169.95
+[11/37] 48-ounce-stainless-steel-container
+  Fetching: https://www.vitamix.com/us/en_us/products/48-ounce-stainless-steel-container
+  ✓ 48-ounce Stainless Steel Container - $249.95
+[12/37] 5-speed-immersion-blender
+  Fetching: https://www.vitamix.com/us/en_us/products/5-speed-immersion-blender
+  ✓ 5-Speed Immersion Blender - $144.95
+[13/37] 5-speed-immersion-blender-3-piece-bundle
+  Fetching: https://www.vitamix.com/us/en_us/products/5-speed-immersion-blender-3-piece-bundle
+  ✓ 5-Speed Immersion Blender 3-Piece Bundle - $164.95
+[14/37] 64-ounce-low-profile-container-with-self-detect
+  Fetching: https://www.vitamix.com/us/en_us/products/64-ounce-low-profile-container-with-self-detect
+  ✓ 64-ounce Low-Profile Container with SELF-DETECT® - $179.95
+[15/37] 8-piece-straw-set
+  Fetching: https://www.vitamix.com/us/en_us/products/8-piece-straw-set
+  ✓ 8 Piece Straw Set - $9.95
+[16/37] classic-64-ounce-container
+  Fetching: https://www.vitamix.com/us/en_us/products/classic-64-ounce-container
+  ✓ Classic 64-ounce Container - $179.95
+[17/37] cutting-board-4-piece-set
+  Fetching: https://www.vitamix.com/us/en_us/products/cutting-board-4-piece-set
+  ✓ Cutting Board 4-Piece Set - $14.95
+[18/37] food-processor-attachment
+  Fetching: https://www.vitamix.com/us/en_us/products/food-processor-attachment
+  ✓ 12-Cup Food Processor Attachment with SELF-DETECT® - $279.95
+[19/37] food-processor-attachment-bundle
+  Fetching: https://www.vitamix.com/us/en_us/products/food-processor-attachment-bundle
+  ✓ 12-Cup Food Processor Attachment with SELF-DETECT® Bundle - $349.95
+[20/37] food-processor-attachment-julienne-disc
+  Fetching: https://www.vitamix.com/us/en_us/products/food-processor-attachment-julienne-disc
+  ✓ Food Processor Attachment Julienne Disc - $39.95
+[21/37] food-processor-attachment-stack-and-store-disc-case
+  Fetching: https://www.vitamix.com/us/en_us/products/food-processor-attachment-stack-and-store-disc-case
+  ✓ Food Processor Attachment Stack and Store Extender - $34.95
+[22/37] food-processor-attachment-veggie-stick-disc
+  Fetching: https://www.vitamix.com/us/en_us/products/food-processor-attachment-veggie-stick-disc
+  ✓ Food Processor Attachment Veggie Stick Disc - $39.95
+[23/37] food-processor-blade-disc
+  Fetching: https://www.vitamix.com/us/en_us/products/food-processor-blade-disc
+  ✓ Food Processor Attachment Reversible Fine Shred and Ultra-Thin Slice Disc - $29.95
+[24/37] food-processor-flat-lid
+  Fetching: https://www.vitamix.com/us/en_us/products/food-processor-flat-lid
+  ✓ Food Processor Attachment Compact Lid - $34.95
+[25/37] foodcycler-fc-50
+  Fetching: https://www.vitamix.com/us/en_us/products/foodcycler-fc-50
+  ✓ Vitamix® FoodCycler® FC-50™ - $269.95
+[26/37] immersion-blender-mini-chopper
+  Fetching: https://www.vitamix.com/us/en_us/products/immersion-blender-mini-chopper
+  Failed to parse JSON: Bad control character in string literal in JSON at position 349
+  Error extracting https://www.vitamix.com/us/en_us/products/immersion-blender-mini-chopper: Failed to extract accessory data
+[27/37] immersion-blender-storage-case
+  Fetching: https://www.vitamix.com/us/en_us/products/immersion-blender-storage-case
+  ✓ Immersion Blender Storage Case - $39.95
+[28/37] immersion-blender-whisk
+  Fetching: https://www.vitamix.com/us/en_us/products/immersion-blender-whisk
+  ✓ Immersion Blender Whisk - $19.95
+[29/37] immersion-blending-jar
+  Fetching: https://www.vitamix.com/us/en_us/products/immersion-blending-jar
+  ✓ Immersion Blending Jar - $19.95
+[30/37] immersion-station
+  Fetching: https://www.vitamix.com/us/en_us/products/immersion-station
+  ✓ Immersion Station® - $29.95
+[31/37] low-profile-64-ounce-container
+  Fetching: https://www.vitamix.com/us/en_us/products/low-profile-64-ounce-container
+  ✓ Low-Profile 64-ounce Container - $179.95
+[32/37] personal-cup-adapter
+  Fetching: https://www.vitamix.com/us/en_us/products/personal-cup-adapter
+  ✓ Personal Cup Adapter - $149.95
+[33/37] silicone-blender-spatula
+  Fetching: https://www.vitamix.com/us/en_us/products/silicone-blender-spatula
+  ✓ Silicone Blender Spatula - $11.95
+[34/37] simply-entertaining-cookbook
+  Fetching: https://www.vitamix.com/us/en_us/products/simply-entertaining-cookbook
+  ✓ Simply Entertaining Cookbook - $24.95
+[35/37] simply-soups-cookbook
+  Fetching: https://www.vitamix.com/us/en_us/products/simply-soups-cookbook
+  ✓ Simply Soups Cookbook - $24.95
+[36/37] under-blade-scraper
+  Fetching: https://www.vitamix.com/us/en_us/products/under-blade-scraper
+  ✓ Under Blade Scraper - $14.95
+[37/37] whole-grains-cookbook
+  Fetching: https://www.vitamix.com/us/en_us/products/whole-grains-cookbook
+  ✓ Whole Grains Cookbook - $15.95
+
+✅ Saved 36 accessories
+
+🎉 Crawl complete!
+

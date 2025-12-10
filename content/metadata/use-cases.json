@@ -1,0 +1,92 @@
+{
+  "useCases": [
+    {
+      "id": "smoothies",
+      "name": "Smoothies & Shakes",
+      "description": "Daily smoothies, protein shakes, and fruit blends",
+      "icon": "smoothie",
+      "relevantFeatures": ["variable-speed", "pulse", "self-cleaning"],
+      "recommendedSeries": ["Ascent", "Explorian", "Propel"],
+      "difficultyLevel": "easy",
+      "timeInvestment": "5-10 minutes",
+      "popularRecipes": ["green-smoothie", "protein-shake", "acai-bowl"]
+    },
+    {
+      "id": "soups",
+      "name": "Hot Soups",
+      "description": "Hot soups made from scratch using friction heat",
+      "icon": "soup",
+      "relevantFeatures": ["hot-soup-program", "variable-speed", "high-power"],
+      "recommendedSeries": ["Ascent", "5200"],
+      "difficultyLevel": "medium",
+      "timeInvestment": "10-15 minutes",
+      "popularRecipes": ["tomato-soup", "butternut-squash-soup", "broccoli-cheddar"]
+    },
+    {
+      "id": "nut-butters",
+      "name": "Nut Butters & Spreads",
+      "description": "Homemade almond butter, peanut butter, and spreads",
+      "icon": "spread",
+      "relevantFeatures": ["tamper", "variable-speed", "high-power"],
+      "recommendedSeries": ["Ascent", "5200", "Propel"],
+      "difficultyLevel": "medium",
+      "timeInvestment": "5-8 minutes",
+      "popularRecipes": ["almond-butter", "peanut-butter", "cashew-butter"]
+    },
+    {
+      "id": "frozen-desserts",
+      "name": "Frozen Desserts",
+      "description": "Ice cream, frozen yogurt, and sorbets",
+      "icon": "dessert",
+      "relevantFeatures": ["frozen-dessert-program", "tamper", "variable-speed"],
+      "recommendedSeries": ["Ascent", "5200"],
+      "difficultyLevel": "easy",
+      "timeInvestment": "5 minutes",
+      "popularRecipes": ["banana-ice-cream", "mango-sorbet", "chocolate-frozen-yogurt"]
+    },
+    {
+      "id": "baby-food",
+      "name": "Baby Food",
+      "description": "Fresh, homemade baby food purees",
+      "icon": "baby",
+      "relevantFeatures": ["variable-speed", "self-cleaning", "bpa-free"],
+      "recommendedSeries": ["Ascent", "Explorian", "Personal"],
+      "difficultyLevel": "easy",
+      "timeInvestment": "10 minutes",
+      "popularRecipes": ["avocado-baby-food", "banana-baby-food", "sweet-potato-puree"]
+    },
+    {
+      "id": "dips-sauces",
+      "name": "Dips & Sauces",
+      "description": "Fresh salsas, hummus, and sauces",
+      "icon": "sauce",
+      "relevantFeatures": ["pulse", "variable-speed", "food-processor-attachment"],
+      "recommendedSeries": ["Ascent", "Explorian"],
+      "difficultyLevel": "easy",
+      "timeInvestment": "5-10 minutes",
+      "popularRecipes": ["hummus", "salsa", "pesto"]
+    },
+    {
+      "id": "batters-doughs",
+      "name": "Batters & Doughs",
+      "description": "Pancake batter, pizza dough, and more",
+      "icon": "baking",
+      "relevantFeatures": ["variable-speed", "pulse", "food-processor-attachment"],
+      "recommendedSeries": ["Ascent", "5200"],
+      "difficultyLevel": "medium",
+      "timeInvestment": "5-15 minutes",
+      "popularRecipes": ["pancake-batter", "whole-wheat-bread", "pizza-dough"]
+    },
+    {
+      "id": "grinding",
+      "name": "Grinding & Milling",
+      "description": "Grinding grains, coffee beans, and spices",
+      "icon": "grain",
+      "relevantFeatures": ["dry-grains-container", "variable-speed", "high-power"],
+      "recommendedSeries": ["Ascent", "5200"],
+      "difficultyLevel": "easy",
+      "timeInvestment": "1-3 minutes",
+      "popularRecipes": ["almond-flour", "oat-flour", "powdered-sugar"]
+    }
+  ]
+}

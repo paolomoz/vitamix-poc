@@ -1,0 +1,16 @@
+name = "vitamix-embed-recipes"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+BATCH_SIZE = "100"
+
+# Workers AI for embeddings
+[ai]
+binding = "AI"
+
+# Vectorize for storing embeddings
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "vitamix-content"

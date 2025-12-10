@@ -1,0 +1,124 @@
+{
+  "personas": [
+    {
+      "personaId": "health-enthusiast",
+      "name": "Health Enthusiast",
+      "demographics": {
+        "householdType": "solo or couple",
+        "typicalAge": "25-45",
+        "timeAvailability": "moderate",
+        "cookingSkill": "intermediate"
+      },
+      "primaryGoals": ["daily smoothies", "nutrient-dense meals", "meal prep efficiency"],
+      "keyBarriers": ["time constraints", "consistent healthy habits"],
+      "emotionalState": {
+        "frustrations": ["weak blenders that cannot handle greens", "chunky smoothies"],
+        "hopes": ["effortless healthy eating", "more energy"],
+        "fears": ["wasting money on another weak blender"]
+      },
+      "productPriorities": [
+        {"attribute": "power", "importance": "high"},
+        {"attribute": "ease of cleaning", "importance": "high"},
+        {"attribute": "speed", "importance": "medium"}
+      ],
+      "effectiveMessaging": {
+        "validationPhrases": ["You deserve a blender that keeps up with your lifestyle"],
+        "benefitEmphasis": ["silky smooth greens", "daily use durability"],
+        "proofPoints": ["10-year warranty", "professional grade motor"],
+        "visualizations": ["vibrant green smoothies", "quick morning routine"]
+      },
+      "triggerPhrases": ["daily smoothies", "green smoothie", "health", "nutrition", "workout"],
+      "recommendedProducts": ["ascent-x3", "ascent-x4", "e310"]
+    },
+    {
+      "personaId": "busy-parent",
+      "name": "Busy Parent",
+      "demographics": {
+        "householdType": "family with children",
+        "typicalAge": "30-50",
+        "timeAvailability": "limited",
+        "cookingSkill": "varies"
+      },
+      "primaryGoals": ["quick family meals", "baby food", "hiding vegetables"],
+      "keyBarriers": ["time", "picky eaters", "cleanup hassle"],
+      "emotionalState": {
+        "frustrations": ["complicated kitchen gadgets", "endless cleanup"],
+        "hopes": ["getting kids to eat healthier", "simplifying meal prep"],
+        "fears": ["expensive equipment collecting dust"]
+      },
+      "productPriorities": [
+        {"attribute": "ease of use", "importance": "high"},
+        {"attribute": "self-cleaning", "importance": "high"},
+        {"attribute": "versatility", "importance": "high"}
+      ],
+      "effectiveMessaging": {
+        "validationPhrases": ["We know your time is precious"],
+        "benefitEmphasis": ["one-touch programs", "self-cleaning in 60 seconds"],
+        "proofPoints": ["make soup AND clean up in 15 minutes"],
+        "visualizations": ["happy kids drinking smoothies", "quick weeknight dinners"]
+      },
+      "triggerPhrases": ["family", "kids", "baby food", "busy", "quick", "easy cleanup"],
+      "recommendedProducts": ["ascent-x4", "ascent-x5", "propel-series-750"]
+    },
+    {
+      "personaId": "culinary-explorer",
+      "name": "Culinary Explorer",
+      "demographics": {
+        "householdType": "couple or solo",
+        "typicalAge": "30-60",
+        "timeAvailability": "flexible",
+        "cookingSkill": "advanced"
+      },
+      "primaryGoals": ["restaurant-quality results", "technique mastery", "recipe experimentation"],
+      "keyBarriers": ["finding equipment that matches skill level"],
+      "emotionalState": {
+        "frustrations": ["consumer-grade limitations", "lack of precision"],
+        "hopes": ["professional results at home", "endless creativity"],
+        "fears": ["settling for less than the best"]
+      },
+      "productPriorities": [
+        {"attribute": "precision control", "importance": "high"},
+        {"attribute": "power", "importance": "high"},
+        {"attribute": "accessory options", "importance": "medium"}
+      ],
+      "effectiveMessaging": {
+        "validationPhrases": ["For those who take cooking seriously"],
+        "benefitEmphasis": ["variable speed precision", "commercial-grade power"],
+        "proofPoints": ["used by professional chefs", "same motor as commercial units"],
+        "visualizations": ["silky sauces", "perfect nut butters", "hot soup from scratch"]
+      },
+      "triggerPhrases": ["chef", "professional", "restaurant", "precision", "control", "technique"],
+      "recommendedProducts": ["ascent-x5", "5200-standard-getting-started", "a2300"]
+    },
+    {
+      "personaId": "budget-conscious",
+      "name": "Value Seeker",
+      "demographics": {
+        "householdType": "any",
+        "typicalAge": "any",
+        "timeAvailability": "any",
+        "cookingSkill": "any"
+      },
+      "primaryGoals": ["best value for money", "long-term investment", "essential features"],
+      "keyBarriers": ["upfront cost", "justifying premium price"],
+      "emotionalState": {
+        "frustrations": ["replacing cheap blenders every few years"],
+        "hopes": ["buy once, use forever", "getting quality for fair price"],
+        "fears": ["overpaying for features they wont use"]
+      },
+      "productPriorities": [
+        {"attribute": "durability", "importance": "high"},
+        {"attribute": "warranty", "importance": "high"},
+        {"attribute": "essential features only", "importance": "high"}
+      ],
+      "effectiveMessaging": {
+        "validationPhrases": ["Smart shoppers know: the real cost is over time"],
+        "benefitEmphasis": ["10-year warranty", "built to last decades"],
+        "proofPoints": ["cost per use over 10 years", "no replacement costs"],
+        "visualizations": ["warranty badge", "side-by-side durability comparison"]
+      },
+      "triggerPhrases": ["budget", "affordable", "value", "worth it", "price", "cost"],
+      "recommendedProducts": ["e310", "propel-series-510", "ascent-x2"]
+    }
+  ]
+}

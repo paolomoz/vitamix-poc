@@ -1,0 +1,1402 @@
+{
+  "generatedAt": "2025-12-09T20:14:10.920Z",
+  "source": "https://www.vitamix.com",
+  "count": 32,
+  "products": [
+    {
+      "id": "5200-legacy-bundle",
+      "sku": "5200_LEGACY_BUNDLE",
+      "name": "5200 Legacy Bundle",
+      "series": "5200",
+      "url": "https://www.vitamix.com/us/en_us/products/5200-legacy-bundle",
+      "price": 599.95,
+      "originalPrice": 649.95,
+      "availability": "in-stock",
+      "description": "The 5200 is one of the most popular Vitamix blenders we've ever designed, and it's still topping \"Best Blender\" lists to this day. Included in this bundle are the Personal Cup Adaptor, which turns a full size blender into a personal blender, a spatula, and a tamper holder. Find out why this classic has endured year after year.",
+      "tagline": "The 5200 is one of the most popular Vitamix blenders we've ever designed, and it's still topping \"Best Blender\" lists to this day",
+      "features": [
+        "7-Year Full Warranty",
+        "Self-Cleaning",
+        "Variable Speed Control",
+        "64-Ounce Container",
+        "Tamper Holder",
+        "Personal Cup Adapter",
+        "Laser-Cut Blades",
+        "Top-Rack Dishwasher-Safe",
+        "BPA-Free, Double Insulated Material"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Snacks",
+        "Meals"
+      ],
+      "warranty": "7-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 0,
+        "dimensions": "20.5 x 8.75 x 7.25 in",
+        "weight": "10 lb 9 oz"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_a51a9e2356f55b97064595faa80c4b79a0336b3a.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_a51a9e2356f55b97064595faa80c4b79a0336b3a.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:08:37.268Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/5200-legacy-bundle",
+      "contentHash": ""
+    },
+    {
+      "id": "5200-standard-getting-started",
+      "sku": "5200_STANDARD_GETTING_STARTED",
+      "name": "5200 Standard - Getting Started",
+      "series": "5200",
+      "url": "https://www.vitamix.com/us/en_us/products/5200-standard-getting-started",
+      "price": 449.95,
+      "originalPrice": 499.95,
+      "availability": "in-stock",
+      "description": "Create every course of your home-cooked meal—from frozen drinks to creamy desserts—in minutes. The Vitamix 5200 is the universal tool for family meals and entertaining.",
+      "tagline": "The universal tool for family meals and entertaining",
+      "features": [
+        "Large Batches",
+        "Variable Speed Control",
+        "Pulverize Seeds",
+        "Hot Soup"
+      ],
+      "bestFor": [
+        "Frozen drinks",
+        "Creamy desserts",
+        "Family meals",
+        "Entertaining"
+      ],
+      "warranty": "7-year full warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 0,
+        "dimensions": "20.5 x 8.75 x 7.25 in",
+        "weight": "10 lb 9 oz"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_bcd9b471a9b8219de3198529327044da42150284.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_bcd9b471a9b8219de3198529327044da42150284.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:08:47.098Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/5200-standard-getting-started",
+      "contentHash": ""
+    },
+    {
+      "id": "a2300",
+      "sku": "A2300",
+      "name": "A2300",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/a2300",
+      "price": 549.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Equipped with Variable Speed Control and Pulse, the A2300 lets you easily adjust the texture of every dish. Built-in wireless connectivity will allow Ascent Series blenders to evolve with the latest innovations for years to come.",
+      "tagline": "You're In Control",
+      "features": [
+        "Variable Speed Control",
+        "Pulse Feature",
+        "Built-in Wireless Connectivity",
+        "Digital Timer",
+        "Compatible with Self-Detect Containers"
+      ],
+      "bestFor": [
+        "smooth purées",
+        "chunky salsas",
+        "pasta sauce",
+        "vegetable soups"
+      ],
+      "warranty": "10-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 0,
+        "dimensions": "11 x 8 x 17 in",
+        "weight": "11.86 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_7e6d7f85b0d167b64987fb2a0b157a68a309094a.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_7e6d7f85b0d167b64987fb2a0b157a68a309094a.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:08:57.700Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/a2300",
+      "contentHash": ""
+    },
+    {
+      "id": "a2300-family-pack",
+      "sku": "A2300_FAMILY_PACK",
+      "name": "A2300 Family Pack",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/a2300-family-pack",
+      "price": 699.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Equipped with Variable Speed Control and Pulse, the A2300 lets you easily adjust the texture of every dish. Built-in wireless connectivity will allow Ascent Series blenders to evolve with the latest innovations for years to come.",
+      "tagline": "Equipped with Variable Speed Control and Pulse, the A2300 lets you easily adjust the texture of every dish",
+      "features": [
+        "Variable Speed Control and Pulse",
+        "Built-in wireless connectivity",
+        "SELF-DETECT® Technology",
+        "BPA Free & Dishwasher Safe"
+      ],
+      "bestFor": [
+        "smoothies",
+        "baby food",
+        "personal servings"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 0,
+        "dimensions": "11 x 8 x 17 in",
+        "weight": "11.86 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_211782c3800203fda37b47559cbbb61833db2117.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_211782c3800203fda37b47559cbbb61833db2117.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:09:06.542Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/a2300-family-pack",
+      "contentHash": ""
+    },
+    {
+      "id": "a2300-super-bundle",
+      "sku": "A2300_SUPER_BUNDLE",
+      "name": "Ascent® Series A2300 Super Bundle",
+      "series": "ascent",
+      "url": "https://www.vitamix.com/us/en_us/products/a2300-super-bundle",
+      "price": 814.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "A2300 Blender Super Bundle",
+      "tagline": "A2300 Blender Super Bundle",
+      "features": [
+        "Variable Speed Control",
+        "Pulse feature",
+        "Built-in wireless connectivity",
+        "Digital timer",
+        "Compatible with Self-Detect containers"
+      ],
+      "bestFor": [
+        "smoothies",
+        "purees",
+        "soups",
+        "salsas"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 0,
+        "dimensions": "11 x 8 x 17 in",
+        "weight": null
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_e1b6b2389306d16f4285b8fc4d3a97dfcbde1d79.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_e1b6b2389306d16f4285b8fc4d3a97dfcbde1d79.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:09:15.925Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/a2300-super-bundle",
+      "contentHash": ""
+    },
+    {
+      "id": "a2500-plus-aer-disc-container",
+      "sku": "A2500_PLUS_AER_DISC_CONTAINER",
+      "name": "A2500 + Aer® Disc Container",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/a2500-plus-aer-disc-container",
+      "price": 699.95,
+      "originalPrice": 749.95,
+      "availability": "in-stock",
+      "description": "Three program settings (for Smoothies, Hot Soups, and Frozen Desserts) automatically adjust to the container size you've selected, process your recipes, and stop the blender when complete.",
+      "tagline": "Effortless Craft Cocktails and Precisely Textured Recipes",
+      "features": [
+        "Three program settings",
+        "Variable Speed Control and Pulse feature",
+        "Built-in wireless connectivity",
+        "Digital timer",
+        "Compatible with SELF-DETECT containers"
+      ],
+      "bestFor": [
+        "smoothies",
+        "hot soups",
+        "frozen desserts",
+        "craft cocktails",
+        "emulsions",
+        "culinary foams"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 3,
+        "dimensions": "11\" x 8\" x 17\"",
+        "weight": "11.86 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_fbaae1d131ee9c40c66cda9157d72ce396b0c46d.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_fbaae1d131ee9c40c66cda9157d72ce396b0c46d.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:09:26.779Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/a2500-plus-aer-disc-container",
+      "contentHash": ""
+    },
+    {
+      "id": "ascent-x2",
+      "sku": "ASCENT_X2",
+      "name": "Ascent® X2",
+      "series": "ascent",
+      "url": "https://www.vitamix.com/us/en_us/products/ascent-x2",
+      "price": 499.95,
+      "originalPrice": 549.95,
+      "availability": "in-stock",
+      "description": "The Ascent X Series is Vitamix's premium blender line. Its reimagined design combines an intuitive interface with a sophisticated, timeless look that feels at home in any home. It's the best in blending, enhanced by customer feedback and updated for the modern kitchen. The Ascent X2 features a 48-ounce Container, an automatic Self-Cleaning Program, and three Blending Programs (Smoothies, Frozen Desserts, and Soups). Add SELF-DETECT® containers and attachments to build a customized blending system designed to fit your needs.",
+      "tagline": "Premium blender with intuitive design and advanced blending capabilities",
+      "features": [
+        "10-Year Full Warranty",
+        "3 Blending Programs",
+        "Self-Cleaning Program",
+        "48-Ounce BPA-Free Container",
+        "Variable Speed Control and Pulse",
+        "Digital Timer",
+        "Built-In Wireless Connectivity"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Frozen Desserts",
+        "Soups"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 3,
+        "dimensions": "9.75 x 7.75 x 17",
+        "weight": "13.6 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_335b90c4a88f4c5c43cf4c729084121123c0ce9a.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_335b90c4a88f4c5c43cf4c729084121123c0ce9a.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:09:39.660Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/ascent-x2",
+      "contentHash": ""
+    },
+    {
+      "id": "ascent-x2-smartprep-kitchen-system",
+      "sku": "ASCENT_X2_SMARTPREP_KITCHEN_SYSTEM",
+      "name": "Ascent® X2 SmartPrep™ Kitchen System",
+      "series": "ascent",
+      "url": "https://www.vitamix.com/us/en_us/products/ascent-x2-smartprep-kitchen-system",
+      "price": 699.95,
+      "originalPrice": 749.95,
+      "availability": "in-stock",
+      "description": "Our top-of-the-line blender and Food Processor Attachment are now available in one convenient package. Use the Food Processor Attachment to speed through tedious food prep tasks, while the standard blending container makes everything from smoothies to soup to nut butter.",
+      "tagline": "Our top-of-the-line blender and Food Processor Attachment are now available in one convenient package",
+      "features": [
+        "Self-Cleaning Program",
+        "3 Blending Programs",
+        "Variable Speed Control",
+        "Digital Timer",
+        "48-Ounce BPA-Free Container",
+        "Tamper Holder",
+        "12-Cup Food Processor Attachment",
+        "Precision Blades and Discs",
+        "Digital Recipe Book"
+      ],
+      "bestFor": [
+        "smoothies",
+        "frozen desserts",
+        "soups"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 3,
+        "dimensions": "9.75 x 7.75 x 17",
+        "weight": "11.4 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_3dfd1177696e2a048431afb3ea58d98afe27d56f.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_3dfd1177696e2a048431afb3ea58d98afe27d56f.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:09:50.687Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/ascent-x2-smartprep-kitchen-system",
+      "contentHash": ""
+    },
+    {
+      "id": "ascent-x3",
+      "sku": "ASCENT_X3",
+      "name": "Ascent X3",
+      "series": "ascent",
+      "url": "https://www.vitamix.com/us/en_us/products/ascent-x3",
+      "price": 599.95,
+      "originalPrice": 649.95,
+      "availability": "in-stock",
+      "description": "The Ascent X Series is Vitamix's premium blender line. Its reimagined design combines an intuitive interface with a sophisticated, timeless look that feels at home in any home. It's the best in blending, enhanced by customer feedback and updated for the modern kitchen. The Ascent X3 features a 48-ounce Container, an automatic Self-Cleaning Program, and three Blending Programs (Smoothies, Frozen Desserts, and Soups). Add SELF-DETECT® containers and attachments to build a customized blending system designed to fit your needs.",
+      "tagline": "The Ascent X Series is Vitamix's premium blender line",
+      "features": [
+        "10-Year Full Warranty",
+        "3 Blending Programs",
+        "Self-Cleaning Program",
+        "48-Ounce BPA-Free Container",
+        "Variable Speed Control and Pulse",
+        "Touch Buttons",
+        "Digital Timer",
+        "Built-In Wireless Connectivity"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Frozen Desserts",
+        "Soups"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 3,
+        "dimensions": "9.75 x 7.75 x 17",
+        "weight": "13.6 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_9dce4f483d4ee81ca0a5e651c27156551f2bccbf.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_9dce4f483d4ee81ca0a5e651c27156551f2bccbf.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:10:02.906Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/ascent-x3",
+      "contentHash": ""
+    },
+    {
+      "id": "ascent-x4",
+      "sku": "ASCENT_X4",
+      "name": "Ascent® X4",
+      "series": "ascent",
+      "url": "https://www.vitamix.com/us/en_us/products/ascent-x4",
+      "price": 649.95,
+      "originalPrice": 699.95,
+      "availability": "in-stock",
+      "description": "The Ascent X Series is Vitamix's premium blender line. Its reimagined design combines an intuitive touch interface with a sophisticated, timeless look that feels at home in any home. It's the best in blending, enhanced by customer feedback and updated for the modern kitchen.",
+      "tagline": "Reimagined design with intuitive touch interface",
+      "features": [
+        "5 blending programs",
+        "Self-Cleaning program",
+        "48-ounce BPA-free container",
+        "Digital timer",
+        "SELF-DETECT® container compatibility",
+        "Tamper holder",
+        "Add 15-seconds button",
+        "Recipe book included"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Frozen Desserts",
+        "Soups",
+        "Frozen Cocktails",
+        "Dips & Spreads"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 5,
+        "dimensions": "9.75 x 7.75 x 17",
+        "weight": "14.25 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_3f3eeec71d9e88c78b005868ddc8805b28b122b0.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_3f3eeec71d9e88c78b005868ddc8805b28b122b0.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:10:14.746Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/ascent-x4",
+      "contentHash": ""
+    },
+    {
+      "id": "ascent-x4-gourmet-smartprep-kitchen-system",
+      "sku": "ASCENT_X4_GOURMET_SMARTPREP_KITCHEN_SYSTEM",
+      "name": "Ascent® X4 Gourmet SmartPrep Kitchen System",
+      "series": "ascent",
+      "url": "https://www.vitamix.com/us/en_us/products/ascent-x4-gourmet-smartprep-kitchen-system",
+      "price": 849.95,
+      "originalPrice": 899.95,
+      "availability": "in-stock",
+      "description": "Our top-of-the-line blender and Food Processor Attachment are now available in one convenient package. Use the Food Processor Attachment to speed through tedious food prep tasks, while the standard blending container makes everything from smoothies to soup to nut butter.",
+      "tagline": "Our top-of-the-line blender and Food Processor Attachment are now available in one convenient package",
+      "features": [
+        "Self-Cleaning Program",
+        "5 Blending Programs",
+        "Tamper Indicator",
+        "Digital Timer",
+        "Add 15-Seconds Button",
+        "48-Ounce BPA-Free Container",
+        "Tamper Holder",
+        "12-Cup Food Processor Attachment",
+        "Precision Blades and Discs",
+        "Convenient Storage",
+        "Recipe Book"
+      ],
+      "bestFor": [
+        "smoothies",
+        "soup",
+        "nut butter",
+        "dips",
+        "spreads",
+        "frozen desserts",
+        "frozen cocktails"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 5,
+        "dimensions": "9.75 x 7.75 x 17",
+        "weight": "11.4 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_6e084fb19bf5b2527067598b94615aac8f95576e.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_6e084fb19bf5b2527067598b94615aac8f95576e.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:10:26.634Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/ascent-x4-gourmet-smartprep-kitchen-system",
+      "contentHash": ""
+    },
+    {
+      "id": "ascent-x5",
+      "sku": "ASCENT_X5",
+      "name": "Ascent® X5",
+      "series": "ascent",
+      "url": "https://www.vitamix.com/us/en_us/products/ascent-x5",
+      "price": 699.95,
+      "originalPrice": 749.95,
+      "availability": "in-stock",
+      "description": "The Ascent X Series is Vitamix's premium blender line. Its reimagined design combines an intuitive touch interface with a sophisticated, timeless look that feels at home in any home. It's the best in blending, enhanced by customer feedback and updated for the modern kitchen.",
+      "tagline": "Premium blender with intuitive touch interface",
+      "features": [
+        "10 Blending Programs",
+        "Self-Cleaning Program",
+        "48-Ounce BPA-Free Container",
+        "Digital Timer",
+        "SELF-DETECT® Container Compatibility",
+        "Tamper Holder",
+        "Add 15-Seconds Button"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Frozen Desserts",
+        "Soups",
+        "Frozen Cocktails",
+        "Dips & Spreads",
+        "Smoothie Bowls",
+        "Frappés",
+        "Nut Butters",
+        "Non-Dairy Milks",
+        "Spice Grinding"
+      ],
+      "warranty": "10-year warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 10,
+        "dimensions": "9.75 x 7.75 x 17",
+        "weight": "14.25 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_7ca6b121cca4cd1397c0c9bf32637ef925950836.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_7ca6b121cca4cd1397c0c9bf32637ef925950836.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:10:38.894Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/ascent-x5",
+      "contentHash": ""
+    },
+    {
+      "id": "ascent-x5-smartprep-kitchen-system",
+      "sku": "ASCENT_X5_SMARTPREP_KITCHEN_SYSTEM",
+      "name": "Ascent® X5 SmartPrep™ Kitchen System",
+      "series": "ascent",
+      "url": "https://www.vitamix.com/us/en_us/products/ascent-x5-smartprep-kitchen-system",
+      "price": 899.95,
+      "originalPrice": 949.95,
+      "availability": "in-stock",
+      "description": "We combined our top-of-the-line Vitamix model, the Ascent Series X5, with the 12-Cup Food Processor Attachment to create the ultimate kitchen tool. It's everything you need to make anything you want.",
+      "tagline": "We combined our top-of-the-line Vitamix model, the Ascent Series X5, with the 12-Cup Food Processor Attachment to create the ultimate kitchen tool",
+      "features": [
+        "10 Blending Programs",
+        "Self-Cleaning Program",
+        "Built-In Wireless Connectivity",
+        "48-Ounce BPA-Free Container",
+        "Food Processor Attachment",
+        "SELF-DETECT® Wireless Safety System",
+        "Recipe Book"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Frozen Desserts",
+        "Soups",
+        "Frozen Cocktails",
+        "Dips & Spreads",
+        "Smoothie Bowls",
+        "Frappés",
+        "Nut Butters",
+        "Non-Dairy Milks",
+        "Spice Grinding"
+      ],
+      "warranty": "10-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 10,
+        "dimensions": "9.75 x 7.75 x 17",
+        "weight": "14.25 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_3e6ae9c156e9a526031de695f7b4f06844e9fa74.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_3e6ae9c156e9a526031de695f7b4f06844e9fa74.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:10:50.681Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/ascent-x5-smartprep-kitchen-system",
+      "contentHash": ""
+    },
+    {
+      "id": "certified-reconditioned-a2500",
+      "sku": "CERTIFIED_RECONDITIONED_A2500",
+      "name": "Certified Reconditioned A2500",
+      "series": "reconditioned",
+      "url": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-a2500",
+      "price": 449.95,
+      "originalPrice": 599.95,
+      "availability": "in-stock",
+      "description": "Three program settings (for Smoothies, Hot Soups, and Frozen Desserts) automatically adjust to the container size you've selected, process your recipes, and stop the blender when complete. Built-in wireless connectivity will allow Ascent™ Series blenders to evolve with the latest innovations for years to come.",
+      "tagline": "Three program settings (for Smoothies, Hot Soups, and Frozen Desserts) automatically adjust to the container size you've selected, process your recipes, and stop the blender when complete",
+      "features": [
+        "Three program settings for Smoothies, Hot Soup, and Frozen Desserts",
+        "Variable Speed Control and Pulse feature",
+        "Built-in wireless connectivity",
+        "Digital timer",
+        "Compatible with SELF-DETECT® Containers"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Hot Soups",
+        "Frozen Desserts"
+      ],
+      "warranty": "5-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 3,
+        "dimensions": "11 x 8 x 17 in",
+        "weight": "11.86 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_1dc369e6c43c4983fe5a2812b1bc17252ccde5ac.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_1dc369e6c43c4983fe5a2812b1bc17252ccde5ac.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:11:02.775Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-a2500",
+      "contentHash": ""
+    },
+    {
+      "id": "certified-reconditioned-a3500",
+      "sku": "CERTIFIED_RECONDITIONED_A3500",
+      "name": "Certified Reconditioned A3500",
+      "series": "reconditioned",
+      "url": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-a3500",
+      "price": 549.95,
+      "originalPrice": 699.95,
+      "availability": "in-stock",
+      "description": "Now you can purchase the Vitamix s Ascent Series in a Certified Reconditioned model",
+      "tagline": "Now you can purchase the Vitamix s Ascent Series in a Certified Reconditioned model",
+      "features": [
+        "Five program settings",
+        "Touchscreen controls",
+        "Variable Speed Control and Pulse feature",
+        "Built-in wireless connectivity",
+        "Programmable timer",
+        "Compatible with Self-Detect containers"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Hot Soups",
+        "Dips & Spreads",
+        "Frozen Desserts"
+      ],
+      "warranty": "5-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 5,
+        "dimensions": "11 x 8 x 17 in",
+        "weight": "14.92 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b5919e14dd98c14fbebec6d55f8a15687566f7e4.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b5919e14dd98c14fbebec6d55f8a15687566f7e4.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:11:13.457Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-a3500",
+      "contentHash": ""
+    },
+    {
+      "id": "certified-reconditioned-explorian",
+      "sku": "CERTIFIED_RECONDITIONED_EXPLORIAN",
+      "name": "Certified Reconditioned Explorian® Series",
+      "series": "explorian",
+      "url": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-explorian",
+      "price": 319.95,
+      "originalPrice": 479.95,
+      "availability": "in-stock",
+      "description": "With the same enduring quality and trusted blending performance that has made Vitamix® an icon in the kitchen, the Certified Reconditioned Explorian™ Series Blender offers Variable Speed Control and Pulse to create a wide variety of textures, and a 64-ounce Low Profile Container that fits easily below overhead cabinets.",
+      "tagline": "With the same enduring quality and trusted blending performance that has made Vitamix® an icon in the kitchen, the Certified Reconditioned Explorian™ Series Blender offers Variable Speed Control and Pulse to create a wide variety of textures, and a 64-ounce Low Profile Container that fits easily below overhead cabinets",
+      "features": [
+        "Ten variable speeds for culinary precision",
+        "Pulse feature for layering textures",
+        "Powerful 2.2 HP motor",
+        "Self-cleaning in 30 to 60 seconds"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Soups",
+        "Purees"
+      ],
+      "warranty": "3-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 0,
+        "dimensions": "11 x 8 x 18 in",
+        "weight": "10.5 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_e0c7013dc6f46dc0979105ddd6f25f49de269bc8.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_e0c7013dc6f46dc0979105ddd6f25f49de269bc8.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:11:24.140Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-explorian",
+      "contentHash": ""
+    },
+    {
+      "id": "certified-reconditioned-explorian-with-programs",
+      "sku": "CERTIFIED_RECONDITIONED_EXPLORIAN_WITH_PROGRAMS",
+      "name": "Certified Reconditioned Explorian® with Programs",
+      "series": "explorian",
+      "url": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-explorian-with-programs",
+      "price": 379.95,
+      "originalPrice": 529.95,
+      "availability": "in-stock",
+      "description": "With three automatic program settings and the power, performance, and durability Vitamix is known for, you'll be blending your favorite drinks, meals, and snacks for years to come.",
+      "tagline": "With three automatic program settings and the power, performance, and durability Vitamix is known for, you'll be blending your favorite drinks, meals, and snacks for years to come",
+      "features": [
+        "3 program settings for Smoothies, Hot Soup and Frozen Desserts",
+        "64-ounce Low-Profile container fits under kitchen cabinets",
+        "Variable Speed Control for different textures"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Hot Soup",
+        "Frozen Desserts"
+      ],
+      "warranty": "3-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 3,
+        "dimensions": "9\" L x 7.5\" W x 18\" H",
+        "weight": "10 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_bd8f60989fae9a1fbbcb9f6a614ba985fce7a027.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_bd8f60989fae9a1fbbcb9f6a614ba985fce7a027.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:11:34.460Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-explorian-with-programs",
+      "contentHash": ""
+    },
+    {
+      "id": "certified-reconditioned-s50",
+      "sku": "CERTIFIED_RECONDITIONED_S50",
+      "name": "Certified Reconditioned S50",
+      "series": "reconditioned",
+      "url": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-s50",
+      "price": 339.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The Certified Reconditioned S50 offers the ease and convenience of two pre-programmed settings in a personal blending size, for high-performance blending that fits on your countertop.",
+      "tagline": "Personal Blending with Pre-Programmed Settings",
+      "features": [
+        "Safety Interlocking System",
+        "Dishwasher Safe Containers",
+        "Two Blending Containers",
+        "2 Pre-Programmed Settings"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Small batches of soups",
+        "Sauces",
+        "Frozen desserts"
+      ],
+      "warranty": "5-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "8 oz",
+        "programs": 2,
+        "dimensions": "8.34 x 5.9 x 14.55 in",
+        "weight": "12.375 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_d3cde3946fe9b6056ba45ff54e28d4b1e3ce937f.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_d3cde3946fe9b6056ba45ff54e28d4b1e3ce937f.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:11:44.034Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-s50",
+      "contentHash": ""
+    },
+    {
+      "id": "certified-reconditioned-standard",
+      "sku": "CERTIFIED_RECONDITIONED_STANDARD",
+      "name": "Certified Reconditioned Standard",
+      "series": "reconditioned",
+      "url": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-standard",
+      "price": 349.95,
+      "originalPrice": 499.95,
+      "availability": "in-stock",
+      "description": "Vitamix reconditioned machines are guaranteed to deliver the same quality you d expect from Vitamix  Get the Vitamix Certified Reconditioned Standard today",
+      "tagline": "Create Every Texture",
+      "features": [
+        "Ten variable speeds for culinary precision",
+        "High/Low Control for processing ingredients",
+        "Friction heat creates hot soup in six minutes",
+        "Metal drive system for better blends and longer lifespan"
+      ],
+      "bestFor": [
+        "smoothies",
+        "purees",
+        "soups",
+        "hot soup"
+      ],
+      "warranty": "5-year full warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 10,
+        "dimensions": "20.5 x 8.75 x 7.25 in",
+        "weight": "10.63 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b82a931041c3b2837ed16298ee099ea989baf63c.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b82a931041c3b2837ed16298ee099ea989baf63c.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:11:53.900Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/certified-reconditioned-standard",
+      "contentHash": ""
+    },
+    {
+      "id": "creations-gallery",
+      "sku": "CREATIONS_GALLERY",
+      "name": "Creations Gallery",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/creations-gallery",
+      "price": 499.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "With a 2-peak HP motor the Creations Gallery is a workhorse in the kitchen and features a sleep metallic finish that matches your kitchen appliances",
+      "tagline": "With a 2-peak HP motor the Creations Gallery is a workhorse in the kitchen and features a sleep metallic finish that matches your kitchen appliances",
+      "features": [
+        "2-peak HP motor",
+        "Sleek metallic finish",
+        "Laser-cut stainless-steel hammermill and cutting blades",
+        "Radial cooling fan and thermal protection system"
+      ],
+      "bestFor": [
+        "Household blending"
+      ],
+      "warranty": "5-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "20-ounce & 8-ounce",
+        "programs": 0,
+        "dimensions": null,
+        "weight": "10 lb 9-ounce"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_c9b90fa58bdaf37a615b7da73578fe54282d7a49.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_c9b90fa58bdaf37a615b7da73578fe54282d7a49.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:12:02.781Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/creations-gallery",
+      "contentHash": ""
+    },
+    {
+      "id": "creations-ii",
+      "sku": "CREATIONS_II",
+      "name": "Creations II",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/creations-ii",
+      "price": 479.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "With power and a compact container Creations II remains accessible throughout the day for simplifying kitchen tasks and incorporating whole foods into your menu",
+      "tagline": "With power and a compact container Creations II remains accessible throughout the day for simplifying kitchen tasks and incorporating whole foods into your menu",
+      "features": [
+        "Variable Speed Control",
+        "10 variable speeds for culinary precision",
+        "48-ounce container for medium batches",
+        "Measurements on container and lid",
+        "Metal drive system"
+      ],
+      "bestFor": [
+        "purées",
+        "soups",
+        "medium family meals"
+      ],
+      "warranty": "5-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 10,
+        "dimensions": "17.4 x 8.75 x 7.25 in",
+        "weight": "10 lb 9-ounce"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_0fd89cfaf7cac43b6a826f684102018aea7e7be0.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_0fd89cfaf7cac43b6a826f684102018aea7e7be0.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:12:12.471Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/creations-ii",
+      "contentHash": ""
+    },
+    {
+      "id": "e310",
+      "sku": "E310",
+      "name": "E310",
+      "series": "explorian",
+      "url": "https://www.vitamix.com/us/en_us/products/e310",
+      "price": 299.95,
+      "originalPrice": 379.95,
+      "availability": "in-stock",
+      "description": "An accessible affordable high performance blender that does not sacrifice on quality versatility and durability while providing exceptional joy of use",
+      "tagline": "Explore how easy it is to make healthy, whole-food recipes at home",
+      "features": [
+        "Ten variable speeds",
+        "Pulse feature",
+        "High-performance 2 HP motor",
+        "Self-cleaning in 30-60 seconds"
+      ],
+      "bestFor": [
+        "smoothies",
+        "soups",
+        "purees",
+        "medium batch cooking"
+      ],
+      "warranty": "5-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 10,
+        "dimensions": "9 x 8 x 18 in",
+        "weight": "10.5 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_9bda4788608eabaa7bbbf3bfa59803af269b7f77.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_9bda4788608eabaa7bbbf3bfa59803af269b7f77.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:12:22.531Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/e310",
+      "contentHash": ""
+    },
+    {
+      "id": "e310-and-pca-bundle",
+      "sku": "E310_AND_PCA_BUNDLE",
+      "name": "E310 + Personal Cup Adapter",
+      "series": "explorian",
+      "url": "https://www.vitamix.com/us/en_us/products/e310-and-pca-bundle",
+      "price": 419.95,
+      "originalPrice": 499.95,
+      "availability": "in-stock",
+      "description": "The E310 + Personal Cup Adapter offers two container sizes: 48-ounce blending container that's perfect for small to midsize blends (1-6 servings), and two 20-ounce Blending Cups with Personal Cup Adapter that makes it easy to blend in the container and take it with you.",
+      "tagline": "The E310 + Personal Cup Adapter offers two container sizes: 48-ounce blending container that's perfect for small to midsize blends (1-6 servings), and two 20-ounce Blending Cups with Personal Cup Adapter that makes it easy to blend in the container and take it with you",
+      "features": [
+        "Variable Speed Control",
+        "Pulse function",
+        "Tamper included",
+        "BPA-free Tritan® container",
+        "Laser-Cut Blades",
+        "Metal drive system"
+      ],
+      "bestFor": [
+        "Small to midsize blends",
+        "On-the-go blending",
+        "Smoothies",
+        "Salsas",
+        "Purees"
+      ],
+      "warranty": "5-Year Full Warranty (E310), 3-Year Full Warranty (Personal Cup Adapter)",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz, 20 oz",
+        "programs": 0,
+        "dimensions": "9 x 8 x 18 in (E310), 10 x 5.5 x 5.5 in (Personal Cup Adapter)",
+        "weight": "10.5 lb (E310), 2.2 lb (Personal Cup Adapter)"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_eb3665670f5615eee80ddbc4a716a6905298425e.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_eb3665670f5615eee80ddbc4a716a6905298425e.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:12:34.525Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/e310-and-pca-bundle",
+      "contentHash": ""
+    },
+    {
+      "id": "e320-and-pca-explorian-blender",
+      "sku": "E320_AND_PCA_EXPLORIAN_BLENDER",
+      "name": "E320 + Personal Cup Adapter",
+      "series": "explorian",
+      "url": "https://www.vitamix.com/us/en_us/products/e320-and-pca-explorian-blender",
+      "price": 349.95,
+      "originalPrice": 624.95,
+      "availability": "in-stock",
+      "description": "The E320 + Personal Cup Adapter offers two container sizes: 64-ounce blending container that fits easily below overhead cabinets and two, 20-ounce Blending Cups with Personal Cup Adapter that makes it easy to blend in the container and take it with you.",
+      "tagline": "The E320 + Personal Cup Adapter offers two container sizes: 64-ounce blending container that fits easily below overhead cabinets and two, 20-ounce Blending Cups with Personal Cup Adapter that makes it easy to blend in the container and take it with you",
+      "features": [
+        "Variable Speed Control",
+        "Pulse",
+        "Tamper",
+        "BPA-free Tritan® container",
+        "Laser-cut hardened stainless steel blades",
+        "Metal drive system",
+        "7-year full warranty"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Salsas",
+        "Purees",
+        "Frozen mixtures"
+      ],
+      "warranty": "7-year full warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz / 20 oz",
+        "programs": 0,
+        "dimensions": "9 x 8 x 18 in",
+        "weight": "19 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_f78714bc941f32219cd63190db257670439af20a.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_f78714bc941f32219cd63190db257670439af20a.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:12:44.888Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/e320-and-pca-explorian-blender",
+      "contentHash": ""
+    },
+    {
+      "id": "propel-750-classic-bundle",
+      "sku": "PROPEL_750_CLASSIC_BUNDLE",
+      "name": "Propel® 750 Classic Bundle",
+      "series": "propel",
+      "url": "https://www.vitamix.com/us/en_us/products/propel-750-classic-bundle",
+      "price": 549.95,
+      "originalPrice": 699.95,
+      "availability": "in-stock",
+      "description": "The Propel™ 750 Classic Bundle comes with a 64-ounce container and 48-ounce container. That makes it easy to blend almost any volume, from single servings to large, 8-serving batches. Or, you can dedicate one of the containers to non-food uses like beauty products, pet food, and more.",
+      "tagline": "The Propel™ 750 Classic Bundle comes with a 64-ounce container and 48-ounce container",
+      "features": [
+        "Four Blending Programs: Smoothie, Hot Soup, Frozen Dessert, and Dip & Spread",
+        "Self-Cleaning Program",
+        "Variable Speed Control and Pulse feature",
+        "Ten variable speeds",
+        "Pulse Feature for layering textures",
+        "High-Performance 2.2 HP Motor"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Hot Soups",
+        "Frozen Desserts",
+        "Dips & Spreads"
+      ],
+      "warranty": "7-Year Full Warranty for Propel 750, 3-Year Full Warranty for 48-ounce Container",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64-ounces, 48-ounces",
+        "programs": 4,
+        "dimensions": "9 x 7.5 x 18 in.",
+        "weight": "10 lbs."
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_9799f9e5aa6a884b2fad8452acdfb0f9f3b32ecc.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_9799f9e5aa6a884b2fad8452acdfb0f9f3b32ecc.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:12:57.145Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/propel-750-classic-bundle",
+      "contentHash": ""
+    },
+    {
+      "id": "propel-series-510",
+      "sku": "PROPEL_SERIES_510",
+      "name": "Propel® 510",
+      "series": "propel",
+      "url": "https://www.vitamix.com/us/en_us/products/propel-series-510",
+      "price": 349.95,
+      "originalPrice": 499.95,
+      "availability": "in-stock",
+      "description": "Perfect for individual servings and midsize blends. Three Program Settings provide walk-away convenience and consistent results. Variable Speed Control and Pulse feature let you manually fine-tune the texture of any recipe.",
+      "tagline": "Perfect for individual servings and midsize blends",
+      "features": [
+        "48-ounce Container",
+        "Three Program Settings",
+        "Variable Speed Control",
+        "Pulse Feature",
+        "Dishwasher-safe containers and lids",
+        "BPA Free",
+        "Ten variable speeds",
+        "High-Performance Motor"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Hot Soup",
+        "Frozen Dessert",
+        "Purees",
+        "Chunky Sauces"
+      ],
+      "warranty": "5-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 3,
+        "dimensions": "9 x 7.5 x 17.5 in.",
+        "weight": "9.6 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_f2a45cd3cdba9de0eae08002fefcf345b7524578.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_f2a45cd3cdba9de0eae08002fefcf345b7524578.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:13:09.064Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/propel-series-510",
+      "contentHash": ""
+    },
+    {
+      "id": "propel-series-750",
+      "sku": "PROPEL_SERIES_750",
+      "name": "Propel® 750",
+      "series": "propel",
+      "url": "https://www.vitamix.com/us/en_us/products/propel-series-750",
+      "price": 479.95,
+      "originalPrice": 629.95,
+      "availability": "in-stock",
+      "description": "The Propel Series 750 is a high-performance blender with a powerful 2.2 HP motor, 64-ounce low-profile container, and four blending programs for consistent results. Features variable speed control, pulse feature, and self-cleaning capability.",
+      "tagline": "The Propel Series 750 is a high-performance blender with a powerful 2",
+      "features": [
+        "64-Ounce Low-Profile Container",
+        "Four Blending Programs",
+        "Self-Cleaning Program",
+        "Variable Speed Control",
+        "Pulse Feature",
+        "Ten Variable Speeds",
+        "High-Performance Motor"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Hot Soups",
+        "Frozen Desserts",
+        "Dips & Spreads"
+      ],
+      "warranty": "7-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 4,
+        "dimensions": "9 x 7.5 x 18 in.",
+        "weight": "10 lbs."
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_bf932c8d8563c549a46c2c4842487c94a2222fd9.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_bf932c8d8563c549a46c2c4842487c94a2222fd9.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:13:21.137Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/propel-series-750",
+      "contentHash": ""
+    },
+    {
+      "id": "s55",
+      "sku": "S55",
+      "name": "S55",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/s55",
+      "price": 449.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The Vitamix S55 personal blender offers the convenience of four pre-programmed settings with all the power and blending quality you'd expect from a Vitamix",
+      "tagline": "Personal Blender with 4 Pre-Programmed Settings",
+      "features": [
+        "4 Pre-programmed settings",
+        "Variable Speed Control",
+        "Dishwasher safe components",
+        "Two blending containers",
+        "Travel cup functionality"
+      ],
+      "bestFor": [
+        "smoothies",
+        "power blends",
+        "dips & spreads",
+        "frozen desserts"
+      ],
+      "warranty": "5-year full warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "20 oz and 40 oz containers",
+        "programs": 4,
+        "dimensions": "8.3 x 5.9 x 14.6-15.7 in",
+        "weight": "12.375 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_5debd4e893f5ea39759371a7870ec5ec7aefb6db.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_5debd4e893f5ea39759371a7870ec5ec7aefb6db.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:13:31.821Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/s55",
+      "contentHash": ""
+    },
+    {
+      "id": "turboblend-three-speed",
+      "sku": "TURBOBLEND_THREE_SPEED",
+      "name": "TurboBlend Three Speed",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/turboblend-three-speed",
+      "price": 399.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The TurboBlend Three Speed offers convenient controls with Low, Medium, and High settings to create a range of textures, while the Pulse feature provides a quick burst of power for chopping ingredients.",
+      "tagline": "The TurboBlend Three Speed offers convenient controls with Low, Medium, and High settings to create a range of textures, while the Pulse feature provides a quick burst of power for chopping ingredients",
+      "features": [
+        "Low, Medium, and High settings",
+        "Pulse feature for quick power bursts",
+        "Laser-cut stainless-steel hammermill and cutting blades",
+        "Radial cooling fan and thermal protection system"
+      ],
+      "bestFor": [
+        "Household blending",
+        "Creating different texture blends"
+      ],
+      "warranty": "5-year full warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz",
+        "programs": 3,
+        "dimensions": "20.3 x 8.8 x 9 in",
+        "weight": "10.5 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_2738fd402d9b4023b3502fe8d6cedbb9e2e96600.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_2738fd402d9b4023b3502fe8d6cedbb9e2e96600.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:13:41.631Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/turboblend-three-speed",
+      "contentHash": ""
+    },
+    {
+      "id": "turboblend-two-speed",
+      "sku": "TURBOBLEND_TWO_SPEED",
+      "name": "TurboBlend Two Speed Deluxe",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/turboblend-two-speed",
+      "price": 524.95,
+      "originalPrice": 749.95,
+      "availability": "in-stock",
+      "description": "The TurboBlend Two Speed efficiently processes whole fruits and vegetables with predictable consistency",
+      "tagline": "Simple High/Low control efficiently processes whole fruits and vegetables for a variety of recipes",
+      "features": [
+        "Large Batches",
+        "Nut Butter",
+        "Amazing Flavor",
+        "Easy Cleaning"
+      ],
+      "bestFor": [
+        "medium to large batches",
+        "nut butter",
+        "whole fruits and vegetables"
+      ],
+      "warranty": "5-year full warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64 oz/2.0 litre",
+        "programs": 2,
+        "dimensions": "20.5 x 8.75 x 7.25 in",
+        "weight": "10 lb 9 oz"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_d75e2bf5a5592dcf69521f02f33baff8c2e0b308.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_d75e2bf5a5592dcf69521f02f33baff8c2e0b308.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:13:52.449Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/turboblend-two-speed",
+      "contentHash": ""
+    },
+    {
+      "id": "v1200-super-pack",
+      "sku": "V1200_SUPER_PACK",
+      "name": "V1200 Super Pack",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/v1200-super-pack",
+      "price": 669.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Explore how easy it is to make healthy, whole-food recipes at home. From appetizers to dessert, the 64-ounce container is ideal for blending medium to large batches for family meals or entertaining.",
+      "tagline": "Explore how easy it is to make healthy, whole-food recipes at home",
+      "features": [
+        "Variable Speed Control",
+        "SELF-DETECT® Containers",
+        "Pulse Feature",
+        "Built-In Wireless Connectivity",
+        "Digital Timer"
+      ],
+      "bestFor": [
+        "Smoothies",
+        "Soups",
+        "Appetizers",
+        "Desserts"
+      ],
+      "warranty": "10-Year Full Warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "64-ounces, 20-ounces, 8-ounces",
+        "programs": 0,
+        "dimensions": "10.5 x 8 x 17 in",
+        "weight": "11.98 lbs"
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_3f1aff1a7732bbc089ac26af84310b3f841528db.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_3f1aff1a7732bbc089ac26af84310b3f841528db.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:14:03.126Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/v1200-super-pack",
+      "contentHash": ""
+    },
+    {
+      "id": "vitamix-onetm",
+      "sku": "VITAMIX_ONETM",
+      "name": "Vitamix ONE™",
+      "series": "other",
+      "url": "https://www.vitamix.com/us/en_us/products/vitamix-onetm",
+      "price": 249.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "",
+      "tagline": "",
+      "features": [],
+      "bestFor": [],
+      "warranty": "2-year standard warranty",
+      "specs": {
+        "watts": 1500,
+        "capacity": "48 oz",
+        "programs": 0,
+        "dimensions": null,
+        "weight": null
+      },
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b7a3b284a977eff0cc364a6db79c6df264050f87.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b7a3b284a977eff0cc364a6db79c6df264050f87.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:14:09.919Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/vitamix-onetm",
+      "contentHash": ""
+    }
+  ]
+}

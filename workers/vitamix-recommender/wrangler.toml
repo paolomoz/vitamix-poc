@@ -1,0 +1,60 @@
+# Vitamix Recommender Worker Configuration
+name = "vitamix-recommender"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ============================================
+# REQUIRED SETUP BEFORE DEPLOYMENT
+# ============================================
+# 1. Set API secrets:
+#    wrangler secret put ANTHROPIC_API_KEY
+#    wrangler secret put CEREBRAS_API_KEY
+#
+# 2. Create KV namespace (if not exists):
+#    wrangler kv:namespace create SESSIONS
+#    Then update the id below with the returned ID
+#
+# 3. Create Vectorize index (if not exists):
+#    wrangler vectorize create vitamix-content --dimensions=768 --metric=cosine
+# ============================================
+
+# Environment variables (secrets should be set via wrangler secret)
+[vars]
+MODEL_PRESET = "production"
+DEBUG = "false"
+
+# Workers AI for embeddings
+[ai]
+binding = "AI"
+
+# Vectorize for semantic search (create with: wrangler vectorize create vitamix-content --dimensions=768 --metric=cosine)
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "vitamix-content"
+
+# KV for session persistence (create with: wrangler kv:namespace create SESSIONS)
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "f941193db7084d9582f7f2db2ae8c0dc"
+
+# Development settings
+[dev]
+port = 8787
+local_protocol = "http"
+
+# Production environment
+[env.production]
+name = "vitamix-recommender"
+
+[env.production.vars]
+MODEL_PRESET = "production"
+DEBUG = "false"
+
+# Staging environment
+[env.staging]
+name = "vitamix-recommender-staging"
+
+[env.staging.vars]
+MODEL_PRESET = "fast"
+DEBUG = "true"

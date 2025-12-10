@@ -6,6 +6,8 @@ import {
   decorateIcons,
   decorateSections,
   decorateBlocks,
+  decorateBlock,
+  loadBlock,
   decorateTemplateAndTheme,
   waitForFirstImage,
   loadSection,
@@ -13,13 +15,865 @@ import {
   loadCSS,
 } from './aem.js';
 
+// Experiment mode (progressive rendering)
+import { isExperimentRequest, initExperiment } from './experiment.js';
+
+// Worker URLs
+const GENERATIVE_WORKER_URL = 'https://vitamix-generative.paolo-moz.workers.dev';
+const FAST_WORKER_URL = 'https://vitamix-generative-fast.paolo-moz.workers.dev';
+const VITAMIX_RECOMMENDER_URL = 'https://vitamix-recommender.paolo-moz.workers.dev';
+
 /**
- * Builds hero block and prepends to main in a new section.
+ * Escape special regex characters in a string
+ */
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Check if this is a generation request (has ?generate= param)
+ */
+function isGenerationRequest() {
+  return new URLSearchParams(window.location.search).has('generate');
+}
+
+/**
+ * Check if this is a fast generation request (has ?fast= param)
+ */
+function isFastRequest() {
+  return new URLSearchParams(window.location.search).has('fast');
+}
+
+/**
+ * Check if this is a Cerebras generation request (has ?cerebras= param)
+ * DEPRECATED: Now using ?q=...&preset=all-cerebras instead
+ * Keeping for backwards compatibility with old URLs
+ */
+function isCerebrasRequest() {
+  return new URLSearchParams(window.location.search).has('cerebras');
+}
+
+/**
+ * Check if this is a Vitamix Recommender request (has ?q= or ?query= param)
+ * Uses the new vitamix-recommender worker with Claude Opus reasoning
+ */
+function isVitamixRecommenderRequest() {
+  const params = new URLSearchParams(window.location.search);
+  return params.has('q') || params.has('query');
+}
+
+/**
+ * Generate a URL-safe slug from a query
+ */
+function generateSlug(query) {
+  let slug = query
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .substring(0, 80);
+
+  // Add short hash for uniqueness
+  let hash = 0;
+  const str = query + Date.now();
+  for (let i = 0; i < str.length; i += 1) {
+    const char = str.charCodeAt(i);
+    // eslint-disable-next-line no-bitwise
+    hash = ((hash << 5) - hash) + char;
+    // eslint-disable-next-line no-bitwise
+    hash &= hash;
+  }
+  const hashStr = Math.abs(hash).toString(36).slice(0, 6);
+  return `${slug}-${hashStr}`;
+}
+
+/**
+ * Render a generative page from query parameter
+ */
+async function renderGenerativePage() {
+  // Load skeleton styles
+  await loadCSS(`${window.hlx.codeBasePath}/styles/skeleton.css`);
+
+  const main = document.querySelector('main');
+  if (!main) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get('generate');
+  const slug = generateSlug(query);
+
+  // Clear main and show loading state
+  main.innerHTML = `
+    <div class="section generating-container">
+      <h1 class="generating-title">Creating Your Personalized Page</h1>
+      <p class="generating-query">"${query}"</p>
+      <div class="progress-indicator">
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+      </div>
+      <p class="generation-status">Connecting...</p>
+    </div>
+    <div id="generation-content"></div>
+  `;
+
+  const loadingState = main.querySelector('.generating-container');
+  const statusEl = main.querySelector('.generation-status');
+  const content = main.querySelector('#generation-content');
+
+  // Connect to SSE stream
+  const streamUrl = `${GENERATIVE_WORKER_URL}/api/stream?slug=${encodeURIComponent(slug)}&query=${encodeURIComponent(query)}`;
+  const eventSource = new EventSource(streamUrl);
+  let blockCount = 0;
+  let generatedBlocks = []; // Array of { html, sectionStyle }
+
+  eventSource.onopen = () => {
+    statusEl.textContent = 'Generating content...';
+  };
+
+  eventSource.addEventListener('layout', (e) => {
+    const data = JSON.parse(e.data);
+    statusEl.textContent = `Generating ${data.blocks.length} sections...`;
+  });
+
+  eventSource.addEventListener('block-start', (e) => {
+    const data = JSON.parse(e.data);
+    statusEl.textContent = `Creating ${data.blockType}...`;
+  });
+
+  eventSource.addEventListener('block-content', async (e) => {
+    const data = JSON.parse(e.data);
+
+    // Hide loading state after first block
+    if (blockCount === 0) {
+      loadingState.style.display = 'none';
+    }
+    blockCount += 1;
+
+    // Store HTML and sectionStyle for persistence
+    generatedBlocks.push({ html: data.html, sectionStyle: data.sectionStyle });
+
+    // Create section and add content
+    const section = document.createElement('div');
+    section.className = 'section';
+    // Apply section style (highlight, dark) if provided
+    if (data.sectionStyle && data.sectionStyle !== 'default') {
+      section.classList.add(data.sectionStyle);
+    }
+    section.dataset.sectionStatus = 'initialized';
+    section.innerHTML = data.html;
+
+    // Store original src for each generated image (before any decoration)
+    section.querySelectorAll('img[data-gen-image]').forEach((img) => {
+      img.dataset.originalSrc = img.getAttribute('src');
+    });
+
+    // Wrap block in a wrapper div (EDS pattern)
+    const blockEl = section.querySelector('[class]');
+    if (blockEl) {
+      const blockName = blockEl.classList[0];
+      // Create wrapper
+      const wrapper = document.createElement('div');
+      wrapper.className = `${blockName}-wrapper`;
+      blockEl.parentNode.insertBefore(wrapper, blockEl);
+      wrapper.appendChild(blockEl);
+
+      // Decorate the block (adds .block class, data-block-name, wraps text nodes)
+      decorateBlock(blockEl);
+
+      // Add container class to section
+      section.classList.add(`${blockName}-container`);
+    }
+
+    // Decorate buttons and icons
+    decorateButtons(section);
+    decorateIcons(section);
+
+    // Append to DOM first
+    content.appendChild(section);
+
+    // Now load the block (CSS + JS module)
+    const block = section.querySelector('.block');
+    if (block) {
+      await loadBlock(block);
+    }
+
+    // Mark section as loaded and show it
+    section.dataset.sectionStatus = 'loaded';
+    section.style.display = null;
+  });
+
+  // Handle image-ready events - update image src and trigger loaded animation
+  eventSource.addEventListener('image-ready', (e) => {
+    const data = JSON.parse(e.data);
+    const { imageId, url } = data;
+
+    // Resolve relative URLs to absolute worker URLs
+    let resolvedUrl = url;
+    if (url && url.startsWith('/')) {
+      resolvedUrl = `${GENERATIVE_WORKER_URL}${url}`;
+    }
+
+    // eslint-disable-next-line no-console
+    console.log('Image ready:', imageId, resolvedUrl);
+
+    // Find the image with matching data-gen-image attribute
+    const img = content.querySelector(`img[data-gen-image="${imageId}"]`);
+    if (img && resolvedUrl) {
+      // Get references before modifying DOM
+      const originalUrl = img.dataset.originalSrc;
+      const section = img.closest('.section');
+      const imgParent = img.parentNode;
+
+      // Force browser to reload image by replacing the element
+      // (browser's in-memory image cache ignores query string cache-busting)
+      const cacheBustUrl = resolvedUrl.includes('?')
+        ? `${resolvedUrl}&_t=${Date.now()}`
+        : `${resolvedUrl}?_t=${Date.now()}`;
+
+      // Create new image element to bypass browser's image cache
+      const newImg = document.createElement('img');
+      newImg.src = cacheBustUrl;
+      newImg.alt = img.alt || '';
+      newImg.className = img.className;
+      if (img.loading) newImg.loading = img.loading;
+      newImg.dataset.genImage = imageId; // Preserve for subsequent lookups
+      // Mark as loaded immediately - triggers CSS transition
+      newImg.classList.add('loaded');
+
+      // Replace old image with new one
+      if (imgParent) {
+        imgParent.replaceChild(newImg, img);
+      }
+
+      // Also update the generatedBlocks array for persistence
+      if (section && originalUrl) {
+        const sectionIndex = Array.from(content.children).indexOf(section);
+        if (sectionIndex >= 0 && generatedBlocks[sectionIndex]) {
+          // Replace the placeholder URL with the actual URL in stored HTML
+          generatedBlocks[sectionIndex].html = generatedBlocks[sectionIndex].html.replace(
+            new RegExp(escapeRegExp(originalUrl), 'g'),
+            resolvedUrl,
+          );
+        }
+      }
+    }
+  });
+
+  eventSource.addEventListener('generation-complete', (e) => {
+    eventSource.close();
+
+    // Update document title
+    const h1 = content.querySelector('h1');
+    if (h1) {
+      document.title = `${h1.textContent} | Vitamix`;
+    }
+
+    // Add "Save this page" section
+    const saveSection = document.createElement('div');
+    saveSection.className = 'section save-page-section';
+    saveSection.innerHTML = `
+      <div class="save-page-container">
+        <h3>Like this page?</h3>
+        <p>Save it to get a permanent link you can share and revisit.</p>
+        <button class="button save-page-btn" data-slug="${slug}" data-query="${encodeURIComponent(query)}">
+          Save & Get Permanent Link
+        </button>
+        <div class="save-status"></div>
+      </div>
+    `;
+    content.appendChild(saveSection);
+
+    // Handle save button click
+    const saveBtn = saveSection.querySelector('.save-page-btn');
+    const saveStatus = saveSection.querySelector('.save-status');
+
+    saveBtn.addEventListener('click', async () => {
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving...';
+      saveStatus.textContent = '';
+
+      try {
+        // Build HTML array with section-metadata for DA persistence
+        const htmlForPersistence = generatedBlocks.map((block) => {
+          let sectionHtml = block.html;
+          // Add section-metadata block if section has a non-default style
+          if (block.sectionStyle && block.sectionStyle !== 'default') {
+            sectionHtml += `
+<div class="section-metadata">
+  <div>
+    <div>style</div>
+    <div>${block.sectionStyle}</div>
+  </div>
+</div>`;
+          }
+          return sectionHtml;
+        });
+
+        const response = await fetch(`${GENERATIVE_WORKER_URL}/api/persist`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug,
+            query,
+            html: htmlForPersistence,
+          }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          const permanentUrl = `${window.location.origin}/discover/${slug}`;
+          saveSection.innerHTML = `
+            <div class="save-page-container save-success">
+              <h3>Page Saved!</h3>
+              <p>Your permanent link:</p>
+              <a href="/discover/${slug}" class="permanent-link">${permanentUrl}</a>
+              <button class="button copy-link-btn" onclick="navigator.clipboard.writeText('${permanentUrl}'); this.textContent='Copied!'">
+                Copy Link
+              </button>
+            </div>
+          `;
+        } else {
+          throw new Error(result.error || 'Failed to save');
+        }
+      } catch (error) {
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Save & Get Permanent Link';
+        saveStatus.textContent = `Error: ${error.message}. Please try again.`;
+        saveStatus.style.color = '#c00';
+      }
+    });
+  });
+
+  eventSource.addEventListener('error', (e) => {
+    if (e.data) {
+      const data = JSON.parse(e.data);
+      loadingState.innerHTML = `
+        <h1>Something went wrong</h1>
+        <p style="color: #c00;">${data.message}</p>
+        <p><a href="/">Return to homepage</a></p>
+      `;
+    }
+    eventSource.close();
+  });
+
+  eventSource.onerror = () => {
+    if (eventSource.readyState === EventSource.CLOSED) {
+      if (blockCount === 0) {
+        statusEl.textContent = 'Connection failed. Please try again.';
+      }
+    }
+  };
+}
+
+/**
+ * Render a fast generative page from ?fast= parameter
+ * Uses the two-phase worker (vitamix-generative-fast)
+ */
+async function renderFastGenerativePage() {
+  // Load skeleton styles
+  await loadCSS(`${window.hlx.codeBasePath}/styles/skeleton.css`);
+
+  const main = document.querySelector('main');
+  if (!main) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get('fast');
+  const slug = generateSlug(query);
+
+  // Clear main and show loading state with fast branding
+  main.innerHTML = `
+    <div class="section generating-container fast-mode">
+      <div class="fast-badge">Fast Mode</div>
+      <h1 class="generating-title">Creating Your Page</h1>
+      <p class="generating-query">"${query}"</p>
+      <div class="progress-indicator">
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+      </div>
+      <p class="generation-status">Hero appears in ~3 seconds...</p>
+    </div>
+    <div id="generation-content"></div>
+  `;
+
+  const loadingState = main.querySelector('.generating-container');
+  const statusEl = main.querySelector('.generation-status');
+  const content = main.querySelector('#generation-content');
+
+  // Connect to FAST worker SSE stream
+  const streamUrl = `${FAST_WORKER_URL}/api/stream?slug=${encodeURIComponent(slug)}&query=${encodeURIComponent(query)}`;
+  const eventSource = new EventSource(streamUrl);
+  let blockCount = 0;
+  const generatedBlocks = []; // Array of { html, sectionStyle }
+  const startTime = Date.now();
+
+  eventSource.onopen = () => {
+    statusEl.textContent = 'Connected, generating hero...';
+  };
+
+  eventSource.addEventListener('layout', (e) => {
+    const data = JSON.parse(e.data);
+    statusEl.textContent = `Layout ready: ${data.blocks.length} sections`;
+  });
+
+  eventSource.addEventListener('block-start', (e) => {
+    const data = JSON.parse(e.data);
+    if (data.position === 0) {
+      statusEl.textContent = 'Hero incoming...';
+    } else {
+      statusEl.textContent = `Creating ${data.blockType}...`;
+    }
+  });
+
+  eventSource.addEventListener('block-content', async (e) => {
+    const data = JSON.parse(e.data);
+    const elapsedSec = ((Date.now() - startTime) / 1000).toFixed(1);
+
+    // Hide loading state after first block (hero)
+    if (blockCount === 0) {
+      loadingState.style.display = 'none';
+      // eslint-disable-next-line no-console
+      console.log(`[Fast] Hero appeared in ${elapsedSec}s`);
+    }
+    blockCount += 1;
+
+    // Store HTML and sectionStyle for persistence
+    generatedBlocks.push({ html: data.html, sectionStyle: data.sectionStyle });
+
+    // Create section and add content
+    const section = document.createElement('div');
+    section.className = 'section';
+    if (data.sectionStyle && data.sectionStyle !== 'default') {
+      section.classList.add(data.sectionStyle);
+    }
+    section.dataset.sectionStatus = 'initialized';
+    section.innerHTML = data.html;
+
+    // Store original src for each generated image
+    section.querySelectorAll('img[data-gen-image]').forEach((img) => {
+      img.dataset.originalSrc = img.getAttribute('src');
+    });
+
+    // Wrap block in a wrapper div (EDS pattern)
+    const blockEl = section.querySelector('[class]');
+    if (blockEl) {
+      const blockName = blockEl.classList[0];
+      const wrapper = document.createElement('div');
+      wrapper.className = `${blockName}-wrapper`;
+      blockEl.parentNode.insertBefore(wrapper, blockEl);
+      wrapper.appendChild(blockEl);
+      decorateBlock(blockEl);
+      section.classList.add(`${blockName}-container`);
+    }
+
+    // Decorate buttons and icons
+    decorateButtons(section);
+    decorateIcons(section);
+
+    // Append to DOM
+    content.appendChild(section);
+
+    // Load the block (CSS + JS module)
+    const block = section.querySelector('.block');
+    if (block) {
+      await loadBlock(block);
+    }
+
+    // Mark section as loaded
+    section.dataset.sectionStatus = 'loaded';
+    section.style.display = null;
+  });
+
+  // Handle image-ready events
+  eventSource.addEventListener('image-ready', (e) => {
+    const data = JSON.parse(e.data);
+    const { imageId, url } = data;
+
+    let resolvedUrl = url;
+    if (url && url.startsWith('/')) {
+      resolvedUrl = `${FAST_WORKER_URL}${url}`;
+    }
+
+    const img = content.querySelector(`img[data-gen-image="${imageId}"]`);
+    if (img && resolvedUrl) {
+      const originalUrl = img.dataset.originalSrc;
+      img.src = resolvedUrl;
+
+      // Update stored HTML for persistence
+      const section = img.closest('.section');
+      if (section && originalUrl) {
+        const sectionIndex = Array.from(content.children).indexOf(section);
+        if (sectionIndex >= 0 && generatedBlocks[sectionIndex]) {
+          generatedBlocks[sectionIndex].html = generatedBlocks[sectionIndex].html.replace(
+            new RegExp(escapeRegExp(originalUrl), 'g'),
+            resolvedUrl,
+          );
+        }
+      }
+      img.classList.add('loaded');
+    }
+  });
+
+  eventSource.addEventListener('generation-complete', (e) => {
+    eventSource.close();
+    const data = JSON.parse(e.data);
+    const totalTime = ((Date.now() - startTime) / 1000).toFixed(1);
+
+    // eslint-disable-next-line no-console
+    console.log(`[Fast] Complete in ${totalTime}s`, data);
+
+    // Update document title
+    const h1 = content.querySelector('h1');
+    if (h1) {
+      document.title = `${h1.textContent} | Vitamix`;
+    }
+
+    // Add save section (reuse same pattern as standard flow)
+    const saveSection = document.createElement('div');
+    saveSection.className = 'section save-page-section';
+    saveSection.innerHTML = `
+      <div class="save-page-container">
+        <div class="fast-complete-badge">Generated in ${totalTime}s</div>
+        <h3>Like this page?</h3>
+        <p>Save it to get a permanent link you can share and revisit.</p>
+        <button class="button save-page-btn" data-slug="${slug}" data-query="${encodeURIComponent(query)}">
+          Save & Get Permanent Link
+        </button>
+        <div class="save-status"></div>
+      </div>
+    `;
+    content.appendChild(saveSection);
+
+    // Handle save button click (uses fast worker's persist endpoint)
+    const saveBtn = saveSection.querySelector('.save-page-btn');
+    const saveStatus = saveSection.querySelector('.save-status');
+
+    saveBtn.addEventListener('click', async () => {
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Saving...';
+      saveStatus.textContent = '';
+
+      try {
+        const htmlForPersistence = generatedBlocks.map((block) => {
+          let sectionHtml = block.html;
+          if (block.sectionStyle && block.sectionStyle !== 'default') {
+            sectionHtml += `
+<div class="section-metadata">
+  <div>
+    <div>style</div>
+    <div>${block.sectionStyle}</div>
+  </div>
+</div>`;
+          }
+          return sectionHtml;
+        });
+
+        const response = await fetch(`${FAST_WORKER_URL}/api/persist`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug,
+            query,
+            html: htmlForPersistence,
+          }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          const permanentUrl = `${window.location.origin}/discover/${slug}`;
+          saveSection.innerHTML = `
+            <div class="save-page-container save-success">
+              <h3>Page Saved!</h3>
+              <p>Your permanent link:</p>
+              <a href="/discover/${slug}" class="permanent-link">${permanentUrl}</a>
+              <button class="button copy-link-btn" onclick="navigator.clipboard.writeText('${permanentUrl}'); this.textContent='Copied!'">
+                Copy Link
+              </button>
+            </div>
+          `;
+        } else {
+          throw new Error(result.error || 'Failed to save');
+        }
+      } catch (error) {
+        saveBtn.disabled = false;
+        saveBtn.textContent = 'Save & Get Permanent Link';
+        saveStatus.textContent = `Error: ${error.message}. Please try again.`;
+        saveStatus.style.color = '#c00';
+      }
+    });
+  });
+
+  eventSource.addEventListener('error', (e) => {
+    if (e.data) {
+      const data = JSON.parse(e.data);
+      loadingState.innerHTML = `
+        <h1>Something went wrong</h1>
+        <p style="color: #c00;">${data.message}</p>
+        <p><a href="/">Return to homepage</a></p>
+      `;
+    }
+    eventSource.close();
+  });
+
+  eventSource.onerror = () => {
+    if (eventSource.readyState === EventSource.CLOSED) {
+      if (blockCount === 0) {
+        statusEl.textContent = 'Connection failed. Please try again.';
+      }
+    }
+  };
+}
+
+/**
+ * Render a Vitamix Recommender page from ?q= or ?query= parameter
+ * Uses the vitamix-recommender worker with Claude Opus reasoning
+ */
+async function renderVitamixRecommenderPage() {
+  // Load skeleton/vitamix styles
+  await loadCSS(`${window.hlx.codeBasePath}/styles/vitamix.css`);
+
+  const main = document.querySelector('main');
+  if (!main) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get('q') || params.get('query');
+  const preset = params.get('preset') || 'production'; // Default to production (Claude reasoning)
+  const slug = generateSlug(query);
+
+  // Determine badge and status based on preset
+  const isSpeedMode = preset === 'all-cerebras';
+  const badgeText = isSpeedMode ? 'Speed Mode' : 'Quality Mode';
+  const badgeClass = isSpeedMode ? 'speed-badge' : 'recommender-badge';
+
+  // Clear main and show loading state (reasoning handled by block from worker)
+  main.innerHTML = `
+    <div class="section generating-container vitamix-recommender">
+      <div class="${badgeClass}">${badgeText}</div>
+      <h1 class="generating-title">Finding Your Perfect Vitamix</h1>
+      <p class="generating-query">"${query}"</p>
+      <div class="progress-indicator">
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+        <div class="progress-dot"></div>
+      </div>
+      <p class="generation-status">Analyzing your needs...</p>
+    </div>
+    <div id="generation-content"></div>
+  `;
+
+  const loadingState = main.querySelector('.generating-container');
+  const statusEl = main.querySelector('.generation-status');
+  const content = main.querySelector('#generation-content');
+
+  // Connect to SSE stream with preset parameter
+  const streamUrl = `${VITAMIX_RECOMMENDER_URL}/generate?query=${encodeURIComponent(query)}&slug=${encodeURIComponent(slug)}&preset=${encodeURIComponent(preset)}`;
+  const eventSource = new EventSource(streamUrl);
+  let blockCount = 0;
+  const generatedBlocks = [];
+  const startTime = Date.now();
+
+  eventSource.onopen = () => {
+    statusEl.textContent = 'Connected to AI...';
+  };
+
+  eventSource.addEventListener('generation-start', (e) => {
+    const data = JSON.parse(e.data);
+    statusEl.textContent = `Planning ${data.estimatedBlocks} sections...`;
+  });
+
+  eventSource.addEventListener('reasoning-start', (e) => {
+    const data = JSON.parse(e.data);
+    statusEl.textContent = `Reasoning with ${data.model}...`;
+  });
+
+  eventSource.addEventListener('reasoning-step', (e) => {
+    const data = JSON.parse(e.data);
+    statusEl.textContent = data.title;
+  });
+
+  eventSource.addEventListener('reasoning-complete', (e) => {
+    const data = JSON.parse(e.data);
+    const confidence = Math.round(data.confidence * 100);
+    statusEl.textContent = `Reasoning complete (${confidence}% confidence). Generating content...`;
+  });
+
+  eventSource.addEventListener('block-start', (e) => {
+    const data = JSON.parse(e.data);
+    statusEl.textContent = `Creating ${data.blockType}...`;
+  });
+
+  eventSource.addEventListener('block-content', async (e) => {
+    const data = JSON.parse(e.data);
+
+    // Hide loading state after first content block
+    if (blockCount === 0) {
+      loadingState.style.display = 'none';
+    }
+    blockCount += 1;
+
+    // Store for persistence
+    generatedBlocks.push({ html: data.html, sectionStyle: data.sectionStyle });
+
+    // Create section and add content
+    const section = document.createElement('div');
+    section.className = 'section';
+    if (data.sectionStyle && data.sectionStyle !== 'default') {
+      section.classList.add(data.sectionStyle);
+    }
+    section.dataset.sectionStatus = 'initialized';
+    section.innerHTML = data.html;
+
+    // Store original src for images
+    section.querySelectorAll('img[data-gen-image]').forEach((img) => {
+      img.dataset.originalSrc = img.getAttribute('src');
+    });
+
+    // Wrap block in wrapper div (EDS pattern)
+    const blockEl = section.querySelector('[class]');
+    if (blockEl) {
+      const blockName = blockEl.classList[0];
+      const wrapper = document.createElement('div');
+      wrapper.className = `${blockName}-wrapper`;
+      blockEl.parentNode.insertBefore(wrapper, blockEl);
+      wrapper.appendChild(blockEl);
+      decorateBlock(blockEl);
+      section.classList.add(`${blockName}-container`);
+    }
+
+    decorateButtons(section);
+    decorateIcons(section);
+
+    content.appendChild(section);
+
+    // Load the block (CSS + JS)
+    const block = section.querySelector('.block');
+    if (block) {
+      await loadBlock(block);
+    }
+
+    section.dataset.sectionStatus = 'loaded';
+    section.style.display = null;
+  });
+
+  eventSource.addEventListener('block-rationale', (e) => {
+    const data = JSON.parse(e.data);
+    // eslint-disable-next-line no-console
+    console.log(`[Recommender] Block rationale for ${data.blockType}:`, data.rationale);
+  });
+
+  eventSource.addEventListener('image-ready', (e) => {
+    const data = JSON.parse(e.data);
+    const { imageId, url } = data;
+
+    let resolvedUrl = url;
+    if (url && url.startsWith('/')) {
+      resolvedUrl = `${VITAMIX_RECOMMENDER_URL}${url}`;
+    }
+
+    const img = content.querySelector(`img[data-gen-image="${imageId}"]`);
+    if (img && resolvedUrl) {
+      const originalUrl = img.dataset.originalSrc;
+      const section = img.closest('.section');
+      const imgParent = img.parentNode;
+
+      const cacheBustUrl = resolvedUrl.includes('?')
+        ? `${resolvedUrl}&_t=${Date.now()}`
+        : `${resolvedUrl}?_t=${Date.now()}`;
+
+      const newImg = document.createElement('img');
+      newImg.src = cacheBustUrl;
+      newImg.alt = img.alt || '';
+      newImg.className = img.className;
+      if (img.loading) newImg.loading = img.loading;
+      newImg.dataset.genImage = imageId;
+      newImg.classList.add('loaded');
+
+      if (imgParent) {
+        imgParent.replaceChild(newImg, img);
+      }
+
+      // Update stored HTML
+      if (section && originalUrl) {
+        const sectionIndex = Array.from(content.children).indexOf(section);
+        if (sectionIndex >= 0 && generatedBlocks[sectionIndex]) {
+          generatedBlocks[sectionIndex].html = generatedBlocks[sectionIndex].html.replace(
+            new RegExp(escapeRegExp(originalUrl), 'g'),
+            resolvedUrl,
+          );
+        }
+      }
+    }
+  });
+
+  eventSource.addEventListener('generation-complete', (e) => {
+    eventSource.close();
+    const data = JSON.parse(e.data);
+    const totalTime = ((Date.now() - startTime) / 1000).toFixed(1);
+
+    // eslint-disable-next-line no-console
+    console.log(`[Recommender] Complete in ${totalTime}s`, data);
+
+    // Update document title
+    const h1 = content.querySelector('h1');
+    if (h1) {
+      document.title = `${h1.textContent} | Vitamix`;
+    }
+  });
+
+  eventSource.addEventListener('error', (e) => {
+    if (e.data) {
+      const data = JSON.parse(e.data);
+      loadingState.innerHTML = `
+        <h1>Something went wrong</h1>
+        <p style="color: #c00;">${data.message}</p>
+        <p><a href="/">Return to homepage</a></p>
+      `;
+    }
+    eventSource.close();
+  });
+
+  eventSource.onerror = () => {
+    if (eventSource.readyState === EventSource.CLOSED) {
+      if (blockCount === 0) {
+        statusEl.textContent = 'Connection failed. Please try again.';
+      }
+    }
+  };
+}
+
+/**
+ * Get icon for reasoning step stage
+ */
+function getReasoningIcon(stage) {
+  const icons = {
+    understanding: '🔍',
+    assessment: '📊',
+    decision: '✅',
+    analysis: '🧠',
+    recommendation: '💡',
+  };
+  return icons[stage] || '•';
+}
+
+/**
+ * Builds hero block from default content pattern (picture + h1 without block wrapper).
+ * This is the standard EDS auto-blocking behavior for pages where hero is not explicitly authored.
+ * If a .hero block already exists, this function does nothing.
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
+  // Skip if there's already an explicit hero block
+  if (main.querySelector('.hero')) {
+    return;
+  }
+
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
+
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
@@ -64,11 +918,112 @@ function buildAutoBlocks(main) {
       });
     }
 
-    buildHeroBlock(main);
+    // buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
   }
+}
+
+/**
+ * Decorate hero-video sections with video background and content wrapper
+ * @param {Element} main The main element
+ */
+function decorateHeroVideoSections(main) {
+  const heroVideoSections = main.querySelectorAll('.section.hero-video');
+  heroVideoSections.forEach((section) => {
+    // Skip if already decorated
+    if (section.querySelector('.hero-video-bg')) return;
+
+    // Create video element
+    const video = document.createElement('video');
+    video.className = 'hero-video-bg';
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.setAttribute('aria-hidden', 'true');
+    video.innerHTML = `
+      <source src="https://player.vimeo.com/progressive_redirect/playback/742715169/rendition/1080p/file.mp4?loc=external&signature=af88564d33ef1f252232f6f7448a3939c80664afacb4a865588b5d1bb4fc9bfe" type="video/mp4">
+    `;
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'hero-video-overlay';
+
+    // Create content wrapper and move all existing content into it
+    const contentWrapper = document.createElement('div');
+    contentWrapper.className = 'hero-video-content';
+
+    // Move all children (except section-metadata) to content wrapper
+    const children = [...section.children];
+    children.forEach((child) => {
+      if (!child.classList.contains('section-metadata')) {
+        contentWrapper.appendChild(child);
+      }
+    });
+
+    // Restructure h3/p pairs into feature columns and why section
+    const h3Elements = contentWrapper.querySelectorAll('h3');
+    if (h3Elements.length >= 2) {
+      // Create features container for first two h3/p pairs (Personalized Recipes, Product Guidance)
+      const featuresContainer = document.createElement('div');
+      featuresContainer.className = 'hero-features';
+
+      // First two h3 elements with their following p
+      for (let i = 0; i < 2 && i < h3Elements.length; i += 1) {
+        const h3 = h3Elements[i];
+        const featureDiv = document.createElement('div');
+        featureDiv.className = 'hero-feature';
+        featureDiv.appendChild(h3.cloneNode(true));
+
+        // Get the p that follows this h3
+        let nextEl = h3.nextElementSibling;
+        while (nextEl && nextEl.tagName !== 'P' && nextEl.tagName !== 'H3') {
+          nextEl = nextEl.nextElementSibling;
+        }
+        if (nextEl && nextEl.tagName === 'P') {
+          featureDiv.appendChild(nextEl.cloneNode(true));
+          nextEl.remove();
+        }
+        h3.remove();
+        featuresContainer.appendChild(featureDiv);
+      }
+
+      // Handle the third h3 (Why Use AI-Powered Discovery) - wrap in hero-why
+      if (h3Elements.length >= 3) {
+        const whyH3 = h3Elements[2];
+        const whyContainer = document.createElement('div');
+        whyContainer.className = 'hero-why';
+        whyContainer.appendChild(whyH3.cloneNode(true));
+
+        let nextEl = whyH3.nextElementSibling;
+        while (nextEl && nextEl.tagName !== 'H3') {
+          const nextNext = nextEl.nextElementSibling;
+          if (nextEl.tagName === 'P') {
+            whyContainer.appendChild(nextEl.cloneNode(true));
+            nextEl.remove();
+          }
+          nextEl = nextNext;
+        }
+        whyH3.remove();
+        contentWrapper.appendChild(whyContainer);
+      }
+
+      // Insert features container after the form
+      const form = contentWrapper.querySelector('.query-form-cerebras-wrapper');
+      if (form) {
+        form.after(featuresContainer);
+      } else {
+        contentWrapper.appendChild(featuresContainer);
+      }
+    }
+
+    // Insert video, overlay, and content wrapper
+    section.insertBefore(video, section.firstChild);
+    section.insertBefore(overlay, video.nextSibling);
+    section.insertBefore(contentWrapper, overlay.nextSibling);
+  });
 }
 
 /**
@@ -83,6 +1038,7 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  decorateHeroVideoSections(main);
 }
 
 /**
@@ -139,6 +1095,56 @@ function loadDelayed() {
 }
 
 async function loadPage() {
+  // Check if this is a Cerebras request (?cerebras=query) - handled by cerebras-scripts.js
+  if (isCerebrasRequest()) {
+    // Dynamically import and run cerebras-scripts.js
+    document.documentElement.lang = 'en';
+    decorateTemplateAndTheme();
+    loadHeader(document.querySelector('header'));
+    loadFooter(document.querySelector('footer'));
+    await import('./cerebras-scripts.js');
+    return;
+  }
+
+  // Check if this is a Vitamix Recommender request (?q= or ?query=) - Claude Opus reasoning
+  if (isVitamixRecommenderRequest()) {
+    document.documentElement.lang = 'en';
+    decorateTemplateAndTheme();
+    document.body.classList.add('appear', 'vitamix-recommender-mode');
+    loadHeader(document.querySelector('header'));
+    loadFooter(document.querySelector('footer'));
+    await renderVitamixRecommenderPage();
+    return;
+  }
+
+  // Check if this is an experiment request (?experiment=query) - progressive rendering
+  if (isExperimentRequest()) {
+    const handled = await initExperiment();
+    if (handled) return;
+  }
+
+  // Check if this is a fast request (?fast=query) - two-phase generation
+  if (isFastRequest()) {
+    document.documentElement.lang = 'en';
+    decorateTemplateAndTheme();
+    document.body.classList.add('appear', 'fast-mode');
+    loadHeader(document.querySelector('header'));
+    loadFooter(document.querySelector('footer'));
+    await renderFastGenerativePage();
+    return;
+  }
+
+  // Check if this is a generation request (?generate=query) - current flow
+  if (isGenerationRequest()) {
+    document.documentElement.lang = 'en';
+    decorateTemplateAndTheme();
+    document.body.classList.add('appear');
+    loadHeader(document.querySelector('header'));
+    loadFooter(document.querySelector('footer'));
+    await renderGenerativePage();
+    return;
+  }
+
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();

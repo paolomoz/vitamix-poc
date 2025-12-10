@@ -1,0 +1,183 @@
+/**
+ * Recommender Hero Block Styles
+ *
+ * Full-width hero with background image, centered title, and query form.
+ */
+
+/* Container reset - ensure full width */
+.recommender-hero-container {
+  max-width: unset;
+  padding: 0;
+}
+
+.recommender-hero-container .recommender-hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Section wrapper reset */
+main .section:has(.recommender-hero) {
+  max-width: unset;
+  padding: 0;
+}
+
+main .section:has(.recommender-hero) > div {
+  max-width: unset;
+}
+
+/* Prevent horizontal scroll from 100vw */
+body:has(.recommender-hero) {
+  overflow-x: hidden;
+}
+
+/* Base block styles */
+.recommender-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1a2634;
+}
+
+/* Dark overlay */
+.recommender-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 35, 50, 0.6);
+  z-index: 1;
+}
+
+/* Content container */
+.recommender-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--spacing-xl);
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Icon */
+.recommender-hero-icon {
+  margin-bottom: var(--spacing-lg);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.recommender-hero-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+/* Title */
+.recommender-hero-title {
+  font-family: var(--font-family-heading, Georgia, 'Times New Roman', serif);
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 300;
+  color: #fff;
+  margin: 0 0 var(--spacing-2xl);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Form styles */
+.recommender-hero-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.recommender-hero-input-wrapper {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.recommender-hero input[type="text"] {
+  flex: 1;
+  padding: 18px 24px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+}
+
+.recommender-hero input[type="text"]::placeholder {
+  color: #888;
+}
+
+.recommender-hero button[type="submit"] {
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.recommender-hero button[type="submit"]:hover {
+  background: #333;
+}
+
+.recommender-hero button[type="submit"]:active {
+  background: #000;
+}
+
+.recommender-hero button[type="submit"].loading {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .recommender-hero {
+    min-height: 80vh;
+  }
+
+  .recommender-hero-content {
+    padding: var(--spacing-lg);
+  }
+
+  .recommender-hero-input-wrapper {
+    flex-direction: column;
+  }
+
+  .recommender-hero input[type="text"] {
+    padding: 16px 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .recommender-hero button[type="submit"] {
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommender-hero {
+    min-height: 70vh;
+  }
+
+  .recommender-hero-title {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .recommender-hero-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}

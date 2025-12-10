@@ -1,0 +1,160 @@
+/* Reasoning User Block Styles
+ * Warm, empathetic design that feels personal and helpful
+ */
+
+.reasoning-user-container {
+  background: linear-gradient(135deg, #fefefe 0%, #f8f9fa 100%);
+  border-radius: 16px;
+  margin: 24px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.reasoning-user-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 40px;
+}
+
+.reasoning-user.block {
+  background: transparent;
+}
+
+/* Header */
+.reasoning-user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.reasoning-user-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.reasoning-user-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+}
+
+/* Intro text */
+.reasoning-user-intro {
+  font-size: 15px;
+  color: #666;
+  margin: 0 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Steps */
+.reasoning-user-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reasoning-user-step {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reasoning-user-step:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.step-emoji {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.step-body {
+  flex: 1;
+}
+
+.step-heading {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.step-detail {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.step-detail p {
+  margin: 0 0 8px;
+}
+
+.step-detail p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.reasoning-user-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.footer-icon {
+  font-size: 18px;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reasoning-user-wrapper {
+    padding: 24px 20px;
+  }
+
+  .reasoning-user-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .reasoning-user-title {
+    font-size: 20px;
+  }
+
+  .reasoning-user-step {
+    padding: 16px;
+  }
+
+  .step-emoji {
+    font-size: 24px;
+  }
+
+  .step-heading {
+    font-size: 15px;
+  }
+}

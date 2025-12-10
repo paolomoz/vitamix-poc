@@ -1,0 +1,74 @@
+{
+  "features": [
+    {
+      "id": "self-cleaning",
+      "name": "Self-Cleaning",
+      "description": "Add warm water and dish soap, run for 60 seconds, rinse clean",
+      "benefit": "Saves time on cleanup - no disassembly needed",
+      "availableIn": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "a2300", "e310", "5200-standard-getting-started"]
+    },
+    {
+      "id": "preset-programs",
+      "name": "Preset Programs",
+      "description": "One-touch programs for smoothies, soups, frozen desserts, and more",
+      "benefit": "Consistent results without guesswork",
+      "availableIn": ["ascent-x3", "ascent-x4", "ascent-x5", "propel-series-750"]
+    },
+    {
+      "id": "self-detect",
+      "name": "SELF-DETECT Technology",
+      "description": "Container automatically communicates with base for optimal performance",
+      "benefit": "Right settings every time, enhanced safety features",
+      "availableIn": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5"]
+    },
+    {
+      "id": "variable-speed",
+      "name": "Variable Speed Control",
+      "description": "10 variable speeds for precise texture control",
+      "benefit": "From chunky salsas to silky purees with one machine",
+      "availableIn": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "a2300", "5200-standard-getting-started", "e310", "propel-series-510", "propel-series-750"]
+    },
+    {
+      "id": "hot-soup-program",
+      "name": "Hot Soup Program",
+      "description": "Creates steaming hot soup from cold ingredients in minutes",
+      "benefit": "Friction heat for fresh soup without a stove",
+      "availableIn": ["ascent-x3", "ascent-x4", "ascent-x5", "propel-series-750"]
+    },
+    {
+      "id": "touchscreen",
+      "name": "Touchscreen Interface",
+      "description": "Modern touchscreen controls for easy operation",
+      "benefit": "Intuitive controls, easy to clean surface",
+      "availableIn": ["ascent-x4", "ascent-x5"]
+    },
+    {
+      "id": "wireless-connectivity",
+      "name": "Wireless Connectivity",
+      "description": "Connect to the Vitamix app for guided recipes and tips",
+      "benefit": "Expand capabilities with app-guided recipes",
+      "availableIn": ["ascent-x5"]
+    },
+    {
+      "id": "low-profile-container",
+      "name": "Low-Profile Container",
+      "description": "Shorter container fits under standard cabinets",
+      "benefit": "Store on counter without removing cabinets",
+      "availableIn": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "propel-series-510", "propel-series-750"]
+    },
+    {
+      "id": "pulse",
+      "name": "Pulse Feature",
+      "description": "Quick bursts of power for chunky textures",
+      "benefit": "Perfect for salsas, chopping, and rough cuts",
+      "availableIn": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "a2300", "5200-standard-getting-started", "e310", "propel-series-510", "propel-series-750"]
+    },
+    {
+      "id": "tamper",
+      "name": "Included Tamper",
+      "description": "Push ingredients toward blades during blending",
+      "benefit": "Process thick mixtures like nut butters without stopping",
+      "availableIn": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "a2300", "5200-standard-getting-started"]
+    }
+  ]
+}

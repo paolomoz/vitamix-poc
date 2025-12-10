@@ -11,33 +11,93 @@
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* ===== Vitamix Brand Colors ===== */
+  --color-brand-red: #C41230;
+  --color-brand-red-dark: #a30f28;
+  --color-brand-dark: #1A1A1A;
+  --color-charcoal: #333333;
+  --color-dark-gray: #666666;
+  --color-medium-gray: #999999;
+  --color-light-gray: #E5E5E5;
+  --color-off-white: #F5F5F5;
+  --color-white: #FFFFFF;
+  --color-star-gold: #FFD700;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* Legacy color mappings */
+  --background-color: var(--color-white);
+  --light-color: var(--color-off-white);
+  --dark-color: var(--color-dark-gray);
+  --text-color: var(--color-brand-dark);
+  --link-color: var(--color-brand-red);
+  --link-hover-color: var(--color-brand-red-dark);
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* ===== Typography - Vitamix via Adobe Fonts ===== */
+  --body-font-family: 'gotham-narrow', gotham-narrow-fallback, helvetica, sans-serif;
+  --heading-font-family: 'sentinel', sentinel-fallback, georgia, serif;
+  --nav-font-family: 'gotham-narrow', gotham-narrow-fallback, helvetica, sans-serif;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  /* Font sizes */
+  --font-size-hero: 4.5rem;
+  --font-size-5xl: 3rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-xl: 1.25rem;
+  --font-size-lg: 1.125rem;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.75rem;
 
-  /* nav height */
+  /* Legacy size mappings */
+  --body-font-size-m: var(--font-size-base);
+  --body-font-size-s: var(--font-size-sm);
+  --body-font-size-xs: var(--font-size-xs);
+  --heading-font-size-xxl: var(--font-size-hero);
+  --heading-font-size-xl: var(--font-size-5xl);
+  --heading-font-size-l: var(--font-size-4xl);
+  --heading-font-size-m: var(--font-size-3xl);
+  --heading-font-size-s: var(--font-size-2xl);
+  --heading-font-size-xs: var(--font-size-xl);
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 500;
+
+  /* ===== Spacing ===== */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-section-sm: 3rem;
+  --spacing-section-md: 5rem;
+  --spacing-section-lg: 8rem;
+
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.15);
+
+  /* ===== Transitions ===== */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* ===== Border Radius ===== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* ===== Layout ===== */
   --nav-height: 64px;
+  --max-width-content: 1200px;
+  --max-width-wide: 1400px;
 }
 
 /* fallback fonts */
@@ -107,7 +167,7 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   scroll-margin: 40px;
 }
@@ -165,49 +225,79 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
+/* buttons - Vitamix style */
 a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: 0; /* Vitamix uses square corners */
+  padding: 0.75rem 2rem;
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 500;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: var(--color-brand-red);
+  color: var(--color-white);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: background-color var(--transition-normal);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--color-brand-red-dark);
   cursor: pointer;
+  text-decoration: none;
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
+  background-color: var(--color-light-gray);
+  color: var(--color-medium-gray);
+  cursor: not-allowed;
 }
 
+/* Secondary button - outlined */
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: transparent;
+  border: 1px solid var(--color-brand-dark);
+  color: var(--color-brand-dark);
+}
+
+a.button.secondary:hover,
+a.button.secondary:focus,
+button.secondary:hover,
+button.secondary:focus {
+  background-color: var(--color-brand-dark);
+  color: var(--color-white);
+}
+
+/* Ghost/link button */
+a.button.ghost,
+button.ghost {
+  background-color: transparent;
+  color: var(--color-brand-red);
+  text-decoration: underline;
+  padding: 0.5rem 0;
+}
+
+a.button.ghost:hover,
+button.ghost:hover {
+  background-color: transparent;
+  text-decoration-thickness: 2px;
 }
 
 main img {
@@ -239,7 +329,7 @@ main > .section > div {
 }
 
 main > .section:first-of-type {
-  margin-top: 0;
+  margin: 0;
 }
 
 @media (width >= 900px) {
@@ -254,4 +344,594 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+main .section.dark {
+  background-color: var(--color-brand-dark, #1A1A1A);
+  margin: 0;
+  padding: 60px 0;
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3,
+main .section.dark h4,
+main .section.dark p {
+  color: var(--color-white, #fff);
+}
+
+main .section.dark a:any-link {
+  color: var(--color-brand-red, #C41230);
+}
+
+main .section.dark .button:any-link {
+  color: var(--color-white, #fff);
+}
+
+main .section.dark .button.secondary:any-link {
+  background-color: transparent;
+  border-color: var(--color-white, #fff);
+  color: var(--color-white, #fff);
+}
+
+/* ===== Recipe Content Layout ===== */
+/* Two-column layout: nutrition sidebar on left, ingredients/directions on right */
+/* Each block is in its own section, so we use grid on the parent container */
+
+main > div:has(.recipe-sidebar-container) {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0 48px;
+}
+
+/* Hero and CTA span full width */
+main > div:has(.recipe-sidebar-container) > .recipe-hero-detail-container,
+main > div:has(.recipe-sidebar-container) > .cta-container {
+  grid-column: 1 / -1;
+}
+
+/* Sidebar on left, spans multiple rows */
+main > div:has(.recipe-sidebar-container) > .recipe-sidebar-container {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+  margin: 0;
+  padding: 40px 0;
+}
+
+main > div:has(.recipe-sidebar-container) > .recipe-sidebar-container > div {
+  position: sticky;
+  top: calc(var(--nav-height, 64px) + 24px);
+  padding: 0 24px 0 0;
+}
+
+/* Ingredients and directions on right */
+main > div:has(.recipe-sidebar-container) > .ingredients-list-container,
+main > div:has(.recipe-sidebar-container) > .recipe-directions-container {
+  grid-column: 2;
+  margin: 0;
+}
+
+main > div:has(.recipe-sidebar-container) > .ingredients-list-container {
+  padding: 40px 24px 40px 0;
+  border-bottom: 1px solid var(--color-light-gray, #e5e5e5);
+}
+
+main > div:has(.recipe-sidebar-container) > .recipe-directions-container {
+  padding: 40px 24px 40px 0;
+}
+
+/* Responsive: Stack on mobile */
+@media (width < 900px) {
+  main > div:has(.recipe-sidebar-container) {
+    display: block;
+  }
+
+  main > div:has(.recipe-sidebar-container) > .recipe-sidebar-container > div {
+    position: static;
+    padding: 0 24px;
+  }
+
+  main > div:has(.recipe-sidebar-container) > .ingredients-list-container,
+  main > div:has(.recipe-sidebar-container) > .recipe-directions-container {
+    padding: 32px 24px;
+  }
+}
+
+/* ===== Hero Video Section (DA-authored) ===== */
+main .section.hero-video {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+main .section.hero-video .hero-video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* 1. Overlay covers whole background */
+main .section.hero-video .hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main .section.hero-video > .default-content-wrapper,
+main .section.hero-video > .query-form-cerebras-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/* Content wrapper with dark background for text contrast */
+main .section.hero-video .hero-video-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 60px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 8px;
+}
+
+main .section.hero-video .hero-video-content h1 {
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 16px;
+  margin-top: 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 300;
+}
+
+main .section.hero-video .hero-video-content > .default-content-wrapper > p:first-of-type {
+  font-size: var(--body-font-size-m);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 4. Two columns for Personalized Recipes and Product Guidance */
+main .section.hero-video .hero-video-content .hero-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+main .section.hero-video .hero-video-content h3 {
+  font-size: var(--font-size-lg);
+  color: white;
+  margin: 0 0 8px;
+  font-weight: 500;
+  text-align: left;
+}
+
+main .section.hero-video .hero-video-content p {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Bottom "Why Use" section - left aligned */
+main .section.hero-video .hero-video-content .hero-why {
+  margin-top: 32px;
+  text-align: left;
+}
+
+main .section.hero-video .hero-video-content .query-form-cerebras {
+  margin: 24px 0 0;
+}
+
+/* 2. Input and button matching header style */
+main .section.hero-video .query-form-cerebras-input-wrapper {
+  background: var(--color-charcoal);
+  border: 1px solid var(--color-light-gray);
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+main .section.hero-video .query-form-cerebras input[type="text"] {
+  background: white;
+  color: var(--color-brand-dark);
+  border: none;
+  border-radius: 0;
+  padding: 12px 16px;
+  font-size: var(--body-font-size-s);
+}
+
+main .section.hero-video .query-form-cerebras input[type="text"]::placeholder {
+  color: var(--color-medium-gray);
+}
+
+main .section.hero-video .query-form-cerebras button[type="submit"] {
+  background: var(--color-charcoal);
+  color: white;
+  border-radius: 0;
+  padding: 12px 24px;
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+main .section.hero-video .query-form-cerebras button[type="submit"]:hover {
+  background: var(--color-dark-gray);
+}
+
+/* 3. "Or try" and chips in one row */
+main .section.hero-video .query-form-cerebras-examples {
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 16px;
+  gap: 10px;
+}
+
+main .section.hero-video .query-form-cerebras-examples .examples-label {
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+
+main .section.hero-video .query-form-cerebras-examples button {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: var(--font-size-xs);
+}
+
+main .section.hero-video .query-form-cerebras-examples button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive hero-video */
+@media (width < 900px) {
+  main .section.hero-video {
+    min-height: auto;
+    padding: 80px 20px;
+  }
+
+  main .section.hero-video .hero-video-content {
+    padding: 30px 24px;
+    max-width: 100%;
+  }
+
+  main .section.hero-video .hero-video-content h1 {
+    font-size: var(--heading-font-size-l);
+  }
+
+  main .section.hero-video .hero-video-content .hero-features {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  main .section.hero-video .query-form-cerebras-examples {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== Homepage Hero with Video Background ===== */
+.homepage-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 900px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.homepage-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.homepage-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.homepage-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 40px 60px;
+  min-width: 600px;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+}
+
+.homepage-hero-content h1 {
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 24px;
+  margin-top: 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 300;
+}
+
+.homepage-hero-content p {
+  font-size: var(--body-font-size-m);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto 32px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Homepage Search Form */
+.homepage-search-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.homepage-search-container {
+  display: flex;
+  align-items: stretch;
+  background: transparent;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.homepage-search-container input {
+  flex: 1;
+  border: 1px solid var(--color-charcoal);
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  padding: 16px 20px;
+  font-size: var(--body-font-size-s);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  min-width: 0;
+}
+
+.homepage-search-container input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.homepage-search-container button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 16px 24px;
+  border: 1px solid var(--color-charcoal);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--color-charcoal);
+  color: white;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.homepage-search-container button:hover {
+  background-color: var(--color-dark-gray);
+}
+
+.homepage-search-container button:disabled {
+  background-color: var(--color-charcoal);
+  cursor: wait;
+  opacity: 0.9;
+}
+
+/* Generating spinner for homepage button */
+.generating-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Image Quality Toggle */
+.image-quality-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.image-quality-toggle .toggle-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.image-quality-toggle .toggle-option {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.image-quality-toggle .toggle-option:first-of-type {
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+
+.image-quality-toggle .toggle-option:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+.image-quality-toggle .toggle-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.image-quality-toggle .toggle-option.active {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+/* Homepage Suggestions as Chips */
+.homepage-suggestions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0;
+}
+
+.suggestions-label {
+  font-size: var(--body-font-size-xs);
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.suggestions-chips {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 3px 10px;
+  justify-content: center;
+}
+
+.suggestion-chip {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 4px 0;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.suggestion-chip:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile adjustments for homepage hero */
+@media (width < 600px) {
+  .homepage-hero {
+    min-height: 100vh;
+    max-height: none;
+  }
+
+  .homepage-hero-content {
+    width: calc(100% - 32px);
+    min-width: 0;
+    max-width: none;
+    padding: 40px 24px;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .homepage-hero-content h1 {
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .homepage-hero-content p {
+    font-size: var(--body-font-size-s);
+    margin-bottom: 20px;
+  }
+
+  .homepage-search-form {
+    margin-bottom: 16px;
+  }
+
+  .homepage-search-container {
+    flex-direction: row;
+  }
+
+  .homepage-search-container input {
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+  }
+
+  .homepage-search-container button {
+    padding: 12px 14px;
+    border-radius: 0 4px 4px 0;
+    white-space: nowrap;
+  }
+
+  .homepage-search-container button span {
+    display: none;
+  }
+
+  .suggestions-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .suggestion-chip {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
 }

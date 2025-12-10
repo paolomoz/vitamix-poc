@@ -1,0 +1,23 @@
+{
+  "name": "vitamix-crawler",
+  "version": "1.0.0",
+  "description": "Crawler to fetch Vitamix products, recipes, and accessories",
+  "type": "module",
+  "scripts": {
+    "crawl": "node crawl.js",
+    "crawl:products": "node crawl.js --products-only",
+    "crawl:recipes": "node crawl.js --recipes-only",
+    "crawl:images": "node crawl.js --images-only",
+    "crawl:ai": "node crawl-with-ai.js",
+    "crawl:ai:products": "node crawl-with-ai.js --products-only",
+    "crawl:ai:recipes": "node crawl-with-ai.js --recipes-only",
+    "crawl:ai:accessories": "node crawl-with-ai.js --accessories-only",
+    "crawl:ai:all": "node crawl-with-ai.js --all",
+    "download-images": "node download-images.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.6.1",
+    "node-fetch": "^3.3.2"
+  }
+}

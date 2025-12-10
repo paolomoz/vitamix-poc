@@ -1,0 +1,409 @@
+/**
+ * Cerebras AI Experiment Styles
+ * Isolated styling for the Cerebras experiment - doesn't affect main styles
+ */
+
+/* Cerebras brand color - purple/indigo theme */
+:root {
+  --cerebras-primary: #6366f1;
+  --cerebras-secondary: #818cf8;
+  --cerebras-dark: #4f46e5;
+  --cerebras-light: #e0e7ff;
+}
+
+/* Hero section on cerebras.html */
+.cerebras-hero {
+  background: linear-gradient(135deg, var(--cerebras-light) 0%, #f5f3ff 100%);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.cerebras-hero h1 {
+  color: var(--cerebras-dark);
+}
+
+/* Query form */
+.cerebras-query-form {
+  max-width: 700px;
+  margin: 32px auto 0;
+}
+
+.query-input-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.cerebras-query-form input[type="text"] {
+  flex: 1;
+  padding: 16px 20px;
+  font-size: 18px;
+  border: 2px solid var(--cerebras-secondary);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cerebras-query-form input[type="text"]:focus {
+  border-color: var(--cerebras-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.cerebras-btn {
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 500;
+  background: var(--cerebras-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.cerebras-btn:hover {
+  background: var(--cerebras-dark);
+  transform: translateY(-1px);
+}
+
+.cerebras-btn:disabled {
+  background: #94a3b8;
+  cursor: wait;
+}
+
+/* Example buttons */
+.query-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.examples-label {
+  color: #666;
+  font-size: 14px;
+}
+
+.example-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background: white;
+  border: 1px solid var(--cerebras-secondary);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.example-btn:hover {
+  background: var(--cerebras-light);
+  border-color: var(--cerebras-primary);
+}
+
+/* Error/fallback state */
+.cerebras-loading {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.cerebras-loading h1 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.cerebras-loading p {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.cerebras-loading a {
+  color: var(--cerebras-primary);
+}
+
+/* Completion state */
+.cerebras-complete {
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--cerebras-light);
+}
+
+.cerebras-complete-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cerebras-complete-badge {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--cerebras-primary);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 24px;
+  margin-bottom: 16px;
+}
+
+.cerebras-complete a {
+  color: var(--cerebras-dark);
+}
+
+/* Image placeholder shimmer - container */
+picture:has(img[data-gen-image]:not(.loaded)) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  background: linear-gradient(
+    90deg,
+    #c8c8c8 0%,
+    #e8e8e8 50%,
+    #c8c8c8 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Also apply shimmer to image containers in decorated blocks */
+.recipe-card-image:has(img[data-gen-image]:not(.loaded)),
+.cards > div > div:first-child:has(img[data-gen-image]:not(.loaded)) {
+  background: linear-gradient(
+    90deg,
+    #c8c8c8 0%,
+    #e8e8e8 50%,
+    #c8c8c8 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+/* Hero images should be taller */
+.hero picture:has(img[data-gen-image]:not(.loaded)),
+.technique-spotlight picture:has(img[data-gen-image]:not(.loaded)) {
+  min-height: 400px;
+  aspect-ratio: 16 / 9;
+}
+
+/* Card images use 4:3 */
+.cards picture:has(img[data-gen-image]:not(.loaded)),
+.recipe-cards picture:has(img[data-gen-image]:not(.loaded)),
+.recipe-grid picture:has(img[data-gen-image]:not(.loaded)) {
+  aspect-ratio: 4 / 3;
+  min-height: 200px;
+}
+
+/* Image placeholder shimmer - the image itself */
+img[data-gen-image] {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hide broken image icon and alt text while loading */
+img[data-gen-image]:not(.loaded) {
+  /* Make the image invisible but keep the space */
+  opacity: 0;
+}
+
+img[data-gen-image].loaded {
+  opacity: 1;
+}
+
+/* Remove shimmer from picture when image is loaded */
+picture:has(img[data-gen-image].loaded) {
+  background: none;
+  animation: none;
+  min-height: auto;
+}
+
+/* Remove shimmer from decorated containers when loaded */
+.recipe-card-image:has(img[data-gen-image].loaded),
+.cards > div > div:first-child:has(img[data-gen-image].loaded) {
+  background: none;
+  animation: none;
+}
+
+/* Dark section shimmer variant */
+.dark picture:has(img[data-gen-image]:not(.loaded)),
+.highlight picture:has(img[data-gen-image]:not(.loaded)),
+.dark .recipe-card-image:has(img[data-gen-image]:not(.loaded)),
+.highlight .recipe-card-image:has(img[data-gen-image]:not(.loaded)) {
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 0%,
+    #3f3f3f 50%,
+    #2a2a2a 100%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Share button in header */
+.publish-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  margin-right: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  background: transparent;
+  color: #9ca3af;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.publish-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.publish-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.publish-btn.published {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #34d399;
+}
+
+.publish-btn.published:hover {
+  background: rgba(16, 185, 129, 0.25);
+  color: #4ade80;
+}
+
+.publish-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.publish-btn .generating-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Copy notification toast */
+.copy-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #1f2937;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10000;
+}
+
+.copy-notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.copy-notification svg {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+/* Explore CTA loading state */
+a.button.generating,
+a.button[data-cta-type="explore"].generating {
+  pointer-events: none;
+  opacity: 0.8;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+a.button.generating .generating-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Contextual CTA badge (optional visual indicator) */
+.contextual-cta a[data-cta-type="explore"]::after {
+  content: '→';
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.contextual-cta a[data-cta-type="explore"]:hover::after {
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .query-input-wrapper {
+    flex-direction: column;
+  }
+
+  .cerebras-query-form input[type="text"],
+  .cerebras-btn {
+    font-size: 16px;
+    padding: 14px 16px;
+  }
+
+  .query-examples {
+    justify-content: flex-start;
+  }
+
+  .publish-btn {
+    padding: 6px 10px;
+    margin-right: 8px;
+  }
+
+  .publish-btn span {
+    display: none;
+  }
+
+  .copy-notification {
+    bottom: 16px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}

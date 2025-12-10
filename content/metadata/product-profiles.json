@@ -1,0 +1,132 @@
+{
+  "profiles": {
+    "ascent-x5": {
+      "useCaseScores": {
+        "smoothies": 10,
+        "soups": 10,
+        "nut-butters": 10,
+        "frozen-desserts": 10,
+        "baby-food": 9,
+        "dips-sauces": 10,
+        "batters-doughs": 9,
+        "grinding": 9
+      },
+      "priceTier": "premium",
+      "householdFit": ["solo", "couple", "family"],
+      "standoutFeatures": ["touchscreen", "wireless-connectivity", "preset-programs", "self-detect"],
+      "notIdealFor": ["budget-conscious buyers", "simple needs only"]
+    },
+    "ascent-x4": {
+      "useCaseScores": {
+        "smoothies": 10,
+        "soups": 10,
+        "nut-butters": 10,
+        "frozen-desserts": 10,
+        "baby-food": 9,
+        "dips-sauces": 10,
+        "batters-doughs": 9,
+        "grinding": 9
+      },
+      "priceTier": "premium",
+      "householdFit": ["solo", "couple", "family"],
+      "standoutFeatures": ["touchscreen", "preset-programs", "self-detect"],
+      "notIdealFor": ["budget-conscious buyers"]
+    },
+    "ascent-x3": {
+      "useCaseScores": {
+        "smoothies": 10,
+        "soups": 10,
+        "nut-butters": 9,
+        "frozen-desserts": 10,
+        "baby-food": 9,
+        "dips-sauces": 9,
+        "batters-doughs": 8,
+        "grinding": 8
+      },
+      "priceTier": "mid",
+      "householdFit": ["solo", "couple", "family"],
+      "standoutFeatures": ["preset-programs", "self-detect"],
+      "notIdealFor": ["those wanting touchscreen"]
+    },
+    "ascent-x2": {
+      "useCaseScores": {
+        "smoothies": 9,
+        "soups": 8,
+        "nut-butters": 9,
+        "frozen-desserts": 8,
+        "baby-food": 8,
+        "dips-sauces": 9,
+        "batters-doughs": 8,
+        "grinding": 8
+      },
+      "priceTier": "mid",
+      "householdFit": ["solo", "couple"],
+      "standoutFeatures": ["self-detect", "variable-speed"],
+      "notIdealFor": ["those wanting preset programs"]
+    },
+    "e310": {
+      "useCaseScores": {
+        "smoothies": 9,
+        "soups": 8,
+        "nut-butters": 8,
+        "frozen-desserts": 7,
+        "baby-food": 8,
+        "dips-sauces": 8,
+        "batters-doughs": 7,
+        "grinding": 7
+      },
+      "priceTier": "budget",
+      "householdFit": ["solo", "couple"],
+      "standoutFeatures": ["variable-speed", "pulse"],
+      "notIdealFor": ["large families", "advanced cooking"]
+    },
+    "propel-series-750": {
+      "useCaseScores": {
+        "smoothies": 10,
+        "soups": 10,
+        "nut-butters": 9,
+        "frozen-desserts": 10,
+        "baby-food": 8,
+        "dips-sauces": 9,
+        "batters-doughs": 8,
+        "grinding": 8
+      },
+      "priceTier": "mid",
+      "householdFit": ["solo", "couple", "family"],
+      "standoutFeatures": ["preset-programs", "low-profile-container"],
+      "notIdealFor": ["those wanting SELF-DETECT"]
+    },
+    "propel-series-510": {
+      "useCaseScores": {
+        "smoothies": 8,
+        "soups": 7,
+        "nut-butters": 7,
+        "frozen-desserts": 7,
+        "baby-food": 7,
+        "dips-sauces": 8,
+        "batters-doughs": 6,
+        "grinding": 6
+      },
+      "priceTier": "budget",
+      "householdFit": ["solo", "couple"],
+      "standoutFeatures": ["low-profile-container", "variable-speed"],
+      "notIdealFor": ["advanced cooking", "large batches"]
+    },
+    "5200-standard-getting-started": {
+      "useCaseScores": {
+        "smoothies": 9,
+        "soups": 9,
+        "nut-butters": 10,
+        "frozen-desserts": 8,
+        "baby-food": 8,
+        "dips-sauces": 9,
+        "batters-doughs": 9,
+        "grinding": 9
+      },
+      "priceTier": "mid",
+      "householdFit": ["solo", "couple", "family"],
+      "standoutFeatures": ["classic-design", "tall-container", "tamper"],
+      "notIdealFor": ["counter space limited", "wanting preset programs"]
+    }
+  }
+}

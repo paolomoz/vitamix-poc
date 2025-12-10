@@ -1,0 +1,95 @@
+{
+  "categories": {
+    "smoothies": {
+      "description": "Smoothies, smoothie bowls, and blended drinks",
+      "requiredFeatures": ["variable-speed", "pulse"],
+      "optionalFeatures": ["preset-programs"],
+      "recommendedProducts": ["ascent-x5", "ascent-x4", "ascent-x3", "e310"],
+      "keywords": ["smoothie", "shake", "blend", "frozen drink", "protein shake"]
+    },
+    "soups": {
+      "description": "Hot soups made from friction heat",
+      "requiredFeatures": ["variable-speed"],
+      "optionalFeatures": ["hot-soup-program", "preset-programs"],
+      "recommendedProducts": ["ascent-x5", "ascent-x4", "ascent-x3", "propel-series-750"],
+      "keywords": ["soup", "bisque", "chowder", "puree", "gazpacho"]
+    },
+    "nut-butters": {
+      "description": "Nut butters, seed butters, and spreads",
+      "requiredFeatures": ["variable-speed", "tamper"],
+      "optionalFeatures": [],
+      "recommendedProducts": ["ascent-x5", "ascent-x4", "5200-standard-getting-started"],
+      "keywords": ["nut butter", "peanut butter", "almond butter", "tahini", "spread"]
+    },
+    "frozen-desserts": {
+      "description": "Ice cream, sorbets, and frozen treats",
+      "requiredFeatures": ["variable-speed", "tamper"],
+      "optionalFeatures": ["preset-programs"],
+      "recommendedProducts": ["ascent-x5", "ascent-x4", "ascent-x3"],
+      "keywords": ["ice cream", "frozen yogurt", "sorbet", "nice cream", "freeze"]
+    },
+    "baby-food": {
+      "description": "Purees and baby food",
+      "requiredFeatures": ["variable-speed"],
+      "optionalFeatures": ["self-cleaning"],
+      "recommendedProducts": ["ascent-x4", "ascent-x3", "e310"],
+      "keywords": ["baby food", "puree", "infant", "toddler"]
+    },
+    "dips-sauces": {
+      "description": "Dips, sauces, and dressings",
+      "requiredFeatures": ["variable-speed", "pulse"],
+      "optionalFeatures": [],
+      "recommendedProducts": ["ascent-x5", "ascent-x4", "ascent-x3", "e310"],
+      "keywords": ["dip", "sauce", "dressing", "salsa", "hummus", "pesto", "aioli"]
+    },
+    "batters-doughs": {
+      "description": "Batters for pancakes, waffles, and bread doughs",
+      "requiredFeatures": ["variable-speed"],
+      "optionalFeatures": ["tamper"],
+      "recommendedProducts": ["ascent-x5", "5200-standard-getting-started", "ascent-x4"],
+      "keywords": ["batter", "pancake", "waffle", "bread", "dough", "muffin"]
+    },
+    "grinding": {
+      "description": "Grinding grains, flour, and spices",
+      "requiredFeatures": ["variable-speed"],
+      "optionalFeatures": [],
+      "recommendedProducts": ["5200-standard-getting-started", "ascent-x5", "ascent-x4"],
+      "keywords": ["flour", "grain", "grind", "spice", "coffee", "powder"]
+    },
+    "juices": {
+      "description": "Whole food juices and juice drinks",
+      "requiredFeatures": ["variable-speed"],
+      "optionalFeatures": [],
+      "recommendedProducts": ["ascent-x3", "ascent-x4", "e310"],
+      "keywords": ["juice", "juicing", "whole food juice"]
+    },
+    "cocktails": {
+      "description": "Frozen cocktails and mixed drinks",
+      "requiredFeatures": ["variable-speed", "pulse"],
+      "optionalFeatures": [],
+      "recommendedProducts": ["ascent-x4", "ascent-x3", "e310"],
+      "keywords": ["cocktail", "margarita", "daiquiri", "mojito", "frozen drink"]
+    }
+  },
+  "featureToProducts": {
+    "hot-soup-program": ["ascent-x3", "ascent-x4", "ascent-x5", "propel-series-750"],
+    "preset-programs": ["ascent-x3", "ascent-x4", "ascent-x5", "propel-series-750"],
+    "self-detect": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5"],
+    "touchscreen": ["ascent-x4", "ascent-x5"],
+    "wireless-connectivity": ["ascent-x5"],
+    "tamper": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "5200-standard-getting-started"],
+    "low-profile-container": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "propel-series-510", "propel-series-750"],
+    "variable-speed": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "5200-standard-getting-started", "e310", "propel-series-510", "propel-series-750"],
+    "pulse": ["ascent-x2", "ascent-x3", "ascent-x4", "ascent-x5", "5200-standard-getting-started", "e310", "propel-series-510", "propel-series-750"]
+  },
+  "difficultyToProducts": {
+    "easy": ["e310", "propel-series-510", "ascent-x2"],
+    "medium": ["ascent-x3", "propel-series-750"],
+    "advanced": ["ascent-x5", "ascent-x4", "5200-standard-getting-started"]
+  },
+  "servingSizeToProducts": {
+    "single": ["e310", "propel-series-510", "ascent-x2"],
+    "couple": ["ascent-x3", "e310", "propel-series-750"],
+    "family": ["ascent-x5", "ascent-x4", "5200-standard-getting-started", "propel-series-750"]
+  }
+}

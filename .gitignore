@@ -7,3 +7,9 @@ helix-importer-ui
 .DS_Store
 *.bak
 .idea
+.env
+
+.playwright-mcp/*
+tools/crawler/node_modules/*
+workers/embed-recipes/node_modules/*
+workers/vitamix-recommender/node_modules/*

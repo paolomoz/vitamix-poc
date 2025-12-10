@@ -1,0 +1,104 @@
+/* Follow-up Block Styles */
+
+.follow-up-container {
+  background: #f8f8f8;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.follow-up-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+.follow-up.block {
+  background: transparent;
+}
+
+.follow-up-header {
+  margin-bottom: 20px;
+}
+
+.follow-up-header h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.follow-up-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.follow-up-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #333;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.follow-up-chip:hover {
+  border-color: var(--vitamix-primary, #c00);
+  background: var(--vitamix-light, #fff5f5);
+  color: var(--vitamix-primary, #c00);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(204, 0, 0, 0.15);
+}
+
+.follow-up-chip:active {
+  transform: translateY(0);
+}
+
+.follow-up-chip:focus {
+  outline: 2px solid var(--vitamix-primary, #c00);
+  outline-offset: 2px;
+}
+
+/* Arrow icon on hover */
+.follow-up-chip::after {
+  content: '\2192';
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.2s ease;
+}
+
+.follow-up-chip:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .follow-up-wrapper {
+    padding: 32px 20px;
+  }
+
+  .follow-up-chips {
+    gap: 10px;
+  }
+
+  .follow-up-chip {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .follow-up-chip {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

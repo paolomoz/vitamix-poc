@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2025-12-09",
+  "source": "Discovered via web search of vitamix.com/us/en_us/shop/accessories/",
+  "description": "Comprehensive list of Vitamix accessory URLs for crawling",
+  "categories": ["containers", "tampers", "food-processor", "immersion-blender", "blades", "storage"],
+  "accessories": [
+    {
+      "category": "containers",
+      "urls": [
+        "https://www.vitamix.com/us/en_us/shop/accessories/48-ounce-stainless-steel-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/low-profile-64-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/48-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/classic-64-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/64-ounce-low-profile-container-with-self-detect",
+        "https://www.vitamix.com/us/en_us/shop/accessories/48-ounce-color-containers-with-self-detect",
+        "https://www.vitamix.com/us/en_us/shop/accessories/48-ounce-dry-grains-container-with-self-detect",
+        "https://www.vitamix.com/us/en_us/shop/accessories/32-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/24-ounce-tumbler",
+        "https://www.vitamix.com/us/en_us/shop/accessories/20-ounce-cup",
+        "https://www.vitamix.com/us/en_us/shop/accessories/8-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/aer-disc-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/blending-cup-starter-kit",
+        "https://www.vitamix.com/us/en_us/shop/accessories/personal-cup-adapter"
+      ]
+    },
+    {
+      "category": "tampers",
+      "urls": [
+        "https://www.vitamix.com/us/en_us/shop/accessories/classic-tamper",
+        "https://www.vitamix.com/us/en_us/shop/accessories/low-profile-tamper",
+        "https://www.vitamix.com/us/en_us/shop/accessories/mini-tamper",
+        "https://www.vitamix.com/us/en_us/shop/accessories/s2-low-profile-tamper",
+        "https://www.vitamix.com/us/en_us/shop/accessories/tamper-holder",
+        "https://www.vitamix.com/us/en_us/shop/accessories/tamper-holder-1",
+        "https://www.vitamix.com/us/en_us/shop/accessories/ascent-and-venturist-series-tamper-holder"
+      ]
+    },
+    {
+      "category": "food-processor",
+      "urls": [
+        "https://www.vitamix.com/us/en_us/shop/accessories/food-processor-attachment",
+        "https://www.vitamix.com/us/en_us/shop/accessories/food-processor-attachment-bundle",
+        "https://www.vitamix.com/us/en_us/shop/accessories/food-processor-blade-disc",
+        "https://www.vitamix.com/us/en_us/shop/accessories/food-processor-attachment-veggie-stick-disc",
+        "https://www.vitamix.com/us/en_us/shop/accessories/food-processor-attachment-julienne-disc",
+        "https://www.vitamix.com/us/en_us/shop/accessories/food-processor-attachment-stack-and-store-disc-case"
+      ]
+    },
+    {
+      "category": "immersion-blender",
+      "urls": [
+        "https://www.vitamix.com/us/en_us/shop/accessories/immersion-blender-mini-chopper",
+        "https://www.vitamix.com/us/en_us/shop/accessories/immersion-blending-jar",
+        "https://www.vitamix.com/us/en_us/shop/accessories/immersion-blender-accessories",
+        "https://www.vitamix.com/us/en_us/shop/accessories/immersion-station",
+        "https://www.vitamix.com/us/en_us/shop/accessories/immersion-blender-storage-case"
+      ]
+    },
+    {
+      "category": "blades-parts",
+      "urls": [
+        "https://www.vitamix.com/us/en_us/shop/accessories/blade-assembly-for-48-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/blade-assembly-for-64-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/under-blade-scraper"
+      ]
+    },
+    {
+      "category": "lids-accessories",
+      "urls": [
+        "https://www.vitamix.com/us/en_us/shop/accessories/2-part-lid-48-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/2-part-lid-64-ounce-container",
+        "https://www.vitamix.com/us/en_us/shop/accessories/lid-plug",
+        "https://www.vitamix.com/us/en_us/shop/accessories/filtration-bag",
+        "https://www.vitamix.com/us/en_us/shop/accessories/spatula"
+      ]
+    }
+  ]
+}

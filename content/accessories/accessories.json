@@ -1,0 +1,1702 @@
+{
+  "generatedAt": "2025-12-09T20:20:23.520Z",
+  "source": "https://www.vitamix.com/us/en_us/shop/accessories",
+  "count": 36,
+  "categories": [
+    "immersion-blender",
+    "container",
+    "accessory",
+    "food-processor",
+    "blade",
+    "lid",
+    "cookbook"
+  ],
+  "accessories": [
+    {
+      "id": "2-speed-immersion-blender-whisk-attachment",
+      "name": "2-Speed Immersion Blender + Whisk Attachment",
+      "type": "immersion-blender",
+      "url": "https://www.vitamix.com/us/en_us/products/2-speed-immersion-blender-whisk-attachment",
+      "price": 99.95,
+      "originalPrice": 129.95,
+      "availability": "in-stock",
+      "description": "This easy-to-assemble hand-held blender offers Vitamix performance, two-speed control, a protective bell guard to prevent scratches, and whisk attachment – all at an affordable price. It's covered by a two-year full warranty, so you'll be creating healthy, delicious dishes for years to come.",
+      "features": [
+        "350-watt durable motor",
+        "Two speeds with two-pronged blade",
+        "Unique bell guard reduces suction",
+        "Blends in containers with 3-inch wide opening",
+        "5-foot cord for convenience",
+        "Includes whisk attachment"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "17.75\" H x 3.25\" D x 2.5\" W",
+        "weight": "2.84 lbs",
+        "material": null,
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "2-Speed Immersion Blender"
+        ],
+        "machines": [],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "2-Speed Immersion Blender",
+        "Whisk Attachment"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_de3fe86a52702531f9537952b5ca0ae841fd42a6.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_de3fe86a52702531f9537952b5ca0ae841fd42a6.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:14:33.858Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/2-speed-immersion-blender-whisk-attachment"
+    },
+    {
+      "id": "20-ounce-travel-cup",
+      "name": "20-ounce Travel Cup",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/20-ounce-travel-cup",
+      "price": 29.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Blend and go with the Vitamix 20-ounce Travel Cup. This BPA-free cup is compatible with all S-Series Vitamix blenders.",
+      "features": [
+        "Flip-top lid",
+        "Spill-proof seal",
+        "Dishwasher safe",
+        "Double-wall insulated",
+        "Leak-proof seal"
+      ],
+      "specs": {
+        "capacity": "20 oz",
+        "dimensions": "8 in high",
+        "weight": "1.75 lbs",
+        "material": "Eastman Tritan Copolyester",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "S-Series"
+        ],
+        "machines": [
+          "S-Series blenders"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "20-ounce Cup"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_9743020547b56e00f4ea3e8cd8ca7acdf3679ab0.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_9743020547b56e00f4ea3e8cd8ca7acdf3679ab0.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:14:42.355Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/20-ounce-travel-cup"
+    },
+    {
+      "id": "24-ounce-tumbler",
+      "name": "24-ounce Tumbler",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/24-ounce-tumbler",
+      "price": 29.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Keep beverages cold with these stylish stainless-steel tumblers. Double-wall insulated mug comes with a lid and straw. Add ice and keep beverages cold for up to 18 hours.",
+      "features": [
+        "Double-wall insulated",
+        "Keeps beverages cold for up to 18 hours",
+        "Spill-proof lid and straw",
+        "High quality stainless steel"
+      ],
+      "specs": {
+        "capacity": "24 oz",
+        "dimensions": "9\" x 2.5\" (bottom) x 4\" (top) x 12\"",
+        "weight": "1.01 lbs",
+        "material": "Stainless Steel",
+        "dishwasherSafe": null,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "S-Series"
+        ],
+        "machines": [],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "1 Cup with Lid and Straw"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_0a11bf5cfadb004377b7a8e9fde1e76d5b94d329.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_0a11bf5cfadb004377b7a8e9fde1e76d5b94d329.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:14:49.829Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/24-ounce-tumbler"
+    },
+    {
+      "id": "32-ounce-container",
+      "name": "32-ounce Container",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/32-ounce-container",
+      "price": 149.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The 32-ounce container is lightweight, durable, and perfect for processing small quantities of smoothies, soups, and frozen desserts",
+      "features": [
+        "Designed to process small batches",
+        "Fits easily under most kitchen cabinets",
+        "Blades create simultaneous slicing and pulverizing action",
+        "Spill-proof spout",
+        "Vented lid and lid plug",
+        "Leak prevention design"
+      ],
+      "specs": {
+        "capacity": "32 oz",
+        "dimensions": "9.8 in. high",
+        "weight": "1 lb 15 oz",
+        "material": "BPA-free Eastman Tritan Copolyester",
+        "dishwasherSafe": false,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Classic C-Series",
+          "Classic G-Series"
+        ],
+        "machines": [
+          "Full-size Classic C-Series blenders",
+          "Full-size Classic G-Series blenders"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "32-ounce Container"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_102be4497acb39df5e519542a905afd524c54649.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_102be4497acb39df5e519542a905afd524c54649.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:14:59.056Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/32-ounce-container"
+    },
+    {
+      "id": "32-ounce-dry-grains-container",
+      "name": "32-ounce Dry Grains Container",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/32-ounce-dry-grains-container",
+      "price": 149.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The 32-ounce Dry Grains container grinds whole grains into fresh flours, mixes batter, and even simulates the kneading process to prepare dough for baking",
+      "features": [
+        "Specially designed blades for grinding whole grains",
+        "Reverse vortex blade design prevents ingredient packing",
+        "Clearly marked measurements on container and lid",
+        "Spill-proof spout",
+        "Easy self-cleaning"
+      ],
+      "specs": {
+        "capacity": "32 oz",
+        "dimensions": "9.8 in. high",
+        "weight": "1 lb 15 oz",
+        "material": "BPA-free Eastman Tritan Copolyester",
+        "dishwasherSafe": false,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Legacy",
+          "Explorian"
+        ],
+        "machines": [
+          "All full-size Classic C- or G-Series Vitamix blenders"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "32-ounce Dry Grains Container",
+        "Whole Grains Cookbook"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_31d4163caf96a9fdeb6632386f168d485ef54d7b.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_31d4163caf96a9fdeb6632386f168d485ef54d7b.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:15:09.252Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/32-ounce-dry-grains-container"
+    },
+    {
+      "id": "4-piece-deluxe-immersion-blender-bundle",
+      "name": "5-Speed Immersion Blender 4-Piece Deluxe Bundle",
+      "type": "immersion-blender",
+      "url": "https://www.vitamix.com/us/en_us/products/4-piece-deluxe-immersion-blender-bundle",
+      "price": 259.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The Immersion Blender delivers performance you can trust. Create ideal textures from whole-food ingredients like greens and frozen fruit, and enjoy the convenience of blending in your favorite container.",
+      "features": [
+        "625-watt powerful motor",
+        "One-handed operation",
+        "5 speeds with 4-pronged blade",
+        "Unique bell guard reduces suction",
+        "Blend in any container with 3-inch wide opening",
+        "5-foot cord",
+        "Versatile attachments"
+      ],
+      "specs": {
+        "capacity": "Chopper - 3 cups, Blending Jar - 4 cups",
+        "dimensions": "18.00\" x 3.00\" x 3.00\"",
+        "weight": "2.86 lbs",
+        "material": "Stainless Steel blades",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Immersion"
+        ],
+        "machines": [],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "Immersion Blender",
+        "Whisk Attachment",
+        "Mini-Chopper Attachment",
+        "Blending Jar with Lid"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b27b5053db30b0a92509da5cabea8c99ee9de661.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b27b5053db30b0a92509da5cabea8c99ee9de661.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:15:21.883Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/4-piece-deluxe-immersion-blender-bundle"
+    },
+    {
+      "id": "48-ounce-color-containers-with-self-detect",
+      "name": "48-ounce Color Container with SELF-DETECT®",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/48-ounce-color-containers-with-self-detect",
+      "price": 99.95,
+      "originalPrice": 169.95,
+      "availability": "in-stock",
+      "description": "The Vitamix Color Container is perfect for color-coded uses, like allergen-sensitive cooking and non-food blending. Feel confident avoiding cross-contamination in the kitchen, blending non-food recipes like pet food or body scrubs, or simply making your kitchen a more beautiful place to be.",
+      "features": [
+        "Self-Detect® Technology",
+        "BPA-Free",
+        "Easy to Clean",
+        "Long-Lasting Blades",
+        "Specially Designed Tamper",
+        "See-Through Lid and Lid Plug",
+        "Medium Batches"
+      ],
+      "specs": {
+        "capacity": "48 oz",
+        "dimensions": "6.5 x 8 x 10 inches",
+        "weight": "2.5 lbs",
+        "material": "Eastman Tritan",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist",
+          "Propel",
+          "Legacy"
+        ],
+        "machines": [],
+        "selfDetect": true
+      },
+      "includedItems": [
+        "48-ounce Container with SELF-DETECT™",
+        "S2 Low-Profile Tamper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b7f0f9d6fb177386155cab84993d23af2dbc274e.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b7f0f9d6fb177386155cab84993d23af2dbc274e.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:15:33.903Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/48-ounce-color-containers-with-self-detect"
+    },
+    {
+      "id": "48-ounce-container",
+      "name": "48-ounce Container",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/48-ounce-container",
+      "price": 159.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The 48-ounce container strikes a perfect balance between processing adequate quantities and fitting easily under most kitchen cabinets",
+      "features": [
+        "Designed to process medium batches with a lightweight design",
+        "Uniquely controlled vortex for faster, smoother blends",
+        "Vented lid and lid plug for hot serving temperatures",
+        "Ideal for blending medium batches for small family meals",
+        "Leak prevention design"
+      ],
+      "specs": {
+        "capacity": "48 oz",
+        "dimensions": "10.25 in",
+        "weight": "2 lbs 10 oz",
+        "material": "BPA-free Eastman Tritan Copolyester",
+        "dishwasherSafe": false,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Classic C-Series",
+          "Classic G-Series"
+        ],
+        "machines": [
+          "Full-size Classic C-Series blenders",
+          "Full-size Classic G-Series blenders"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "48-ounce Container",
+        "Mini Tamper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_487273b081e6ebb40ce8f284fbe6bf023e3672f5.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_487273b081e6ebb40ce8f284fbe6bf023e3672f5.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:15:44.681Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/48-ounce-container"
+    },
+    {
+      "id": "48-ounce-container-with-self-detect",
+      "name": "48-ounce Container with SELF-DETECT®",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/48-ounce-container-with-self-detect",
+      "price": 169.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "This container is designed to make small to medium batches of your favorite smoothies, soups, frozen desserts, and more—helping to avoid food waste. Its petite size fits easily below overhead cabinets, and clean-up is a breeze since it's both self-cleaning and dishwasher-safe.",
+      "features": [
+        "Self-Detect® Technology",
+        "BPA-Free Tritan",
+        "Dishwasher Safe",
+        "Laser-cut Stainless Steel Blades",
+        "Included Tamper",
+        "See-Through Lid with Measuring Plug"
+      ],
+      "specs": {
+        "capacity": "48 oz",
+        "dimensions": "6.5 x 8 x 10 inches",
+        "weight": "2.62 lbs",
+        "material": "BPA-free Eastman Tritan Copolyester",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Ascent"
+        ],
+        "machines": [
+          "All full-size Vitamix blenders"
+        ],
+        "selfDetect": true
+      },
+      "includedItems": [
+        "48-ounce Container with SELF-DETECT™",
+        "S2 Low-Profile Tamper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_3863847a7597a91233141c4fbce9b0103c5f1c27.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_3863847a7597a91233141c4fbce9b0103c5f1c27.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:15:55.231Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/48-ounce-container-with-self-detect"
+    },
+    {
+      "id": "48-ounce-dry-grains-container-with-self-detect",
+      "name": "48-ounce Dry Grains Container with SELF-DETECT®",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/48-ounce-dry-grains-container-with-self-detect",
+      "price": 169.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "This container is specially designed to efficiently grind fresh, whole-grain and gluten-free flour, mix batter, and knead thick yeast dough for pizza, soft pretzels, and homemade bread.",
+      "features": [
+        "SELF-DETECT® Technology",
+        "BPA-Free",
+        "Dishwasher Safe",
+        "Laser-cut stainless steel blades",
+        "Includes specialized tamper",
+        "Clear lid with leak-proof seal",
+        "Reverse vortex blade design"
+      ],
+      "specs": {
+        "capacity": "48 oz",
+        "dimensions": "6.5 x 8 x 10 inches",
+        "weight": "2 lbs 10 oz",
+        "material": "Eastman Tritan Copolyester",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist"
+        ],
+        "machines": [
+          "All full-size Vitamix blenders"
+        ],
+        "selfDetect": true
+      },
+      "includedItems": [
+        "48-ounce Dry Grains Container with SELF-DETECT®",
+        "S2 Low-Profile Tamper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_8c9cb125a7d7973a4d04127a7e2ed444514f8e20.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_8c9cb125a7d7973a4d04127a7e2ed444514f8e20.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:16:06.373Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/48-ounce-dry-grains-container-with-self-detect"
+    },
+    {
+      "id": "48-ounce-stainless-steel-container",
+      "name": "48-ounce Stainless Steel Container",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/48-ounce-stainless-steel-container",
+      "price": 249.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Stainless steel cookware is a staple in both home and professional kitchens, and for good reason. It's incredibly durable, versatile, and easy to clean – all qualities Vitamix® owners value in a blending container. And, since it comes with a clear, BPA-free lid, you can monitor and adjust blends without stopping the machine.",
+      "features": [
+        "Durable cookware material preferred by professionals",
+        "Non-reactive for hot, cold, and acidic blends",
+        "Easy to clean",
+        "Odor and stain resistant",
+        "No-drip spout",
+        "Clear lid for monitoring blends",
+        "Ergonomic handle",
+        "Hardened stainless-steel blades"
+      ],
+      "specs": {
+        "capacity": "48 oz",
+        "dimensions": "6.5 x 8 x 10 inches",
+        "weight": "3.75 lbs",
+        "material": "Stainless Steel container, Tritan lid",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [],
+        "machines": [
+          "All full-size Vitamix blenders"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "48oz Stainless Steel Container",
+        "BPA-free Tritan Lid",
+        "Low-Profile Tamper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_12030103bdef9040531949152fb1c29cf9792e42.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_12030103bdef9040531949152fb1c29cf9792e42.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:16:17.621Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/48-ounce-stainless-steel-container"
+    },
+    {
+      "id": "5-speed-immersion-blender",
+      "name": "5-Speed Immersion Blender",
+      "type": "immersion-blender",
+      "url": "https://www.vitamix.com/us/en_us/products/5-speed-immersion-blender",
+      "price": 144.95,
+      "originalPrice": 169.95,
+      "availability": "in-stock",
+      "description": "The Immersion Blender delivers performance you can trust. Create ideal textures from whole-food ingredients like greens and frozen fruit, and enjoy the convenience of blending in your favorite container.",
+      "features": [
+        "625-watt powerful motor",
+        "One-handed operation",
+        "5 speeds and 4-pronged blade",
+        "Unique bell guard reduces suction",
+        "Blend in any container with 3-inch wide opening",
+        "5-foot cord for convenience"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "18 x 3 x 3 in.",
+        "weight": "2.86 lbs",
+        "material": "Motor housing: stainless wrap over plastic; Wand: stainless with plastic coating",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Immersion"
+        ],
+        "machines": [],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "Immersion Wand",
+        "4-Pronged Blade Base"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_85d367e8e45cd2a0d90425c1aabca84cdc3dcb88.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_85d367e8e45cd2a0d90425c1aabca84cdc3dcb88.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:16:29.980Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/5-speed-immersion-blender"
+    },
+    {
+      "id": "5-speed-immersion-blender-3-piece-bundle",
+      "name": "5-Speed Immersion Blender 3-Piece Bundle",
+      "type": "immersion-blender",
+      "url": "https://www.vitamix.com/us/en_us/products/5-speed-immersion-blender-3-piece-bundle",
+      "price": 164.95,
+      "originalPrice": 189.95,
+      "availability": "in-stock",
+      "description": "Create ideal textures from whole-food ingredients and enjoy the convenience of blending in your favorite container with the 5-speed Immersion Blender 3-Piece Bundle.",
+      "features": [
+        "Powerful 625-watt motor",
+        "One-handed operation",
+        "5 speeds with 4-pronged blade",
+        "Unique bell guard reduces suction",
+        "Blend in any container with 3-inch wide opening",
+        "5-foot cord",
+        "Versatile attachments"
+      ],
+      "specs": {
+        "capacity": "4 cups (0.95 l)",
+        "dimensions": {
+          "immersionBlender": "18.00\" x 3.00\" x 3.00\"",
+          "blendingJar": "7.125\" x 4.37\"",
+          "whiskAttachment": "2.46\" x 2.46\" x 9.56\""
+        },
+        "weight": {
+          "immersionBlender": "2.86 lbs (1.29 kg)",
+          "blendingJar": "8 oz (.36 kg)",
+          "whiskAttachment": "0.3 lbs (.13 kg)"
+        },
+        "material": "Stainless Steel Blade",
+        "dishwasherSafe": true,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Immersion Blenders"
+        ],
+        "machines": [
+          "Immersion Blender Accessories"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "5-Speed Immersion Blender",
+        "Whisk Attachment",
+        "Blending Jar with Lid"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b90cbc4bc0709e74c4189f4bd14f4a22691b63f3.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b90cbc4bc0709e74c4189f4bd14f4a22691b63f3.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:16:44.207Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/5-speed-immersion-blender-3-piece-bundle"
+    },
+    {
+      "id": "64-ounce-low-profile-container-with-self-detect",
+      "name": "64-ounce Low-Profile Container with SELF-DETECT®",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/64-ounce-low-profile-container-with-self-detect",
+      "price": 179.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Newly designed Low Profile 64 oz container fits easily under the most kitchen cabinet while proccess larger batches of meal for your family",
+      "features": [
+        "Ideal for Large Batches (2-5 servings)",
+        "SELF-DETECT® Technology",
+        "BPA-Free Tritan Material",
+        "Dishwasher Safe",
+        "Laser-cut Stainless Steel Blades",
+        "Includes Tamper",
+        "Clear Lid with Lid Plug",
+        "Built-in Measurements"
+      ],
+      "specs": {
+        "capacity": "64 oz",
+        "dimensions": "10.2 x 9.6 x 7.4 inches",
+        "weight": "2 lbs 12 oz",
+        "material": "BPA-free Eastman Tritan",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Classic G-Series"
+        ],
+        "machines": [
+          "Smart System",
+          "Full-size blenders"
+        ],
+        "selfDetect": true
+      },
+      "includedItems": [
+        "64-ounce Low-Profile Container",
+        "S2 Low-Profile Tamper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_0caae6fb60f581202e8964cea36b5e2bf208cddd.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_0caae6fb60f581202e8964cea36b5e2bf208cddd.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:16:55.662Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/64-ounce-low-profile-container-with-self-detect"
+    },
+    {
+      "id": "8-piece-straw-set",
+      "name": "8 Piece Straw Set",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/8-piece-straw-set",
+      "price": 9.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "You'll never miss a sip with these silicone-tipped, stainless-steel smoothie straws. The pack of six is perfect for the whole family, plus the two cleaning brushes, making reusing a breeze. Always BPA-free and dishwasher safe, these straws are a sustainable way to enjoy smoothies and juices.",
+      "features": [
+        "Silicone-tipped straws",
+        "Stainless-steel construction",
+        "BPA-free",
+        "Dishwasher safe",
+        "Comes with cleaning brushes"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "8.66\" x 0.39\" x 0.39\" / 9.05\" x 0.47\" x 0.47\"",
+        "weight": "0.4 lbs",
+        "material": "Food Grade Stainless Steel (18/8), Food Grade Silicone, Nylon bristles",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [],
+        "machines": [],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "8 piece straw set with 2 cleaner straws on a blister card"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_9ac15c7ffc80b68f39f1eb79770116aa732a1b0c.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_9ac15c7ffc80b68f39f1eb79770116aa732a1b0c.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:17:04.346Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/8-piece-straw-set"
+    },
+    {
+      "id": "classic-64-ounce-container",
+      "name": "Classic 64-ounce Container",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/classic-64-ounce-container",
+      "price": 179.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Designed to efficiently rotate large quantities back to the blade, the 64-ounce container is the ideal size for family meals and entertaining.",
+      "features": [
+        "Tidy Blends with uniquely controlled vortex",
+        "Measurements on Container + Lid",
+        "Vented lid for hot serving temperatures",
+        "Large batch capability"
+      ],
+      "specs": {
+        "capacity": "64 oz",
+        "dimensions": "7.5 x 9 x 13 inches",
+        "weight": "3.37 lbs",
+        "material": "BPA-free Eastman Tritan Copolyester",
+        "dishwasherSafe": null,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Classic"
+        ],
+        "machines": [
+          "C-Series blenders"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "64-ounce Classic Container",
+        "Classic Tamper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_9e545567401e3495ee3c4a1fa2311d77f3fa0854.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_9e545567401e3495ee3c4a1fa2311d77f3fa0854.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:17:14.791Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/classic-64-ounce-container"
+    },
+    {
+      "id": "cutting-board-4-piece-set",
+      "name": "Cutting Board 4-Piece Set",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/cutting-board-4-piece-set",
+      "price": 14.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "These versatile cutting boards let you slice, dice and chop food, then funnel it right into your Vitamix machine, bowl or pan. With one smooth operation and fewer accessories to clean, food preperation is quicker and easier than ever. This set of four dishwasher-safe plastic boards is coded for food type to help prevent cross-contamination. Perfect for slicing, dicing, and more, they are designed to withstand years of normal household use.",
+      "features": [
+        "Versatile cutting boards",
+        "Funnels food into Vitamix machine, bowl or pan",
+        "Fewer accessories to clean",
+        "Coded for food type to prevent cross-contamination",
+        "Dishwasher-safe",
+        "Designed for years of household use"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "12\" x 18\"",
+        "weight": null,
+        "material": "Plastic",
+        "dishwasherSafe": true,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [],
+        "machines": [
+          "All Vitamix products"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "Cutting Board 4-Piece Set"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_bcd445517d7a35b201aeefe3cb8d897ef06a9499.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_bcd445517d7a35b201aeefe3cb8d897ef06a9499.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:17:24.339Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/cutting-board-4-piece-set"
+    },
+    {
+      "id": "food-processor-attachment",
+      "name": "12-Cup Food Processor Attachment with SELF-DETECT®",
+      "type": "food-processor",
+      "url": "https://www.vitamix.com/us/en_us/products/food-processor-attachment",
+      "price": 279.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Combine the power of your Vitamix motor base with the precision of a large-capacity, full-feature food processor. Go beyond blending and discover how easy food prep can be.",
+      "features": [
+        "Multi-Use Blade for chopping, mincing, kneading, and mixing",
+        "Reversible Small and Large Shred/Slice Discs",
+        "SELF-DETECT® Wireless Safety System",
+        "Stack, Snap, and Go design",
+        "Convenient compact storage"
+      ],
+      "specs": {
+        "capacity": "12 cups",
+        "dimensions": "11.75 x 8.5 x 12.75 inches",
+        "weight": "6.17 lbs",
+        "material": "Tritan work bowl and lid, ABS & Polycarbonate blend base",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist"
+        ],
+        "machines": [],
+        "selfDetect": true
+      },
+      "includedItems": [
+        "SELF-DETECT® Base",
+        "Work Bowl Lid",
+        "2 Reversible Slice/Shred Discs",
+        "Disc Storage Case",
+        "12-Cup Work Bowl",
+        "2 Food Pushers",
+        "1 Multi-Use Blade"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_f35035c2befda809409dcb4ab962c32162dcfc83.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_f35035c2befda809409dcb4ab962c32162dcfc83.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:17:35.272Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/food-processor-attachment"
+    },
+    {
+      "id": "food-processor-attachment-bundle",
+      "name": "12-Cup Food Processor Attachment with SELF-DETECT® Bundle",
+      "type": "food-processor",
+      "url": "https://www.vitamix.com/us/en_us/products/food-processor-attachment-bundle",
+      "price": 349.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Combine the power of your Vitamix motor base with the precision of a large-capacity, full-feature food processor, plus enjoy the added versatility from three bonus cutting discs.",
+      "features": [
+        "Multi-Use Blade",
+        "SELF-DETECT® Wireless Safety System",
+        "Stack, Snap, and Go",
+        "Convenient Storage",
+        "BPA Free & Dishwasher Safe"
+      ],
+      "specs": {
+        "capacity": "12 cups",
+        "dimensions": "18.125in x 14.125in x 15.875in",
+        "weight": "8.2 lbs",
+        "material": "Tritan work bowl and lid, ABS & Polycarbonate blend base",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist"
+        ],
+        "machines": [],
+        "selfDetect": true
+      },
+      "includedItems": [
+        "Food Processor Attachment Base",
+        "Reversible Thin Slice/ Fine Shred Slice",
+        "Julienne Disc",
+        "Veggie Stick Disc",
+        "Reversible Small Shred/ Thin Slice Disc",
+        "Reversible Large Shred/ Thick Slice Disc",
+        "Modular Storage Disc",
+        "Work Bowl Lid",
+        "2 Food Pushers",
+        "12-Cup Work Bowl",
+        "1 Multi-Use Blade",
+        "Stack and Store Extender"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_ee01eec0744081ea758bc3d92a34a813a6fbf2bb.jpeg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_ee01eec0744081ea758bc3d92a34a813a6fbf2bb.jpeg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:17:46.934Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/food-processor-attachment-bundle"
+    },
+    {
+      "id": "food-processor-attachment-julienne-disc",
+      "name": "Food Processor Attachment Julienne Disc",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/food-processor-attachment-julienne-disc",
+      "price": 39.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Let the Food Processor Attachment handle this tedious food-prep staple. The large food chute allows you to insert ingredients oriented horizontally, so you can get long, thin julienne cuts from carrots, zucchini, beets, and more. Get precise, matchstick cuts faster, easier, and safer – no knife skills needed.",
+      "features": [
+        "Large food chute",
+        "Horizontal ingredient orientation",
+        "Precise matchstick cuts",
+        "No knife skills needed"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "6.85 x 6.85 x 1.47 inches",
+        "weight": "0.5 lbs",
+        "material": "Stainless Steel",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist",
+          "Classic"
+        ],
+        "machines": [
+          "Food Processor Attachment"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Julienne Disc"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_3d65520bc0a50a70920dd59cc571cffbfa27a21c.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_3d65520bc0a50a70920dd59cc571cffbfa27a21c.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:17:55.513Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/food-processor-attachment-julienne-disc"
+    },
+    {
+      "id": "food-processor-attachment-stack-and-store-disc-case",
+      "name": "Food Processor Attachment Stack and Store Extender",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/food-processor-attachment-stack-and-store-disc-case",
+      "price": 34.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Organize your collection of Food Processor Attachment discs with the Stack and Store Extender. It's a compact storage solution that increases the capacity of the standard storage case and allows you to store up to 3 additional discs.",
+      "features": [
+        "Compact storage solution",
+        "Increases capacity of standard storage case",
+        "Stores up to 3 additional discs"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "8.44 x 7.9 x 6.38 inches",
+        "weight": "1 lbs",
+        "material": "Tritan",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Ascent"
+        ],
+        "machines": [
+          "Food Processor Attachment"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Stack and Store Extender"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_fe660c1adf0596dacbb9911cd392828ddd388fb1.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_fe660c1adf0596dacbb9911cd392828ddd388fb1.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:18:03.478Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/food-processor-attachment-stack-and-store-disc-case"
+    },
+    {
+      "id": "food-processor-attachment-veggie-stick-disc",
+      "name": "Food Processor Attachment Veggie Stick Disc",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/food-processor-attachment-veggie-stick-disc",
+      "price": 39.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Homemade fries have never been easier. This disc slices perfectly shaped veggie sticks in seconds. Plus, when you make them at home, you can try healthier preparation methods; try making your own baked French fries out of potatoes, sweet potatoes, or other root veggies. They're sure to become a family favorite.",
+      "features": [
+        "Slices perfectly shaped veggie sticks",
+        "Ideal for making baked fries from various root vegetables"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "6.85 x 6.85 x 1.34 inches",
+        "weight": "0.5 lbs",
+        "material": "Stainless Steel",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist",
+          "Classic"
+        ],
+        "machines": [
+          "Food Processor Attachment"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Veggie Stick Disc"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_933359169cf854bfc24a4478ea1132a798f8eb4d.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_933359169cf854bfc24a4478ea1132a798f8eb4d.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:18:12.365Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/food-processor-attachment-veggie-stick-disc"
+    },
+    {
+      "id": "food-processor-blade-disc",
+      "name": "Food Processor Attachment Reversible Fine Shred and Ultra-Thin Slice Disc",
+      "type": "blade",
+      "url": "https://www.vitamix.com/us/en_us/products/food-processor-blade-disc",
+      "price": 29.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Take your Food Processor Attachment precision to the next level. This reversible disc will slice and shred ingredients finer and thinner than the standard discs included with the product. It's perfect for shredded salad toppings, thin-sliced veggie chips, pizza toppings, and much more.",
+      "features": [
+        "Reversible disc for fine shredding and ultra-thin slicing",
+        "Precision slicing and shredding"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "6.85 x 6.85 x 1.34 inches",
+        "weight": "0.5 lbs",
+        "material": "Stainless Steel",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist",
+          "Classic"
+        ],
+        "machines": [
+          "Food Processor Attachment"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Fine Shred & Ultra-Thin Slice Disc"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_9b24cdcaf66da73a9086070d09727a2688dd9c21.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_9b24cdcaf66da73a9086070d09727a2688dd9c21.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:18:22.375Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/food-processor-blade-disc"
+    },
+    {
+      "id": "food-processor-flat-lid",
+      "name": "Food Processor Attachment Compact Lid",
+      "type": "lid",
+      "url": "https://www.vitamix.com/us/en_us/products/food-processor-flat-lid",
+      "price": 34.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "This streamlined lid makes the Food Processor attachment more compact and easier to fit into and under cabinets. It works just like the standard lid, but doesn't have a chute or food pushers. If you're primarily using the multi-use blade, this is a great way to reduce the number of pieces you have to keep track of and clean. This lid also turns the work bowl into a storage container, which can then fit easily into the refrigerator.",
+      "features": [
+        "Compact design",
+        "Easy storage",
+        "Works with multi-use blade",
+        "Can be used as storage container"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "8.26 x 8.35 x 2.05 inches",
+        "weight": "0.06 lbs",
+        "material": "Tritan and TPR (Plug)",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist",
+          "Classic"
+        ],
+        "machines": [
+          "Food Processor Attachment"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Flat Lid"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_06e34fb55cac37d886db8ffc2b9b0b455e23baed.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_06e34fb55cac37d886db8ffc2b9b0b455e23baed.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:18:30.672Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/food-processor-flat-lid"
+    },
+    {
+      "id": "foodcycler-fc-50",
+      "name": "Vitamix® FoodCycler® FC-50™",
+      "type": "food-processor",
+      "url": "https://www.vitamix.com/us/en_us/products/foodcycler-fc-50",
+      "price": 269.95,
+      "originalPrice": 399.95,
+      "availability": "in-stock",
+      "description": "The FoodCycler FC-50 is a compact food waste recycler that reduces food waste by up to 90% and eliminates odors, making it ideal for indoor use.",
+      "features": [
+        "Compact food waste recycler",
+        "Reduces food waste to a fraction of original volume",
+        "Carbon filter lid reduces odors",
+        "Quiet cycles",
+        "Easy to use"
+      ],
+      "specs": {
+        "capacity": "2.5 litres",
+        "dimensions": "12.6 x 11 x 14.2 inches",
+        "weight": null,
+        "material": "ABS Plastic Shell, Aluminum Bucket",
+        "dishwasherSafe": true,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "FoodCycler"
+        ],
+        "machines": [],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "FoodCycler® FC-50",
+        "Carbon Filters",
+        "Removable Waste Bucket with Carbon Filter Lid"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_df3a1bc0af5fbd12e370e2849aed85c1ca0cf976.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_df3a1bc0af5fbd12e370e2849aed85c1ca0cf976.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:18:40.150Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/foodcycler-fc-50"
+    },
+    {
+      "id": "immersion-blender-storage-case",
+      "name": "Immersion Blender Storage Case",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/immersion-blender-storage-case",
+      "price": 39.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Cut down on kitchen clutter with the Immersion Blender Storage Case. This soft-sided travel case to keeps your Immersion Blender neatly organized in your kitchen cabinet, so it's always easy to find. Or, if you're planning on cooking away from home, the Storage Case makes it easy to take your Immersion Blender with you.",
+      "features": [
+        "Soft-sided travel case",
+        "Keeps Immersion Blender organized",
+        "Easy to transport"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "10.43 x 7.56 x 3.35 inches",
+        "weight": "0.5 lbs",
+        "material": "Nylon",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Immersion Blender"
+        ],
+        "machines": [
+          "5-Speed Immersion Blender"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "1 Storage Case"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_9a2823da2483eff122f00627b689345011a98e76.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_9a2823da2483eff122f00627b689345011a98e76.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:18:57.632Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/immersion-blender-storage-case"
+    },
+    {
+      "id": "immersion-blender-whisk",
+      "name": "Immersion Blender Whisk",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/immersion-blender-whisk",
+      "price": 19.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Give your forearm a break and take your Vitamix Immersion Blender for a spin. This attachment turns your Immersion blender in a powerful whisk, allowing you to whip aquafaba, batters, meringues, eggs, cream, and more in minutes.",
+      "features": [
+        "Turns Immersion Blender into a powerful whisk",
+        "Works for small to large batches",
+        "Quickly whips meringue and cream"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "2.46 x 2.46 x 9.56 inches",
+        "weight": "0.3 lbs",
+        "material": "ABS and Stainless Steel",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Immersion Blender"
+        ],
+        "machines": [],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Whisk"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b90cbc4bc0709e74c4189f4bd14f4a22691b63f3.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b90cbc4bc0709e74c4189f4bd14f4a22691b63f3.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:19:06.242Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/immersion-blender-whisk"
+    },
+    {
+      "id": "immersion-blending-jar",
+      "name": "Immersion Blending Jar",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/immersion-blending-jar",
+      "price": 19.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The Immersion Blending Jar design was inspired the standard Vitamix container. The unique shape efficiently moves ingredients through the blades, for a consistent, high-quality blend quality every time. It's easy to blend right in the 32-ounce jar, then take it on the go, or store in the fridge for later. Plus, the mouth of the jar is compatible with standard, wide-mouth canning jar lids.",
+      "features": [
+        "Inspired by standard Vitamix container design",
+        "Efficient ingredient movement through blades",
+        "Compatible with standard wide-mouth canning jar lids"
+      ],
+      "specs": {
+        "capacity": "32 oz",
+        "dimensions": "7.125 x 4.37 inches",
+        "weight": "8 oz",
+        "material": "Tritan",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [],
+        "machines": [],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Jar",
+        "1 Lid"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_33303969a55ce2fd26c3cbc886e3b1b9b8f13fcd.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_33303969a55ce2fd26c3cbc886e3b1b9b8f13fcd.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:19:14.501Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/immersion-blending-jar"
+    },
+    {
+      "id": "immersion-station",
+      "name": "Immersion Station®",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/immersion-station",
+      "price": 29.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Keep your Immersion Blender and accessories organized, secure, and close at hand. The Immersion Station is a simple, convenient countertop display that keeps the Immersion blender in one place. Perfect for frequent users of the Immersion Blender, or for kitchens with limited cabinet space.",
+      "features": [
+        "Organizes Immersion Blender and accessories",
+        "Convenient countertop display",
+        "Suitable for kitchens with limited cabinet space"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "6.5 x 9.75 x 2.0 inches",
+        "weight": "1 lb",
+        "material": "Tritan",
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Immersion Blender"
+        ],
+        "machines": [],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Organizer"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_39e2a3940982f9da7c8098694b311b5c460a0650.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_39e2a3940982f9da7c8098694b311b5c460a0650.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:19:23.032Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/immersion-station"
+    },
+    {
+      "id": "low-profile-64-ounce-container",
+      "name": "Low-Profile 64-ounce Container",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/low-profile-64-ounce-container",
+      "price": 179.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Designed to process large batches with a lightweight design that fits easily under most kitchen cabinets.",
+      "features": [
+        "Measurements on Container + Lid",
+        "Soft-Grip Handle",
+        "Hot Soup capability",
+        "Laser-cut stainless-steel hammermill and cutting blades"
+      ],
+      "specs": {
+        "capacity": "64 oz",
+        "dimensions": "10.1 in high",
+        "weight": "2 lbs 10 oz",
+        "material": "BPA-free Eastman Tritan Copolyester",
+        "dishwasherSafe": false,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Classic G-Series"
+        ],
+        "machines": [
+          "Vitamix 5300",
+          "Vitamix 6500"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "Low-Profile 64-ounce Container",
+        "Low-Profile Tamper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_3fae26664c13f79f781614ff2f876043d68f44cd.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_3fae26664c13f79f781614ff2f876043d68f44cd.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:19:32.467Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/low-profile-64-ounce-container"
+    },
+    {
+      "id": "personal-cup-adapter",
+      "name": "Personal Cup Adapter",
+      "type": "container",
+      "url": "https://www.vitamix.com/us/en_us/products/personal-cup-adapter",
+      "price": 149.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Add the convenience of a personal blender to your full-size Vitamix® machine. The individual portion size of the 20-ounce cup lets you blend just the right amount and avoid food waste.",
+      "features": [
+        "Laser-Cut Stainless Steel Blades",
+        "Top-Rack Dishwasher-Safe",
+        "Leak-Proof Seal",
+        "Dual-Purpose 20-ounce Blending Container",
+        "BPA-Free, Double Insulated Material"
+      ],
+      "specs": {
+        "capacity": "20 oz",
+        "dimensions": "10 x 5.5 x 5.5 inches",
+        "weight": "2.2 lbs",
+        "material": "Cups (Tritan), Storage Lid (Polypropylene), Blade Base (delrene), Blade (Stainless Steel)",
+        "dishwasherSafe": true,
+        "bpaFree": true
+      },
+      "compatibility": {
+        "series": [
+          "Classic Series"
+        ],
+        "machines": [
+          "5200",
+          "5300",
+          "6300",
+          "6500",
+          "7500",
+          "780",
+          "Aspire Series",
+          "Certified Reconditioned Professional Series 750",
+          "Creations Series",
+          "Professional Series",
+          "Total Nutrition Center",
+          "TurboBlend Series",
+          "Explorian Series"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "Adapter",
+        "Two 20-ounce Cups",
+        "Two Lids",
+        "Getting Started Guide"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_a1a6f5a5c0e3d37e3f6d47e3895ce8fcb0b85e38.png",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_a1a6f5a5c0e3d37e3f6d47e3895ce8fcb0b85e38.png"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:19:44.295Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/personal-cup-adapter"
+    },
+    {
+      "id": "silicone-blender-spatula",
+      "name": "Silicone Blender Spatula",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/silicone-blender-spatula",
+      "price": 11.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "This ergonomic spatula is dishwasher safe and designed to get every last bit out of the container, even when blending thicker recipes like nut butter or frozen dessert. Plus, the vibrant red adds a pop of color to any kitchen.",
+      "features": [
+        "Ergonomic design",
+        "Dishwasher safe",
+        "Gets every last bit from container",
+        "Vibrant red color"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "13.50\" x 1.52\" x 1.24\"",
+        "weight": "0.4 lbs",
+        "material": "Food Grade Silicone over molded iron",
+        "dishwasherSafe": true,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [],
+        "machines": [],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Red Spatula in Plastic Wrap"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_fcd79be24feed99c53e68505f6a4bb794888f7be.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_fcd79be24feed99c53e68505f6a4bb794888f7be.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:19:51.770Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/silicone-blender-spatula"
+    },
+    {
+      "id": "simply-entertaining-cookbook",
+      "name": "Simply Entertaining Cookbook",
+      "type": "cookbook",
+      "url": "https://www.vitamix.com/us/en_us/products/simply-entertaining-cookbook",
+      "price": 24.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Add to your Simply Blending collection. The Simply Entertaining book offers complete seasonal menus with appetizers, entrées, sides, beverages, and desserts, designed to help you throw a memorable soirée at any time of year.",
+      "features": [
+        "Six-course meal for four to six guests",
+        "Recipes can be easily doubled or tripled",
+        "Tips from Vitamix® chefs on recipe adjustments and preparation"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "7-3/4 in x 9-1/2 in",
+        "weight": null,
+        "material": null,
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [],
+        "machines": [
+          "All Vitamix® machines"
+        ],
+        "selfDetect": false
+      },
+      "includedItems": [
+        "Simply Entertaining Cookbook"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b88dad8a5c63a918d14b3b65134f773e6591c842.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b88dad8a5c63a918d14b3b65134f773e6591c842.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:19:59.964Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/simply-entertaining-cookbook"
+    },
+    {
+      "id": "simply-soups-cookbook",
+      "name": "Simply Soups Cookbook",
+      "type": "cookbook",
+      "url": "https://www.vitamix.com/us/en_us/products/simply-soups-cookbook",
+      "price": 24.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Try more than 35 delicious, whole-food soup recipes, plus recipes for sides, garnishes, and seasonings – all designed to make food prep easier and mealtime tastier. The book features sections like Chefs' Tips for Superior Soups, Raw & Superfood Soups, Warm-Weather Soups, Cold-Weather Weather Soups, Soup Sides, Garnishes & Spice Blends, and much more.",
+      "features": [
+        "35+ recipes with tips and techniques",
+        "Sections on chefs' tips, raw soups, warm and cold weather soups",
+        "Sides, garnishes, and spice blends"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "7-3/4 in x 9-1/2 in",
+        "weight": null,
+        "material": null,
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": null,
+        "machines": [
+          "All Vitamix® machines except the Vitamix ONE"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "1 Simply Soups Cookbook"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_415a6e2405e0a0faea4d97ae13eaf711670986cc.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_415a6e2405e0a0faea4d97ae13eaf711670986cc.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:20:09.269Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/simply-soups-cookbook"
+    },
+    {
+      "id": "under-blade-scraper",
+      "name": "Under Blade Scraper",
+      "type": "accessory",
+      "url": "https://www.vitamix.com/us/en_us/products/under-blade-scraper",
+      "price": 14.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "The Blade Scraper allows you to get the most out of every recipe by reaching hard to access points in your container, like under the blade. Designed for use with all Vitamix containers.",
+      "features": [
+        "Reaches hard to access points in container",
+        "Designed for use with all Vitamix containers"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "13.90 x 1.80 x 0.96 inches",
+        "weight": null,
+        "material": null,
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "Ascent",
+          "Venturist",
+          "Classic"
+        ],
+        "machines": [
+          "All Vitamix Blenders"
+        ],
+        "selfDetect": null
+      },
+      "includedItems": [
+        "Blade Scraper"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_b423c1612ab6a760a0e66b8c68f73deeafacdff0.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_b423c1612ab6a760a0e66b8c68f73deeafacdff0.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:20:16.312Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/under-blade-scraper"
+    },
+    {
+      "id": "whole-grains-cookbook",
+      "name": "Whole Grains Cookbook",
+      "type": "cookbook",
+      "url": "https://www.vitamix.com/us/en_us/products/whole-grains-cookbook",
+      "price": 15.95,
+      "originalPrice": null,
+      "availability": "in-stock",
+      "description": "Developed by Vitamix chefs, this cookbook is invaluable for grinding fresh flour from whole grains or making homemade breads and cereals.",
+      "features": [
+        "Grinding fresh flour from whole grains",
+        "Making homemade breads and cereals"
+      ],
+      "specs": {
+        "capacity": null,
+        "dimensions": "7 in. x 9 in.",
+        "weight": null,
+        "material": null,
+        "dishwasherSafe": null,
+        "bpaFree": null
+      },
+      "compatibility": {
+        "series": [
+          "C-Series",
+          "Standard/Variable Speed Models"
+        ],
+        "machines": null,
+        "selfDetect": null
+      },
+      "includedItems": [
+        "Whole Grains Cookbook"
+      ],
+      "images": {
+        "primary": "https://www.vitamix.com/us/en_us/products/media_c8c22542234a6fd3e42ce0283c2b77086351c838.jpg",
+        "gallery": [],
+        "remoteUrls": [
+          "https://www.vitamix.com/us/en_us/products/media_c8c22542234a6fd3e42ce0283c2b77086351c838.jpg"
+        ]
+      },
+      "crawledAt": "2025-12-09T20:20:22.519Z",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/products/whole-grains-cookbook"
+    }
+  ]
+}

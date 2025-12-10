@@ -1,0 +1,123 @@
+{
+  "reviews": [
+    {
+      "id": "chef-001",
+      "author": "Suzanne Cupps",
+      "authorTitle": "Chef de Cuisine, Untitled at Whitney Museum, NYC",
+      "content": "We're big fans of Vitamix at Untitled! The kitchen really depends on having at least three or four of them for making sauces, soups, vinaigrettes, and purees.",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/articles/5-chefs-share-why-vitamix-makes-the-best-blender",
+      "sourceType": "chef"
+    },
+    {
+      "id": "chef-002",
+      "author": "Rocco Whalen",
+      "authorTitle": "Chef, Fahrenheit (Cleveland & Charlotte)",
+      "content": "I equip all my restaurants with as many Vitamix machines as possible. It's an essential tool for creating high-quality products efficiently.",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/articles/5-chefs-share-why-vitamix-makes-the-best-blender",
+      "sourceType": "chef"
+    },
+    {
+      "id": "chef-003",
+      "author": "Naomi Pomeroy",
+      "authorTitle": "Chef-Owner, Beast (Portland, OR)",
+      "content": "Nothing compares to a Vitamix. Vitamix blenders produce an incredibly smooth product and velvety texture. Plus, they eliminate the need for straining and other steps that waste time and energy in a kitchen.",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/articles/5-chefs-share-why-vitamix-makes-the-best-blender",
+      "sourceType": "chef"
+    },
+    {
+      "id": "chef-004",
+      "author": "Andrew Volk",
+      "authorTitle": "Mixologist/Owner, Portland Hunt + Alpine Club",
+      "content": "When we use a blender, we want it to evenly chop everything, every single time. The Vitamix is an absolutely durable tool, and it's something we know is going to be our workhorse.",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/articles/5-chefs-share-why-vitamix-makes-the-best-blender",
+      "sourceType": "chef"
+    },
+    {
+      "id": "chef-005",
+      "author": "Anna Henrie Henricks",
+      "authorTitle": "Pastry Chef, Sweetheart Bakery (Portland, OR)",
+      "content": "I couldn't make my savory cheesecake in any other machine. It's like velvet when it comes out.",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/articles/5-chefs-share-why-vitamix-makes-the-best-blender",
+      "sourceType": "chef"
+    },
+    {
+      "id": "customer-001",
+      "author": "Lori V.",
+      "authorTitle": "Rhode Island",
+      "content": "I bought my first Vitamix shortly after I was married in 1960...62 years later, we're still going strong and the blender works as well as it did in 1960.",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/why-vitamix",
+      "sourceType": "customer-story"
+    },
+    {
+      "id": "customer-002",
+      "author": "Sarah M.",
+      "authorTitle": "Verified Buyer",
+      "productId": "ascent-x5",
+      "rating": 5,
+      "content": "We use this every single day for smoothies, soups, and even grinding flour. The preset programs make it so easy, and cleanup is a breeze. Worth every penny.",
+      "verifiedPurchase": true,
+      "useCase": "smoothies",
+      "sourceType": "bazaarvoice"
+    },
+    {
+      "id": "customer-003",
+      "author": "Mike T.",
+      "authorTitle": "Verified Buyer",
+      "productId": "ascent-x3",
+      "rating": 5,
+      "content": "Upgraded from a basic blender and wow - the difference is night and day. Silky smooth every time. The hot soup feature is amazing for winter.",
+      "verifiedPurchase": true,
+      "useCase": "smoothies",
+      "sourceType": "bazaarvoice"
+    },
+    {
+      "id": "customer-004",
+      "author": "Jennifer L.",
+      "authorTitle": "Verified Buyer",
+      "productId": "e310",
+      "rating": 5,
+      "content": "Started with the E310 as my first Vitamix. Does everything I need - smoothies, soups, sauces. Simple controls and powerful motor. Highly recommend for beginners.",
+      "verifiedPurchase": true,
+      "useCase": "soups",
+      "sourceType": "bazaarvoice"
+    },
+    {
+      "id": "customer-005",
+      "author": "David K.",
+      "authorTitle": "Verified Buyer",
+      "productId": "ascent-x4",
+      "rating": 5,
+      "content": "The touchscreen interface is so intuitive. Programs run automatically and it's easy to adjust on the fly. Makes healthy eating so much easier.",
+      "verifiedPurchase": true,
+      "useCase": "smoothies",
+      "sourceType": "bazaarvoice"
+    },
+    {
+      "id": "customer-006",
+      "author": "Amanda R.",
+      "authorTitle": "Verified Buyer",
+      "productId": "propel-series-750",
+      "rating": 5,
+      "content": "The hot soup program creates restaurant-quality soups in minutes. We have completely changed how we eat in winter. The self-cleaning is a bonus.",
+      "verifiedPurchase": true,
+      "useCase": "soups",
+      "sourceType": "bazaarvoice"
+    },
+    {
+      "id": "editorial-001",
+      "author": "Vitamix Quality Team",
+      "authorTitle": "Company Data",
+      "content": "Less than 2% of Vitamix blenders are returned for repair. Instead, they're passed down to the next generation.",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/why-vitamix",
+      "sourceType": "editorial"
+    },
+    {
+      "id": "editorial-002",
+      "author": "Independent Testing",
+      "authorTitle": "Wirecutter, America's Test Kitchen, Epicurious",
+      "content": "Year after year, Vitamix's reputation is reinforced by independent testers who consistently rank them as the best blenders available.",
+      "sourceUrl": "https://www.vitamix.com/us/en_us/articles/how-we-built-a-better-blender",
+      "sourceType": "third-party"
+    }
+  ]
+}
