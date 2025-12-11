@@ -1082,7 +1082,7 @@ export async function orchestrate(
 
     // Stage 4: Deep reasoning (model depends on preset)
     const effectivePreset = preset || env.MODEL_PRESET || 'production';
-    const reasoningModel = effectivePreset === 'all-cerebras' ? 'cerebras-zai-glm-4.6' : 'claude-opus-4-5';
+    const reasoningModel = effectivePreset === 'all-cerebras' ? 'cerebras-gpt-oss-120b' : 'claude-opus-4-5';
     onEvent({
       event: 'reasoning-start',
       data: { model: reasoningModel, preset: effectivePreset },

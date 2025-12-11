@@ -39,19 +39,19 @@ var MODEL_PRESETS = {
     },
     content: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 4096,
       temperature: 0.8
     },
     classification: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 500,
       temperature: 0.3
     },
     validation: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 300,
       temperature: 0.2
     }
@@ -66,19 +66,19 @@ var MODEL_PRESETS = {
     },
     content: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 4096,
       temperature: 0.8
     },
     classification: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 500,
       temperature: 0.3
     },
     validation: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 300,
       temperature: 0.2
     }
@@ -87,25 +87,25 @@ var MODEL_PRESETS = {
   "all-cerebras": {
     reasoning: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 4096,
       temperature: 0.7
     },
     content: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 4096,
       temperature: 0.8
     },
     classification: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 500,
       temperature: 0.3
     },
     validation: {
       provider: "cerebras",
-      model: "zai-glm-4.6",
+      model: "gpt-oss-120b",
       maxTokens: 300,
       temperature: 0.2
     }
@@ -71991,7 +71991,7 @@ async function orchestrate(query, slug, env, onEvent, sessionContext, preset) {
     ctx.intent = await classifyIntent(query, env, sessionContext, preset);
     ctx.ragContext = await getRAGContext(query, ctx.intent, env);
     const effectivePreset = preset || env.MODEL_PRESET || "production";
-    const reasoningModel = effectivePreset === "all-cerebras" ? "cerebras-zai-glm-4.6" : "claude-opus-4-5";
+    const reasoningModel = effectivePreset === "all-cerebras" ? "cerebras-gpt-oss-120b" : "claude-opus-4-5";
     onEvent({
       event: "reasoning-start",
       data: { model: reasoningModel, preset: effectivePreset }
