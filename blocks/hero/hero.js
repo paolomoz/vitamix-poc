@@ -34,10 +34,6 @@
  */
 
 export default function decorate(block) {
-  // Hero block is CSS-only, no JS decoration needed
-  // The two-column layout is handled via CSS grid
-  // This function exists to document the expected structure
-
   // Mark first cell with image as the image column
   const firstRow = block.firstElementChild;
   if (firstRow) {
@@ -50,5 +46,11 @@ export default function decorate(block) {
         cell.classList.add('hero-content');
       }
     });
+  }
+
+  // Remove any CTA buttons from hero
+  const ctaButton = block.querySelector('.button-container');
+  if (ctaButton) {
+    ctaButton.remove();
   }
 }

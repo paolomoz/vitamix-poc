@@ -332,10 +332,12 @@ Do NOT use section, hero-block, hero-content classes - just simple divs.
 </div>`,
 
     'specs-table': `
-## HTML Template (vertical label/value pairs):
-Each row has TWO cells: label cell and value cell.
-Generate 5-8 key specifications.
+## HTML Template (REQUIRED: h3 title + vertical label/value pairs):
 
+YOU MUST OUTPUT THIS TITLE FIRST - IT IS REQUIRED:
+<h3>[Product Model Name] Specifications</h3>
+
+THEN output 5-8 spec rows like this (each row has TWO cells: label and value):
 <div>
   <div>Motor</div>
   <div>2.2 HP Peak</div>
@@ -355,7 +357,9 @@ Generate 5-8 key specifications.
 <div>
   <div>Dimensions</div>
   <div>17.5" H x 8.5" W x 7.7" D</div>
-</div>`,
+</div>
+
+CRITICAL: The <h3> title with the product model name MUST be the first thing in your output. Do not skip it.`,
 
     'faq': `
 ## HTML Template (accordion Q&A pairs):
@@ -741,6 +745,8 @@ async function generateBlockContent(
 
   // Build context based on block type
   let dataContext = '';
+  let specsTableProductName: string | undefined;
+
   if (['product-cards', 'product-recommendation', 'comparison-table'].includes(block.type)) {
     dataContext = `\n\n## Available Products (USE THESE EXACT IMAGE URLs):\n${buildProductContext(ragContext.relevantProducts)}`;
   } else if (['specs-table'].includes(block.type)) {
@@ -748,6 +754,8 @@ async function generateBlockContent(
     const mainProduct = ragContext.relevantProducts[0];
     if (mainProduct) {
       dataContext = `\n\n## Product to Display Specs For:\n- ${mainProduct.name}\n- Features: ${mainProduct.features?.join(', ') || 'High performance blending'}\n- Price: $${mainProduct.price}\n\nGenerate realistic specifications based on this product type.`;
+      // Store product name for title injection
+      specsTableProductName = mainProduct.name;
     }
   } else if (['faq'].includes(block.type)) {
     // For FAQ, provide context about the query and products
@@ -822,9 +830,20 @@ Rationale: ${block.rationale}`,
 
   try {
     const response = await modelFactory.call('content', messages, env);
+    let html = wrapBlockHTML(block.type, response.content, block.variant);
+
+    // For specs-table, add product name as data attribute for client-side title injection
+    if (block.type === 'specs-table' && specsTableProductName) {
+      // Add data-product-name attribute to the opening div
+      html = html.replace(
+        /^<div class="specs-table/,
+        `<div data-product-name="${specsTableProductName}" class="specs-table`
+      );
+    }
+
     return {
       type: block.type,
-      html: wrapBlockHTML(block.type, response.content, block.variant),
+      html,
       sectionStyle: getSectionStyle(block.type),
     };
   } catch (error) {

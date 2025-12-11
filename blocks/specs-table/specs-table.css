@@ -11,6 +11,15 @@
   margin: 0 auto;
 }
 
+/* Title with model name */
+.specs-table-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
 /* Each row is a spec item */
 .specs-table > div {
   display: grid;
@@ -21,7 +30,8 @@
   align-items: baseline;
 }
 
-.specs-table > div:first-child {
+/* First div after title or first child gets top border */
+.specs-table > div:first-of-type {
   border-top: 1px solid #e5e5e5;
 }
 
@@ -48,6 +58,10 @@
 
 .section.dark .specs-table > div {
   border-color: rgb(255 255 255 / 15%);
+}
+
+.section.dark .specs-table-title {
+  color: #fff;
 }
 
 .section.dark .specs-table-label {
