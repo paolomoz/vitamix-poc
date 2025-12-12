@@ -166,7 +166,7 @@ async function renderGenerationPage() {
   const slug = generateSlug(query);
   const startTime = Date.now();
 
-  main.innerHTML = '<div id="generation-content"><div class="generating-container"><h1 class="generating-title">Analyzing your request...</h1><p class="generating-query">"' + query + '"</p><div class="progress-indicator"><div class="progress-dot"></div><div class="progress-dot"></div><div class="progress-dot"></div></div></div></div>';
+  main.innerHTML = '<div id="generation-content"><div class="generating-container"><span class="generating-query">"' + query + '"</span></div></div>';
   const content = main.querySelector('#generation-content');
 
   originalBlocksData = [];
@@ -181,7 +181,7 @@ async function renderGenerationPage() {
 
   eventSource.addEventListener('reasoning-start', function() {
     const loadingContainer = content.querySelector('.generating-container');
-    if (loadingContainer) loadingContainer.remove();
+    if (loadingContainer) loadingContainer.classList.add('done');
     reasoningContainer = createReasoningBlock(content);
   });
 
@@ -208,7 +208,7 @@ async function renderGenerationPage() {
     if (!firstBlockReceived) {
       firstBlockReceived = true;
       const loadingContainer = content.querySelector('.generating-container');
-      if (loadingContainer) loadingContainer.remove();
+      if (loadingContainer) loadingContainer.classList.add('done');
     }
     const data = JSON.parse(e.data);
     originalBlocksData.push(data);

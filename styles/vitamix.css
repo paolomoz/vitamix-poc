@@ -260,13 +260,54 @@
 /* ===== GENERATING STATE ===== */
 
 .generating-container {
-  max-width: 700px;
-  margin: 80px auto;
-  padding: 48px 32px;
+  max-width: 800px;
+  height: 95px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.generating-container .generating-text {
+  font-size: 10px;
+  color: var(--vitamix-muted);
+  margin-bottom: 4px;
+}
+
+.generating-container .generating-label {
+  font-size: 10px;
+  color: var(--vitamix-muted);
+  margin-bottom: 2px;
+}
+
+.generating-container .generating-query {
+  font-size: 14px;
+  color: var(--vitamix-text);
+  max-width: 1000px;
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #333 0%, #333 30%, #bbb 50%, #333 70%, #333 100%);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.generating-container.done .generating-query {
+  background: none;
+  -webkit-text-fill-color: var(--vitamix-text);
+  animation: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 .generating-title {
@@ -276,12 +317,6 @@
   margin-bottom: 12px;
 }
 
-.generating-query {
-  font-size: 18px;
-  color: var(--vitamix-muted);
-  font-style: italic;
-  margin-bottom: 32px;
-}
 
 .progress-indicator {
   display: flex;
@@ -303,6 +338,26 @@
 @keyframes dot-pulse {
   0%, 100% { transform: scale(1); opacity: 0.4; }
   50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* Done state for generating container */
+.generating-container.done .progress-indicator {
+  display: none;
+}
+
+.generating-container.done .generating-text {
+  display: none;
+}
+
+.generating-container .done-icon {
+  display: none;
+  width: 24px;
+  height: 24px;
+  color: var(--vitamix-primary);
+}
+
+.generating-container.done .done-icon {
+  display: block;
 }
 
 /* ===== ERROR STATE ===== */
@@ -525,12 +580,9 @@
   }
   
   .generating-container {
-    margin: 40px 16px;
-    padding: 32px 20px;
-  }
-  
-  .generating-title {
-    font-size: 20px;
+    margin: 0 16px;
+    padding: 0 20px;
+    height: 95px;
   }
   
   .skeleton.product-cards {

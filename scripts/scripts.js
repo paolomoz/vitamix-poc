@@ -647,29 +647,15 @@ async function renderVitamixRecommenderPage() {
   const preset = params.get('preset') || 'production'; // Default to production (Claude reasoning)
   const slug = generateSlug(query);
 
-  // Determine badge and status based on preset
-  const isSpeedMode = preset === 'all-cerebras';
-  const badgeText = isSpeedMode ? 'Speed Mode' : 'Quality Mode';
-  const badgeClass = isSpeedMode ? 'speed-badge' : 'recommender-badge';
-
-  // Clear main and show loading state (reasoning handled by block from worker)
+  // Clear main and show loading state
   main.innerHTML = `
     <div class="section generating-container vitamix-recommender">
-      <div class="${badgeClass}">${badgeText}</div>
-      <h1 class="generating-title">Finding Your Perfect Vitamix</h1>
-      <p class="generating-query">"${query}"</p>
-      <div class="progress-indicator">
-        <div class="progress-dot"></div>
-        <div class="progress-dot"></div>
-        <div class="progress-dot"></div>
-      </div>
-      <p class="generation-status">Analyzing your needs...</p>
+      <span class="generating-query">"${query}"</span>
     </div>
     <div id="generation-content"></div>
   `;
 
   const loadingState = main.querySelector('.generating-container');
-  const statusEl = main.querySelector('.generation-status');
   const content = main.querySelector('#generation-content');
 
   // Connect to SSE stream with preset parameter and session context
@@ -680,42 +666,12 @@ async function renderVitamixRecommenderPage() {
   const generatedBlocks = [];
   const startTime = Date.now();
 
-  eventSource.onopen = () => {
-    statusEl.textContent = 'Connected to AI...';
-  };
-
-  eventSource.addEventListener('generation-start', (e) => {
-    const data = JSON.parse(e.data);
-    statusEl.textContent = `Planning ${data.estimatedBlocks} sections...`;
-  });
-
-  eventSource.addEventListener('reasoning-start', (e) => {
-    const data = JSON.parse(e.data);
-    statusEl.textContent = `Reasoning with ${data.model}...`;
-  });
-
-  eventSource.addEventListener('reasoning-step', (e) => {
-    const data = JSON.parse(e.data);
-    statusEl.textContent = data.title;
-  });
-
-  eventSource.addEventListener('reasoning-complete', (e) => {
-    const data = JSON.parse(e.data);
-    const confidence = Math.round(data.confidence * 100);
-    statusEl.textContent = `Reasoning complete (${confidence}% confidence). Generating content...`;
-  });
-
-  eventSource.addEventListener('block-start', (e) => {
-    const data = JSON.parse(e.data);
-    statusEl.textContent = `Creating ${data.blockType}...`;
-  });
-
   eventSource.addEventListener('block-content', async (e) => {
     const data = JSON.parse(e.data);
 
-    // Hide loading state after first content block
+    // Show done state after first content block
     if (blockCount === 0) {
-      loadingState.style.display = 'none';
+      loadingState.classList.add('done');
     }
     blockCount += 1;
 
