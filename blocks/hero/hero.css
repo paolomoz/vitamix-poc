@@ -11,6 +11,10 @@
  */
 
 /* ===== Container Reset ===== */
+main .section.dark.hero-container {
+  padding: 25px 0;
+}
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -19,7 +23,6 @@
 /* ===== Base Hero Styles ===== */
 .hero {
   position: relative;
-  padding: var(--spacing-section-sm) var(--spacing-lg);
   min-height: 400px;
 }
 

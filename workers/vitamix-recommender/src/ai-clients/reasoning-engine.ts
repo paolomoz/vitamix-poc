@@ -47,7 +47,6 @@ CRITICAL - Your reasoning will be shown directly to users. Write like you're tal
 |-------|---------|
 | hero | Full-width banner with headline and image - for landing/discovery |
 | product-hero | Product-focused hero with image and specs - for product detail |
-| recipe-hero | Recipe hero with image and metadata - for recipe focus |
 | product-cards | Grid of 3-4 product cards - for browsing products |
 | recipe-cards | Grid of 3-4 recipe cards - for inspiration |
 | comparison-table | Side-by-side product comparison - for comparing models |

@@ -284,7 +284,6 @@ export interface BlockSelection {
 export type BlockType =
   | 'hero'
   | 'product-hero'
-  | 'recipe-hero'
   | 'reasoning'
   | 'reasoning-user'
   | 'product-cards'

@@ -138,6 +138,15 @@ export default function decorate(block) {
   // Set up form submission
   form.addEventListener('submit', (event) => handleSubmit(event, form));
 
+  // Submit on Enter key (without Shift)
+  const textarea = form.querySelector('textarea');
+  textarea.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
   // Focus textarea after a short delay
   setTimeout(() => {
     const textarea = form.querySelector('textarea');
