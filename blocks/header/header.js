@@ -338,7 +338,6 @@ export default async function decorate(block) {
   const isHomePage = window.location.pathname === '/' && !window.location.search;
   if (!isHomePage) {
     nav.appendChild(searchContainer);
-    nav.appendChild(aiModeToggle);
     nav.appendChild(qualityToggle);
     nav.appendChild(shareButton);
   }
