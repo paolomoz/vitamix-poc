@@ -470,6 +470,11 @@ export interface Env {
   VECTORIZE?: VectorizeIndex;
   SESSIONS?: KVNamespace;
 
+  // DA (Document Authoring) Configuration
+  DA_ORG: string;
+  DA_REPO: string;
+  DA_TOKEN: string;
+
   // Configuration
   MODEL_PRESET?: string;
   DEBUG?: string;

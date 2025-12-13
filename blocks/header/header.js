@@ -199,6 +199,76 @@ export default async function decorate(block) {
     <button type="button" class="quality-option" data-value="best">Best</button>
   `;
 
+  // Add Share button (disabled during generation, enabled when published)
+  const shareButton = document.createElement('button');
+  shareButton.className = 'header-share-btn';
+  shareButton.type = 'button';
+  shareButton.title = 'Share link will be available after page is saved';
+  shareButton.disabled = true;
+  shareButton.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+      <polyline points="16 6 12 2 8 6"/>
+      <line x1="12" y1="2" x2="12" y2="15"/>
+    </svg>
+    <span>Share</span>
+  `;
+
+  // Store published URL for sharing
+  let publishedUrl = null;
+
+  // Show notification
+  function showCopyNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'copy-notification';
+    notification.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+      <span>${message}</span>
+    `;
+    document.body.appendChild(notification);
+
+    // Trigger show animation
+    requestAnimationFrame(() => {
+      notification.classList.add('show');
+    });
+
+    // Auto-dismiss after 2 seconds
+    setTimeout(() => {
+      notification.classList.remove('show');
+      setTimeout(() => notification.remove(), 300);
+    }, 2000);
+  }
+
+  // Share button click handler
+  shareButton.addEventListener('click', async () => {
+    if (!publishedUrl) return;
+
+    try {
+      await navigator.clipboard.writeText(publishedUrl);
+      showCopyNotification('Link copied to clipboard!');
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = publishedUrl;
+      textArea.style.cssText = 'position:fixed;left:-9999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      showCopyNotification('Link copied to clipboard!');
+    }
+  });
+
+  // Listen for page-published event
+  window.addEventListener('page-published', (e) => {
+    publishedUrl = e.detail.url;
+    shareButton.disabled = false;
+    shareButton.title = 'Copy link to this page';
+    console.log('[Header] Share button enabled for:', publishedUrl);
+  });
+
   // Add search interactivity
   const searchInput = searchContainer.querySelector('input');
   const searchButton = searchContainer.querySelector('.header-explore-btn');
@@ -270,6 +340,7 @@ export default async function decorate(block) {
     nav.appendChild(searchContainer);
     nav.appendChild(aiModeToggle);
     nav.appendChild(qualityToggle);
+    nav.appendChild(shareButton);
   }
 
   const navWrapper = document.createElement('div');

@@ -10,6 +10,7 @@ compatibility_flags = ["nodejs_compat"]
 # 1. Set API secrets:
 #    wrangler secret put ANTHROPIC_API_KEY
 #    wrangler secret put CEREBRAS_API_KEY
+#    wrangler secret put DA_TOKEN
 #
 # 2. Create KV namespace (if not exists):
 #    wrangler kv:namespace create SESSIONS
@@ -23,6 +24,9 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 MODEL_PRESET = "production"
 DEBUG = "false"
+# DA (Document Authoring) configuration
+DA_ORG = "paolomoz"
+DA_REPO = "vitamix-poc"
 
 # Workers AI for embeddings
 [ai]
@@ -50,6 +54,8 @@ name = "vitamix-recommender"
 [env.production.vars]
 MODEL_PRESET = "production"
 DEBUG = "false"
+DA_ORG = "paolomoz"
+DA_REPO = "vitamix-poc"
 
 # Staging environment
 [env.staging]
@@ -58,3 +64,5 @@ name = "vitamix-recommender-staging"
 [env.staging.vars]
 MODEL_PRESET = "fast"
 DEBUG = "true"
+DA_ORG = "paolomoz"
+DA_REPO = "vitamix-poc"

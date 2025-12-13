@@ -23,6 +23,9 @@ const VITAMIX_WORKER_URL = 'https://vitamix-recommender.paolo-moz.workers.dev';
 // Store original block data for publishing
 let originalBlocksData = [];
 
+// Store published page URL
+let publishedPageUrl = null;
+
 function generateSlug(query) {
   let slug = query
     .toLowerCase()
@@ -283,6 +286,11 @@ async function renderGenerationPage() {
     const h1 = content.querySelector('h1');
     if (h1) document.title = h1.textContent + ' | Vitamix Recommender';
     enableHeaderSearch();
+
+    // Auto-persist to DA
+    if (originalBlocksData.length > 0) {
+      persistToDA(query, originalBlocksData, intent);
+    }
   });
 
   eventSource.addEventListener('error', function(e) {
@@ -309,6 +317,48 @@ function enableHeaderSearch() {
   if (btn) {
     btn.disabled = false;
     btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg><span>Explore</span>';
+  }
+}
+
+/**
+ * Persist generated page to DA
+ */
+async function persistToDA(query, blocks, intent) {
+  try {
+    console.log('[Vitamix] Persisting page to DA...');
+
+    const response = await fetch(VITAMIX_WORKER_URL + '/api/persist', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: query,
+        blocks: blocks,
+        intent: intent,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (result.success && result.urls) {
+      publishedPageUrl = result.urls.live;
+      console.log('[Vitamix] Page published: ' + publishedPageUrl);
+
+      // Dispatch custom event for header Share button
+      window.dispatchEvent(new CustomEvent('page-published', {
+        detail: {
+          url: publishedPageUrl,
+          path: result.path,
+        },
+      }));
+
+      return result;
+    } else {
+      console.error('[Vitamix] Persist failed:', result.error);
+      return null;
+    }
+  } catch (error) {
+    console.error('[Vitamix] Persist error:', error);
+    return null;
   }
 }
 

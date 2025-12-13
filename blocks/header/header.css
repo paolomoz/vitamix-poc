@@ -487,4 +487,83 @@ header nav .nav-search {
     padding: 2px 6px;
     font-size: 9px;
   }
+
+  .header-share-btn {
+    padding: 4px 8px;
+  }
+
+  .header-share-btn span {
+    display: none;
+  }
+}
+
+/* Share button */
+.header-share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 4px 10px;
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--color-charcoal);
+  border: 1px solid var(--color-charcoal);
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--body-font-family);
+  flex-shrink: 0;
+}
+
+.header-share-btn:hover:not(:disabled) {
+  background: var(--color-dark-gray);
+  border-color: var(--color-dark-gray);
+}
+
+.header-share-btn:disabled {
+  background: var(--color-light-gray);
+  border-color: var(--color-light-gray);
+  color: var(--color-medium-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.header-share-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Copy notification toast */
+.copy-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--color-charcoal);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+  font-family: var(--body-font-family);
+}
+
+.copy-notification.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.copy-notification svg {
+  width: 16px;
+  height: 16px;
+  color: #4ade80;
 }

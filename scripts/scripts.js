@@ -27,6 +27,46 @@ const FAST_WORKER_URL = 'https://vitamix-generative-fast.paolo-moz.workers.dev';
 const VITAMIX_RECOMMENDER_URL = 'https://vitamix-recommender.paolo-moz.workers.dev';
 
 /**
+ * Persist generated page to DA
+ */
+async function persistToDA(query, blocks, intent) {
+  try {
+    // eslint-disable-next-line no-console
+    console.log('[Recommender] Persisting page to DA...');
+
+    const response = await fetch(`${VITAMIX_RECOMMENDER_URL}/api/persist`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, blocks, intent }),
+    });
+
+    const result = await response.json();
+
+    if (result.success && result.urls) {
+      // eslint-disable-next-line no-console
+      console.log('[Recommender] Page published:', result.urls.live);
+
+      // Dispatch custom event for header Share button
+      window.dispatchEvent(new CustomEvent('page-published', {
+        detail: {
+          url: result.urls.live,
+          path: result.path,
+        },
+      }));
+
+      return result;
+    }
+    // eslint-disable-next-line no-console
+    console.error('[Recommender] Persist failed:', result.error);
+    return null;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('[Recommender] Persist error:', error);
+    return null;
+  }
+}
+
+/**
  * Escape special regex characters in a string
  */
 function escapeRegExp(string) {
@@ -805,6 +845,11 @@ async function renderVitamixRecommenderPage() {
       confidence: data.reasoning?.confidence,
       products: data.recommendations?.products,
     });
+
+    // Auto-persist to DA
+    if (generatedBlocks.length > 0) {
+      persistToDA(query, generatedBlocks, data.intent);
+    }
   });
 
   eventSource.addEventListener('error', (e) => {

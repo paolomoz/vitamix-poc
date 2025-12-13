@@ -9,8 +9,10 @@
  * - GET /health - Health check
  */
 
-import type { Env, SessionContext, SSEEvent } from './types';
+import type { Env, SessionContext, SSEEvent, IntentClassification } from './types';
 import { orchestrate } from './lib/orchestrator';
+import { persistAndPublish, buildPageHtml } from './lib/da-client';
+import { classifyCategory, generateSemanticSlug, buildCategorizedPath } from './lib/category-classifier';
 
 // ============================================
 // CORS Headers
@@ -131,6 +133,92 @@ function handleHealth(): Response {
   );
 }
 
+/**
+ * Persist request body structure
+ */
+interface PersistRequest {
+  query: string;
+  blocks: Array<{ html: string; sectionStyle?: string }>;
+  intent?: IntentClassification;
+  title?: string;
+}
+
+/**
+ * Handle page persistence to DA
+ */
+async function handlePersist(request: Request, env: Env): Promise<Response> {
+  try {
+    const body: PersistRequest = await request.json();
+    const { query, blocks, intent, title } = body;
+
+    if (!query || !blocks || blocks.length === 0) {
+      return new Response(
+        JSON.stringify({ success: false, error: 'Missing query or blocks' }),
+        { status: 400, headers: { 'Content-Type': 'application/json', ...CORS_HEADERS } },
+      );
+    }
+
+    // Create a default intent if not provided
+    const effectiveIntent: IntentClassification = intent || {
+      intentType: 'discovery',
+      confidence: 0.5,
+      entities: { products: [], useCases: [], features: [] },
+      journeyStage: 'exploring',
+    };
+
+    // Classify category and generate slug
+    const category = classifyCategory(effectiveIntent, query);
+    const slug = generateSemanticSlug(query, effectiveIntent);
+    const path = buildCategorizedPath(category, slug);
+
+    // Build page title - use provided title or extract from first h1 in blocks
+    let pageTitle = title || 'Your Vitamix Experience';
+    if (!title) {
+      for (const block of blocks) {
+        const h1Match = block.html.match(/<h1[^>]*>([^<]+)<\/h1>/i);
+        if (h1Match) {
+          pageTitle = h1Match[1];
+          break;
+        }
+      }
+    }
+
+    // Build page description from query
+    const pageDescription = `Personalized Vitamix content for: ${query}`;
+
+    // Build the HTML page
+    const html = buildPageHtml(pageTitle, pageDescription, blocks);
+
+    // Persist and publish
+    console.log(`[Persist] Saving page to ${path}`);
+    const result = await persistAndPublish(path, html, env);
+
+    if (!result.success) {
+      console.error(`[Persist] Failed: ${result.error}`);
+      return new Response(
+        JSON.stringify({ success: false, error: result.error }),
+        { status: 500, headers: { 'Content-Type': 'application/json', ...CORS_HEADERS } },
+      );
+    }
+
+    console.log(`[Persist] Success: ${result.urls?.live}`);
+    return new Response(
+      JSON.stringify({
+        success: true,
+        path,
+        urls: result.urls,
+      }),
+      { headers: { 'Content-Type': 'application/json', ...CORS_HEADERS } },
+    );
+  } catch (error) {
+    console.error('[Persist] Error:', error);
+    return new Response(
+      JSON.stringify({ success: false, error: (error as Error).message }),
+      { status: 500, headers: { 'Content-Type': 'application/json', ...CORS_HEADERS } },
+    );
+  }
+}
+
 function handleOptions(): Response {
   return new Response(null, {
     status: 204,
@@ -182,6 +270,11 @@ export default {
     switch (path) {
       case '/generate':
         return handleGenerate(request, env);
+      case '/api/persist':
+        if (request.method === 'POST') {
+          return handlePersist(request, env);
+        }
+        return new Response('Method not allowed', { status: 405 });
       case '/health':
         return handleHealth();
       default:
