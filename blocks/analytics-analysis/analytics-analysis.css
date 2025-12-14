@@ -131,103 +131,6 @@
   border-radius: 0 4px 4px 0;
 }
 
-/* Suggestions Tabs */
-.analytics-analysis .suggestions-container {
-  margin-bottom: 1.5rem;
-}
-
-.analytics-analysis .suggestions-tabs {
-  display: flex;
-  border-bottom: 1px solid var(--border-color, #e5e5e5);
-  margin-bottom: 1rem;
-}
-
-.analytics-analysis .tab-button {
-  background: none;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-color-muted, #666);
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
-}
-
-.analytics-analysis .tab-button:hover {
-  color: var(--heading-color, #1a1a1a);
-}
-
-.analytics-analysis .tab-button.active {
-  color: var(--primary-color, #c41230);
-  border-bottom-color: var(--primary-color, #c41230);
-}
-
-.analytics-analysis .tab-panel {
-  display: none;
-}
-
-.analytics-analysis .tab-panel.active {
-  display: block;
-}
-
-.analytics-analysis .tab-panel ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  margin: 0;
-}
-
-.analytics-analysis .tab-panel li {
-  padding: 0.5rem 0;
-  line-height: 1.5;
-}
-
-/* Pages Lists */
-.analytics-analysis .pages-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.analytics-analysis .pages-section.exemplary h4 {
-  color: var(--success-color, #22c55e);
-}
-
-.analytics-analysis .pages-section.problematic h4 {
-  color: var(--error-color, #ef4444);
-}
-
-.analytics-analysis .pages-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.analytics-analysis .pages-list li {
-  padding: 0.75rem;
-  border: 1px solid var(--border-color, #e5e5e5);
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-}
-
-.analytics-analysis .pages-list a {
-  color: var(--link-color, #0066cc);
-  text-decoration: none;
-  font-weight: 500;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.analytics-analysis .pages-list a:hover {
-  text-decoration: underline;
-}
-
-.analytics-analysis .page-reason {
-  font-size: 0.75rem;
-  color: var(--text-color-muted, #666);
-  display: block;
-}
-
 /* Loading and Error States */
 .analytics-analysis .loading {
   text-align: center;
@@ -415,10 +318,6 @@
   .analytics-analysis .gauge-circle::before {
     width: 44px;
     height: 44px;
-  }
-
-  .analytics-analysis .pages-container {
-    grid-template-columns: 1fr;
   }
 
   .analytics-analysis .actionable-item {
