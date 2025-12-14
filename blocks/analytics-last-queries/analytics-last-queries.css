@@ -51,6 +51,7 @@
 }
 
 .analytics-last-queries .query-text {
+  font-size: 0.875rem;
   font-weight: 500;
   word-break: break-word;
   line-height: 1.3;

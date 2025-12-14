@@ -99,6 +99,7 @@
 }
 
 .query-text {
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
@@ -226,6 +227,7 @@
   border-left: 4px solid var(--warning-color, #eab308);
   margin-bottom: 0.5rem;
   border-radius: 0 4px 4px 0;
+  font-size: 0.875rem;
 }
 
 /* Suggestions Tabs */
