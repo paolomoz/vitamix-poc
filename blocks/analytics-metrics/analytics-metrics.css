@@ -1,0 +1,73 @@
+/* Analytics Metrics Block Styles */
+
+.analytics-metrics {
+  padding: 1.5rem 0;
+}
+
+.analytics-metrics h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color, #1a1a1a);
+  border-bottom: 2px solid var(--border-color, #e5e5e5);
+  padding-bottom: 0.5rem;
+}
+
+.analytics-metrics .metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.analytics-metrics .metric-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #e5e5e5);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.analytics-metrics .metric-card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+
+.analytics-metrics .metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color, #c41230);
+  margin-bottom: 0.25rem;
+}
+
+.analytics-metrics .metric-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--heading-color, #1a1a1a);
+}
+
+.analytics-metrics .metric-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-color-muted, #666);
+  margin-top: 0.25rem;
+}
+
+.analytics-metrics .loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-color-muted, #666);
+  grid-column: 1 / -1;
+}
+
+.analytics-metrics .error-message {
+  background: var(--error-bg, #fef2f2);
+  border: 1px solid var(--error-color, #ef4444);
+  border-radius: 4px;
+  padding: 1rem;
+  color: var(--error-color, #dc2626);
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .analytics-metrics .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
