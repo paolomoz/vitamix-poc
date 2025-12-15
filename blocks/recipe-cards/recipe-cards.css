@@ -133,6 +133,21 @@ a.recipe-card {
   line-height: 1.3;
 }
 
+.recipe-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.recipe-card-title a:hover {
+  color: #c4122f;
+  text-decoration: underline;
+}
+
+/* Hide backup link element (used only for extracting URL in JS) */
+.recipe-card-link {
+  display: none;
+}
+
 .recipe-card-description {
   font-size: 14px;
   line-height: 1.5;

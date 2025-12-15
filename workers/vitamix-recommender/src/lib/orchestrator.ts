@@ -261,6 +261,7 @@ IMPORTANT:
 - Wrap everything in a single parent div with class "recipe-cards"
 - Each card must be a div (not an anchor) - the link goes inside the title
 - Use div elements as direct children so DA can persist the content properly
+- Include the recipe URL as a separate link element to ensure it persists through DA
 
 <div class="recipe-cards">
   <div class="rcheader">
@@ -272,8 +273,9 @@ IMPORTANT:
       <picture><img src="EXACT_IMAGE_URL_FROM_CONTEXT" alt="Recipe name" loading="lazy"></picture>
     </div>
     <div class="recipe-card-content">
-      <h4 class="recipe-card-title"><a href="EXACT_RECIPE_URL_FROM_CONTEXT" target="_blank">Exact Recipe Name From Context</a></h4>
+      <h4 class="recipe-card-title"><a href="EXACT_RECIPE_URL_FROM_CONTEXT">Exact Recipe Name From Context</a></h4>
       <p class="recipe-card-description">Time and difficulty from context.</p>
+      <p class="recipe-card-link"><a href="EXACT_RECIPE_URL_FROM_CONTEXT">View Recipe</a></p>
     </div>
   </div>
   <!-- Only include recipes that exist in the provided context -->
