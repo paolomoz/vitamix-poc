@@ -121,7 +121,7 @@ function parsePrice(text) {
 
 export default function decorate(block) {
   // Handle header element if present
-  const header = block.querySelector('.pcheader');
+  const header = block.querySelector('.pcheader, header');
   if (header) {
     header.classList.add('product-cards-header');
   }
@@ -161,6 +161,105 @@ export default function decorate(block) {
 
   const ul = document.createElement('ul');
   const isSale = block.classList.contains('sale');
+
+  // Check for two-column format (image | content per row)
+  // This is used by AI-generated content where each row has [image] | [title, price, link]
+  const rows = [...block.children].filter((row) => !row.classList.contains('product-cards-header'));
+  const isTwoColumnFormat = rows.length > 0 && rows.some((row) => {
+    const cells = [...row.children];
+    // Two-column format: first cell has picture, second cell has h3/link
+    return cells.length === 2
+      && cells[0].querySelector('picture')
+      && (cells[1].querySelector('h3') || cells[1].querySelector('a'));
+  });
+
+  if (isTwoColumnFormat) {
+    rows.forEach((row) => {
+      const cells = [...row.children];
+      if (cells.length < 2) return;
+
+      const li = document.createElement('li');
+      li.className = 'product-card';
+      if (isSale) li.classList.add('sale');
+
+      // Image cell (first cell)
+      const imageDiv = document.createElement('div');
+      imageDiv.className = 'product-card-image';
+      const pic = cells[0].querySelector('picture');
+      if (pic) {
+        imageDiv.appendChild(pic.cloneNode(true));
+      }
+
+      // Content cell (second cell)
+      const bodyDiv = document.createElement('div');
+      bodyDiv.className = 'product-card-body';
+
+      const contentCell = cells[1];
+
+      // Extract product name from h3 or first link
+      const h3 = contentCell.querySelector('h3');
+      if (h3) {
+        const nameEl = document.createElement('h3');
+        nameEl.className = 'product-name';
+        const nameLink = h3.querySelector('a');
+        if (nameLink) {
+          nameEl.appendChild(nameLink.cloneNode(true));
+        } else {
+          nameEl.textContent = h3.textContent;
+        }
+        bodyDiv.appendChild(nameEl);
+      }
+
+      // Extract tagline/description (p elements that aren't price or button)
+      const paragraphs = contentCell.querySelectorAll('p');
+      paragraphs.forEach((p) => {
+        const text = p.textContent.trim();
+        // Skip if it's a price or contains a button
+        if (text.startsWith('$') || p.querySelector('a.button, a[class*="button"]')) return;
+        if (text && !text.match(/^\$[\d,.]+$/)) {
+          const tagline = document.createElement('p');
+          tagline.className = 'product-tagline';
+          tagline.textContent = text;
+          bodyDiv.appendChild(tagline);
+        }
+      });
+
+      // Extract price
+      const priceText = [...contentCell.querySelectorAll('p')].find((p) => p.textContent.trim().startsWith('$'));
+      if (priceText) {
+        const priceDiv = document.createElement('div');
+        priceDiv.className = 'product-price';
+        priceDiv.innerHTML = `<span class="current-price">${priceText.textContent.trim()}</span>`;
+        bodyDiv.appendChild(priceDiv);
+      }
+
+      // Extract CTA button
+      const ctaLink = contentCell.querySelector('a.button, a[class*="button"], p:last-child a');
+      if (ctaLink) {
+        const btn = document.createElement('a');
+        btn.className = 'product-cta button';
+        btn.href = ctaLink.href;
+        btn.textContent = ctaLink.textContent;
+        if (ctaLink.target) btn.target = ctaLink.target;
+        decorateCTA(btn);
+        bodyDiv.appendChild(btn);
+      }
+
+      li.appendChild(imageDiv);
+      li.appendChild(bodyDiv);
+      ul.appendChild(li);
+    });
+
+    ul.dataset.cardCount = ul.children.length;
+    block.textContent = '';
+    if (header) {
+      block.appendChild(header);
+    }
+    block.appendChild(ul);
+    return;
+  }
+
+  // Original single-column format handling (vertical structure)
 
   [...block.children].forEach((row) => {
     const li = document.createElement('li');

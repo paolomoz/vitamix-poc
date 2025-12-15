@@ -138,20 +138,6 @@ async function getRAGContext(
 // Content Generation
 // ============================================
 
-function buildProductContext(products: Product[]): string {
-  if (!products.length) return 'No products available.';
-  return products.map(p => `
-- ${p.name} (${p.series})
-  Price: $${p.price}
-  Warranty: ${p.warranty || 'Full Warranty'}
-  Image: ${p.images?.primary || 'no-image'}
-  URL: ${p.url}
-  Tagline: ${p.tagline || p.description?.slice(0, 100) || 'Premium blender'}
-  Features: ${p.features?.slice(0, 3).join(', ') || 'High performance blending'}
-  Best for: ${p.bestFor?.join(', ') || 'All blending tasks'}
-`).join('\n');
-}
-
 function normalizeImageUrl(imagePath: string | undefined): string {
   if (!imagePath || imagePath === 'no-image') return 'no-image';
 
@@ -169,6 +155,23 @@ function normalizeImageUrl(imagePath: string | undefined): string {
   }
 
   return imagePath;
+}
+
+function buildProductContext(products: Product[]): string {
+  if (!products.length) return 'No products available.';
+  return products.map(p => {
+    const imageUrl = normalizeImageUrl(p.images?.primary);
+    return `
+- ${p.name} (${p.series})
+  Price: $${p.price}
+  Warranty: ${p.warranty || 'Full Warranty'}
+  Image: ${imageUrl}
+  URL: ${p.url}
+  Tagline: ${p.tagline || p.description?.slice(0, 100) || 'Premium blender'}
+  Features: ${p.features?.slice(0, 3).join(', ') || 'High performance blending'}
+  Best for: ${p.bestFor?.join(', ') || 'All blending tasks'}
+`;
+  }).join('\n');
 }
 
 function buildRecipeContext(recipes: Recipe[]): string {
@@ -246,24 +249,33 @@ ALWAYS start with a title and optional subtitle that connects to the user's quer
 - Title: Empathetic, helpful headline (e.g., "Recipes You Might Love", "Ideas to Get You Started")
 - Subtitle (optional): If the recipes don't exactly match the query, add a brief empathetic note explaining what you're showing instead
 
+SPECIAL GUIDANCE FOR FAMILY/KIDS QUERIES:
+If the user mentions kids, picky eaters, family, or hiding vegetables:
+- Title should acknowledge the parenting challenge (e.g., "Kid-Approved Recipes", "Sneak Veggies Into These Favorites")
+- Subtitle should reassure parents (e.g., "These recipes are proven hits with even the pickiest eaters")
+- PRIORITIZE soup recipes that hide vegetables - soups blend veggies into undetectable smoothness
+- Include smoothie recipes for kids who love fruity drinks
+- Add a brief note about how each recipe helps with picky eaters (e.g., "The creamy texture hides the spinach!")
+
 IMPORTANT:
 - Wrap everything in a single parent div with class "recipe-cards"
-- Make each card a clickable link to the recipe's URL on vitamix.com (use target="_blank")
+- Each card must be a div (not an anchor) - the link goes inside the title
+- Use div elements as direct children so DA can persist the content properly
 
 <div class="recipe-cards">
-  <header class="rcheader">
+  <div class="rcheader">
     <h3 class="rctitle">Recipes You Might Love</h3>
     <p class="rcsubtitle">Brief context about why these recipes are shown, if needed.</p>
-  </header>
-  <a href="EXACT_RECIPE_URL_FROM_CONTEXT" class="recipe-card" target="_blank">
+  </div>
+  <div class="recipe-card" data-href="EXACT_RECIPE_URL_FROM_CONTEXT">
     <div class="recipe-card-image">
-      <img src="EXACT_IMAGE_URL_FROM_CONTEXT" alt="Recipe name" loading="lazy">
+      <picture><img src="EXACT_IMAGE_URL_FROM_CONTEXT" alt="Recipe name" loading="lazy"></picture>
     </div>
     <div class="recipe-card-content">
-      <h4 class="recipe-card-title">Exact Recipe Name From Context</h4>
+      <h4 class="recipe-card-title"><a href="EXACT_RECIPE_URL_FROM_CONTEXT" target="_blank">Exact Recipe Name From Context</a></h4>
       <p class="recipe-card-description">Time and difficulty from context.</p>
     </div>
-  </a>
+  </div>
   <!-- Only include recipes that exist in the provided context -->
 </div>`,
 
@@ -281,22 +293,20 @@ CRITICAL RULES:
 - Do NOT include star ratings - we don't have rating data
 - Do NOT invent product names - use exact names from context
 
-THEN output 3-4 product cards:
+THEN output 3-4 product cards (each card is a ROW with two CELLS - image cell and content cell):
 <div class="product-card">
-  <a href="EXACT_PRODUCT_URL_FROM_CONTEXT" class="product-card-image" target="_blank">
-    <img src="EXACT_IMAGE_URL_FROM_CONTEXT" alt="Product Name" loading="lazy">
-  </a>
-  <div class="product-card-body">
-    <h3 class="product-name"><a href="EXACT_PRODUCT_URL_FROM_CONTEXT" target="_blank">Exact Product Name</a></h3>
-    <p class="product-tagline">Brief tagline from context</p>
-    <div class="product-price">
-      <span class="current-price">$XXX.XX</span>
-    </div>
-    <a href="EXACT_PRODUCT_URL_FROM_CONTEXT" class="product-cta button" target="_blank">View Details</a>
+  <div>
+    <picture><img src="EXACT_IMAGE_URL_FROM_CONTEXT" alt="Product Name" loading="lazy"></picture>
+  </div>
+  <div>
+    <h3><a href="EXACT_PRODUCT_URL_FROM_CONTEXT" target="_blank">Exact Product Name</a></h3>
+    <p>Brief tagline from context</p>
+    <p>$XXX.XX</p>
+    <p><a href="EXACT_PRODUCT_URL_FROM_CONTEXT" class="button" target="_blank">View Details</a></p>
   </div>
 </div>
 
-CRITICAL: The header element MUST be the first thing in your output. Do not skip it.`,
+CRITICAL: The header element MUST be the first thing in your output. Each product-card must have a div>div>picture>img structure for images.`,
 
     'feature-highlights': `
 ## HTML Template (REQUIRED: header + 3-4 feature rows):
@@ -321,13 +331,33 @@ THEN output 3-4 feature rows like this:
   </div>
 </div>
 
+SPECIAL GUIDANCE FOR FAMILY/KIDS QUERIES:
+If the user mentions kids, family, picky eaters, or hiding vegetables, ALWAYS include these features:
+1. Hot Soup Program - Highlight how it creates silky-smooth soups that hide vegetables completely. Kids can't detect spinach, kale, or other greens when blended to perfection.
+2. Self-Cleaning - Emphasize the 60-second cleanup for busy parents.
+3. Variable Speed Control - Explain how it lets you get the exact texture kids prefer - no chunks!
+4. Smoothie Capabilities - For kids who love fruity drinks, mention how you can sneak spinach into berry smoothies.
+
 CRITICAL: The header element MUST be the first thing in your output. Do not skip it.`,
 
     'hero': `
 ## HTML Template (two-column layout: image | content):
-IMPORTANT: The hero block expects a row with TWO cells - image cell and content cell.
-Do NOT use section, hero-block, hero-content classes - just simple divs.
 
+CRITICAL STRUCTURE REQUIREMENT:
+You MUST output HTML with EXACTLY this nested div structure. The hero block REQUIRES:
+- An outer row div containing exactly TWO child divs
+- First child div: contains ONLY a picture element with the hero image
+- Second child div: contains the text content (optional eyebrow, h1, description, button)
+
+DO NOT output flat content like <p>, <h1>, <ul> directly. Everything MUST be inside the two-cell structure.
+
+SPECIAL GUIDANCE FOR FAMILY/KIDS QUERIES:
+If the user mentions kids, family, picky eaters, or hiding vegetables:
+- Headline should be empathetic and solution-focused
+- Eyebrow can reference their challenge
+- Description should highlight both soup-making for hiding veggies AND smoothies for fruit-loving kids
+
+OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual content):
 <div>
   <div>
     <picture>
@@ -335,12 +365,13 @@ Do NOT use section, hero-block, hero-content classes - just simple divs.
     </picture>
   </div>
   <div>
-    <p>OPTIONAL EYEBROW TEXT</p>
-    <h1>Main Headline Here</h1>
-    <p>Supporting description text that explains the value proposition.</p>
-    <p><a href="#explore" class="button">Explore Now</a></p>
+    <h1>Your Headline Here</h1>
+    <p>Your description text here explaining the value proposition.</p>
+    <p><a href="#" class="button">Shop Now</a></p>
   </div>
-</div>`,
+</div>
+
+REMEMBER: The outer div contains TWO child divs. Image in first, content in second. No exceptions.`,
 
     'specs-table': `
 ## HTML Template (REQUIRED: h3 title + vertical label/value pairs):
@@ -421,6 +452,16 @@ IMPORTANT:
 - ONLY compare Vitamix products to each other - we do not have competitor data.
 - If user mentions a competitor brand (Blendtec, Ninja, etc.), compare 2-3 Vitamix models instead and note that competitor specs are not available.
 
+SPECIAL GUIDANCE FOR FAMILY/KIDS QUERIES:
+If the user mentions kids, family, picky eaters, or hiding vegetables:
+- ALWAYS include these comparison rows that matter for families:
+  1. Hot Soup Program (Yes/No) - critical for hiding vegetables in soups
+  2. Container Size (oz) - larger is better for family batches
+  3. Self-Cleaning - busy parents need quick cleanup
+  4. Preset Programs - easier for the whole family to use
+  5. Warranty - families need long-term reliability
+- Add a row note: "Best for hiding veggies in soups: [product with hot soup program]"
+
 <div>
   <div></div>
   <div><strong><a href="EXACT_PRODUCT_A_URL" target="_blank">Product A Name</a></strong></div>
@@ -439,29 +480,36 @@ IMPORTANT:
 <!-- Add more spec rows as needed -->`,
 
     'product-recommendation': `
-## HTML Template - IMPORTANT: Generate ONE primary product recommendation.
+## HTML Template - Generate ONE primary product recommendation.
+
+CRITICAL: THE IMAGE IS REQUIRED!
+You MUST include the product image from the context below. Look for the "Image:" field in the product data.
+Do NOT output an empty image div. The image URL must be included.
+
 Pick the BEST single product that matches the user's needs. Do NOT list multiple products.
 
-Structure: Wrap everything in a single div with class "product-recommendation".
-First child is the image, second child is the content.
+SPECIAL GUIDANCE FOR FAMILY/KIDS QUERIES:
+If the user mentions kids, family, picky eaters, or hiding vegetables:
+- Eyebrow should reference their family situation
+- Body should mention Hot Soup Program, smoothie capabilities, self-cleaning, large container
 
+OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual values from context):
 <div class="product-recommendation">
-  <div class="product-recommendation-image">
-    <picture><img src="EXACT_PRODUCT_IMAGE_URL" alt="Product Name"></picture>
-  </div>
-  <div class="product-recommendation-content">
-    <p class="product-recommendation-eyebrow">BEST FOR [USE CASE]</p>
-    <h2 class="product-recommendation-headline">Product Name</h2>
-    <p class="product-recommendation-body">Why this specific product is the best choice for the user's needs. Be specific about features that match their requirements.</p>
-    <div class="product-recommendation-price">
-      <span class="price">$XXX.XX</span>
-      <span class="price-note">[USE WARRANTY FROM PRODUCT CONTEXT]</span>
+  <div>
+    <div>
+      <picture><img src="USE_THE_IMAGE_URL_FROM_PRODUCT_CONTEXT" alt="Product Name"></picture>
     </div>
-    <div class="product-recommendation-ctas">
-      <a href="EXACT_PRODUCT_URL" class="button primary cta-external" target="_blank">View on Vitamix</a>
+    <div>
+      <p class="product-recommendation-eyebrow">BEST FOR [USE CASE]</p>
+      <h2 class="product-recommendation-headline">Product Name from Context</h2>
+      <p class="product-recommendation-body">Why this product is the best choice. Be specific about features.</p>
+      <p class="product-recommendation-price">$XXX.XX · Warranty from context</p>
+      <p><a href="PRODUCT_URL_FROM_CONTEXT" class="button primary" target="_blank">View on Vitamix</a></p>
     </div>
   </div>
-</div>`,
+</div>
+
+REMEMBER: The image MUST be included. Check the product context for the Image URL. The structure must be: block > row > cells.`,
 
     'quick-answer': `
 ## HTML Template (simple direct answer):
