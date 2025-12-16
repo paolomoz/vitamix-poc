@@ -317,7 +317,7 @@ export function getReviewsByUseCase(useCase: string): Review[] {
 export function getAverageRating(productId: string): number {
   const productReviews = getReviewsByProduct(productId);
   if (productReviews.length === 0) return 0;
-  const sum = productReviews.reduce((acc, r) => acc + r.rating, 0);
+  const sum = productReviews.reduce((acc, r) => acc + (r.rating || 0), 0);
   return sum / productReviews.length;
 }
 
@@ -733,6 +733,54 @@ export function buildRAGContext(
   // Dedupe and limit products
   relevantProducts = [...new Map(relevantProducts.map(p => [p.id, p])).values()].slice(0, maxProducts);
 
+  // Feature-aware ranking: prioritize products with required features for detected use case
+  const featureRequirements: Record<string, string[]> = {
+    soups: ['hot-soup-program'],
+    soup: ['hot-soup-program'],
+    'hot-soup': ['hot-soup-program'],
+    'frozen-desserts': ['preset-programs'],
+    'ice-cream': ['preset-programs'],
+    'nut-butters': ['tamper'],
+    'nut-butter': ['tamper'],
+  };
+
+  // Products known to have Hot Soup Program
+  const hotSoupProducts = ['ascent-x5', 'ascent-x4', 'ascent-x3', 'a3500', 'a2500', 'propel-750'];
+
+  // Check if any detected keyword matches a feature requirement
+  const primaryUseCase = detectedKeywords.find((kw) => featureRequirements[kw]);
+  if (primaryUseCase) {
+    const requiredFeatures = featureRequirements[primaryUseCase];
+
+    // Sort products to prioritize those with required features
+    relevantProducts.sort((a, b) => {
+      let aScore = 0;
+      let bScore = 0;
+
+      // Check for hot soup program specifically
+      if (requiredFeatures.includes('hot-soup-program')) {
+        if (hotSoupProducts.some((id) => a.id?.includes(id) || a.name.toLowerCase().includes(id.replace('-', ' ')))) {
+          aScore += 10;
+        }
+        if (hotSoupProducts.some((id) => b.id?.includes(id) || b.name.toLowerCase().includes(id.replace('-', ' ')))) {
+          bScore += 10;
+        }
+      }
+
+      // Check features array
+      for (const feature of requiredFeatures) {
+        if (a.features?.some((f) => f.toLowerCase().includes(feature.replace('-', ' ')))) {
+          aScore += 5;
+        }
+        if (b.features?.some((f) => f.toLowerCase().includes(feature.replace('-', ' ')))) {
+          bScore += 5;
+        }
+      }
+
+      return bScore - aScore; // Higher score first
+    });
+  }
+
   // Find relevant use cases
   let relevantUseCases = useCases.filter(
     (uc) =>
@@ -811,6 +859,54 @@ export function buildRAGContext(
   // Dedupe by name (not id, since many recipes have empty id) and limit
   // Also prefer recipes with real images over placeholders
   relevantRecipes = [...new Map(relevantRecipes.map(r => [r.name, r])).values()];
+
+  // Diversity filter: limit recipes per category/subcategory to avoid repetition
+  // (e.g., 5 green smoothie variations should be reduced to max 2)
+  const recipesByCategory = new Map<string, Recipe[]>();
+  for (const recipe of relevantRecipes) {
+    // Use subcategory if available, otherwise category, otherwise 'other'
+    const categoryKey = recipe.subcategory || recipe.category || 'other';
+    const existing = recipesByCategory.get(categoryKey) || [];
+    existing.push(recipe);
+    recipesByCategory.set(categoryKey, existing);
+  }
+
+  // Round-robin selection: take recipes from each category alternately
+  // Max 2 per category to ensure diversity
+  const diverseRecipes: Recipe[] = [];
+  const categories = [...recipesByCategory.keys()];
+  const maxPerCategory = 2;
+
+  // Keep taking one from each category until we have enough or run out
+  let categoryIndex = 0;
+  let itemsPerCategoryTaken = new Map<string, number>();
+
+  while (diverseRecipes.length < maxRecipes && categories.length > 0) {
+    const category = categories[categoryIndex % categories.length];
+    const categoryRecipes = recipesByCategory.get(category) || [];
+    const taken = itemsPerCategoryTaken.get(category) || 0;
+
+    if (taken < maxPerCategory && taken < categoryRecipes.length) {
+      diverseRecipes.push(categoryRecipes[taken]);
+      itemsPerCategoryTaken.set(category, taken + 1);
+    }
+
+    categoryIndex++;
+
+    // Remove categories that are exhausted
+    if (taken + 1 >= maxPerCategory || taken + 1 >= categoryRecipes.length) {
+      const catIdx = categories.indexOf(category);
+      if (catIdx > -1) {
+        categories.splice(catIdx, 1);
+      }
+      categoryIndex = 0; // Reset to start of remaining categories
+    }
+  }
+
+  // Use diverse recipes if we got any, otherwise fall back to original
+  if (diverseRecipes.length > 0) {
+    relevantRecipes = diverseRecipes;
+  }
 
   // Sort to prioritize recipes with real images
   relevantRecipes.sort((a, b) => {

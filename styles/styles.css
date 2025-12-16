@@ -460,6 +460,20 @@ main .section.dark .button.secondary:any-link {
   color: var(--color-white, #fff);
 }
 
+/* Accent section - for best-pick and important callouts (Vitamix Design System) */
+main .section.accent {
+  background: var(--color-off-white, #f5f5f5);
+  border-top: 3px solid var(--color-brand-red, #c41230);
+  border-bottom: 3px solid var(--color-brand-red, #c41230);
+  margin: 0;
+  padding: var(--spacing-section-md, 5rem) 0;
+}
+
+main .section.accent h2 {
+  color: var(--color-brand-dark, #1a1a1a);
+  font-weight: 300;
+}
+
 /* ===== Recipe Content Layout ===== */
 /* Two-column layout: nutrition sidebar on left, ingredients/directions on right */
 /* Each block is in its own section, so we use grid on the parent container */

@@ -86,6 +86,65 @@ export default function decorate(block) {
   // Track number of products for colspan
   const productCount = rows[0] ? [...rows[0].children].length : 1;
 
+  // Detect recommended product from data attribute or recommendation rows
+  let recommendedProductIdx = -1;
+  const recommendedAttr = block.dataset.recommended;
+
+  // Check data-recommended attribute first
+  if (recommendedAttr) {
+    const headerCells = rows[0] ? [...rows[0].children] : [];
+    headerCells.forEach((cell, idx) => {
+      if (idx > 0) {
+        const cellText = cell.textContent.toLowerCase();
+        if (cellText.includes(recommendedAttr.toLowerCase())) {
+          recommendedProductIdx = idx;
+        }
+      }
+    });
+  }
+
+  // If no data attribute, scan for "Best for" or "Recommended" rows to find the recommended product
+  if (recommendedProductIdx === -1) {
+    for (const row of rows.slice(1)) {
+      const firstCell = row.children[0];
+      const firstCellText = firstCell ? firstCell.textContent.trim().toLowerCase() : '';
+      if (firstCellText.startsWith('best for') || firstCellText.startsWith('recommended')
+          || firstCellText.startsWith('our pick')) {
+        // Find which column has the product name in the recommendation
+        const recommendationText = firstCell.textContent.toLowerCase();
+        const headerCells = rows[0] ? [...rows[0].children] : [];
+        headerCells.forEach((cell, idx) => {
+          if (idx > 0) {
+            const productName = cell.textContent.trim().toLowerCase();
+            // Extract first word/model name for matching
+            const productKeywords = productName.split(/[\s®™]+/).filter((w) => w.length > 1);
+            for (const keyword of productKeywords) {
+              if (recommendationText.includes(keyword) && keyword.length > 2) {
+                recommendedProductIdx = idx;
+                break;
+              }
+            }
+          }
+        });
+        break;
+      }
+    }
+  }
+
+  // Apply recommended styling to header if found
+  if (recommendedProductIdx > 0 && thead.children[0]) {
+    const headerCells = thead.children[0].children;
+    if (headerCells[recommendedProductIdx]) {
+      headerCells[recommendedProductIdx].classList.add('recommended-column');
+
+      // Add ribbon badge
+      const ribbon = document.createElement('span');
+      ribbon.className = 'recommended-ribbon';
+      ribbon.textContent = 'BEST PICK';
+      headerCells[recommendedProductIdx].appendChild(ribbon);
+    }
+  }
+
   // Separate recommendation rows from spec rows
   const specRows = [];
   const recommendationRows = [];
@@ -118,6 +177,12 @@ export default function decorate(block) {
         td.textContent = strong ? strong.textContent : cell.textContent.trim();
       } else {
         td.className = 'comparison-table-value';
+
+        // Add recommended column class if this is the recommended product column
+        if (idx === recommendedProductIdx) {
+          td.classList.add('recommended-column');
+        }
+
         const text = cell.textContent.trim();
 
         // Check for winner indicators

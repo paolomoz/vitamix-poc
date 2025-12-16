@@ -99,6 +99,37 @@
   color: #dc2626;
 }
 
+/* Recommended column highlight (Vitamix Design System) */
+.comparison-table-grid th.recommended-column,
+.comparison-table-grid td.recommended-column {
+  background: var(--color-off-white, #f5f5f5);
+  border-left: 3px solid var(--color-brand-red, #c41230);
+  border-right: 3px solid var(--color-brand-red, #c41230);
+}
+
+.comparison-table-grid th.recommended-column {
+  border-top: 3px solid var(--color-brand-red, #c41230);
+  position: relative;
+}
+
+.comparison-table-grid tbody tr:last-child td.recommended-column {
+  border-bottom: 3px solid var(--color-brand-red, #c41230);
+}
+
+/* Recommended ribbon badge */
+.recommended-ribbon {
+  display: block;
+  background: var(--color-brand-red, #c41230);
+  color: var(--color-white, #fff);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 0;
+  margin-top: var(--spacing-xs, 0.25rem);
+}
+
 /* Section variants */
 .section.highlight .comparison-table {
   background: transparent;

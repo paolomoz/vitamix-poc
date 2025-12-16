@@ -306,6 +306,7 @@ export type BlockType =
   | 'budget-breakdown'    // Price/value transparency
   | 'accessibility-specs' // Physical/ergonomic specs
   | 'empathy-hero'        // Warm, acknowledging hero variant
+  | 'best-pick'           // Prominent "Best Pick" callout before comparisons
   // Phase 2 blocks
   | 'sustainability-info' // Environmental responsibility
   | 'smart-features'      // Connected/app capabilities
@@ -405,7 +406,7 @@ export interface ContentChunk {
 
 export type SSEEvent =
   | { event: 'generation-start'; data: { query: string; estimatedBlocks: number } }
-  | { event: 'reasoning-start'; data: { model: string } }
+  | { event: 'reasoning-start'; data: { model: string; preset?: string } }
   | { event: 'reasoning-step'; data: { stage: string; title: string; content: string } }
   | { event: 'reasoning-complete'; data: { confidence: number; duration: number } }
   | { event: 'block-start'; data: { blockType: BlockType; index: number } }

@@ -68,6 +68,7 @@ CRITICAL - Your reasoning will be shown directly to users. Write like you're tal
 | engineering-specs | Deep technical data - for engineers/spec-focused buyers |
 | noise-context | Real-world noise comparisons - for noise-sensitive users |
 | allergen-safety | Cross-contamination protocols - for allergy-concerned users |
+| best-pick | Prominent "Best Pick" callout with visual emphasis - ALWAYS use before comparison-table |
 
 ## Block Selection Guidelines
 
@@ -159,13 +160,30 @@ Keywords: "wattage", "rpm", "motor", "specs", "specifications", "technical", "en
 - Block sequence: hero, engineering-specs, comparison-table, follow-up
 
 ### 12. Competitor Comparison Queries
-Keywords: "blendtec", "ninja", "nutribullet", "kitchenaid", "cuisinart", "breville", "compare to", "vs", "better than"
+Keywords: "blendtec", "ninja", "nutribullet", "kitchenaid", "cuisinart", "breville"
 - IMPORTANT: We only have Vitamix data - cannot make direct competitor comparisons
 - Acknowledge the competitor honestly in the response
 - Focus on Vitamix strengths without false claims about competitors
 - Suggest user research competitors separately for fair comparison
 - Never fabricate competitor specs or make up comparison data
 - Block sequence: hero, feature-highlights (Vitamix strengths), product-recommendation, follow-up
+
+### 13. Vitamix Model Comparison Queries (CRITICAL)
+Detection: Query or URL contains:
+- "vs" or "versus" with Vitamix model names (e.g., "X5 vs X4", "A3500 vs A2500")
+- Multiple Vitamix model identifiers (X5, X4, X3, A3500, A2500, E310, etc.)
+- "compare", "difference between", "which is better" with Vitamix models
+
+WHEN COMPARISON IS DETECTED:
+- ALWAYS include best-pick block BEFORE comparison-table
+- ALWAYS include comparison-table block
+- The best-pick should highlight the recommended model based on user's use case
+- Block sequence: hero, best-pick, comparison-table, product-cards, follow-up
+
+IMPORTANT for soup/hot food queries during comparison:
+- The best-pick MUST be a product with Hot Soup Program (A3500, A2500, Propel 750, Ascent X3/X4/X5)
+- Add "Hot Soup Program" row to comparison table
+- Clearly indicate which models have this feature
 
 ## Output Format
 
@@ -222,6 +240,86 @@ Example BAD follow-ups (never use):
 - "Buy the A3500 now"
 - "Add to cart"
 - "Shop now"`;
+
+// ============================================
+// Comparison Detection Helpers
+// ============================================
+
+/**
+ * Detect if query is asking for a Vitamix model comparison
+ */
+function detectComparisonQuery(query: string): boolean {
+  const lowerQuery = query.toLowerCase();
+
+  // Check for explicit comparison keywords
+  const comparisonKeywords = [
+    /\bvs\b/,
+    /\bversus\b/,
+    /\bcompare\b/,
+    /\bcomparison\b/,
+    /\bdifference between\b/,
+    /\bwhich is better\b/,
+    /\bwhich one\b/,
+    /\bshould i choose\b/,
+    /\bshould i get\b/,
+  ];
+
+  const hasComparisonKeyword = comparisonKeywords.some((pattern) => pattern.test(lowerQuery));
+
+  // Check for multiple Vitamix model identifiers
+  const modelPatterns = [
+    /\bx5\b/gi,
+    /\bx4\b/gi,
+    /\bx3\b/gi,
+    /\bx2\b/gi,
+    /\ba3500\b/gi,
+    /\ba2500\b/gi,
+    /\ba2300\b/gi,
+    /\be310\b/gi,
+    /\be320\b/gi,
+    /\bpropel\b/gi,
+    /\bexplorian\b/gi,
+    /\bascent\b/gi,
+  ];
+
+  const modelMatches = modelPatterns.filter((pattern) => pattern.test(lowerQuery));
+  const hasMultipleModels = modelMatches.length >= 2;
+
+  return hasComparisonKeyword || hasMultipleModels;
+}
+
+/**
+ * Extract comparison details from query for context
+ */
+function getComparisonDetails(query: string): string {
+  const lowerQuery = query.toLowerCase();
+
+  const modelMatches: string[] = [];
+  const modelPatterns: [RegExp, string][] = [
+    [/\bx5\b/gi, 'Ascent X5'],
+    [/\bx4\b/gi, 'Ascent X4'],
+    [/\bx3\b/gi, 'Ascent X3'],
+    [/\bx2\b/gi, 'Ascent X2'],
+    [/\ba3500\b/gi, 'A3500'],
+    [/\ba2500\b/gi, 'A2500'],
+    [/\ba2300\b/gi, 'A2300'],
+    [/\be310\b/gi, 'E310'],
+    [/\be320\b/gi, 'E320'],
+    [/\bpropel\s*750\b/gi, 'Propel 750'],
+  ];
+
+  for (const [pattern, name] of modelPatterns) {
+    if (pattern.test(lowerQuery)) {
+      modelMatches.push(name);
+    }
+  }
+
+  if (modelMatches.length > 0) {
+    return `Models mentioned: ${modelMatches.join(' vs ')}`;
+  }
+
+  return 'General comparison request';
+}
 
 // ============================================
 // Reasoning Engine Functions
@@ -302,6 +400,16 @@ ${lastQueryContext}
 
 ## User Profile
 ${sessionContext?.profile ? JSON.stringify(sessionContext.profile, null, 2) : 'No profile data'}
+
+${detectComparisonQuery(query) ? `
+## COMPARISON QUERY DETECTED (MANDATORY BLOCKS)
+This query is asking for a Vitamix model comparison. You MUST include:
+1. best-pick block - Highlight the recommended model BEFORE the comparison
+2. comparison-table block - Side-by-side comparison of the models
+Block sequence: hero, best-pick, comparison-table, product-cards, follow-up
+
+Detected comparison elements: ${getComparisonDetails(query)}
+` : ''}
 
 ## Your Task
 Analyze this query deeply and select the optimal blocks to render.

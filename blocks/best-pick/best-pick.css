@@ -1,0 +1,205 @@
+/**
+ * Best Pick Block Styles
+ *
+ * Prominent "Our Top Pick" callout following Vitamix Design System.
+ * Reference: /Users/paolo/excat/materialised-web/.claude/skills/vitamix-design-system/SKILL.md
+ */
+
+.best-pick {
+  background: var(--color-off-white, #f5f5f5);
+  padding: var(--spacing-section-md, 5rem) var(--spacing-lg, 1.5rem);
+  max-width: var(--max-width-content, 1200px);
+  margin: 0 auto;
+}
+
+.best-pick-wrapper {
+  position: relative;
+}
+
+/* Badge - brand red with square corners */
+.best-pick-badge {
+  display: inline-block;
+  background: var(--color-brand-red, #c41230);
+  color: var(--color-white, #fff);
+  padding: 0.5rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 0;
+  margin-bottom: var(--spacing-lg, 1.5rem);
+}
+
+/* Two-column container */
+.best-pick-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl, 3rem);
+  align-items: center;
+}
+
+/* Content column */
+.best-pick-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 1rem);
+}
+
+/* Eyebrow text pattern from design system */
+.best-pick-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-brand-red, #c41230);
+  margin: 0;
+}
+
+/* Headline - light weight (300) per design system */
+.best-pick-headline {
+  font-size: var(--font-size-4xl, 2.25rem);
+  font-weight: 300;
+  color: var(--color-brand-dark, #1a1a1a);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Rationale/body text */
+.best-pick-rationale {
+  font-size: var(--font-size-base, 1rem);
+  color: var(--color-charcoal, #333);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+}
+
+/* Price and warranty details */
+.best-pick-details {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md, 1rem);
+  margin-top: var(--spacing-sm, 0.5rem);
+}
+
+.best-pick-price {
+  font-size: var(--font-size-xl, 1.25rem);
+  font-weight: 500;
+  color: var(--color-brand-dark, #1a1a1a);
+}
+
+.best-pick-warranty {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-dark-gray, #666);
+}
+
+/* CTA button - primary button per design system */
+.best-pick-cta {
+  margin-top: var(--spacing-md, 1rem);
+}
+
+.best-pick-cta .button.primary {
+  display: inline-block;
+  background-color: var(--color-brand-red, #c41230);
+  color: var(--color-white, #fff);
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+  border: none;
+  text-decoration: none;
+  transition: background-color var(--transition-normal, 0.2s ease);
+}
+
+.best-pick-cta .button.primary:hover {
+  background-color: var(--color-brand-red-dark, #a30f28);
+}
+
+/* Image column */
+.best-pick-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.best-pick-image picture {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+}
+
+.best-pick-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* Section variants */
+.section.highlight .best-pick {
+  background: transparent;
+}
+
+.section.accent .best-pick {
+  background: transparent;
+}
+
+.section.dark .best-pick {
+  background: transparent;
+}
+
+.section.dark .best-pick-badge {
+  background: var(--color-white, #fff);
+  color: var(--color-brand-red, #c41230);
+}
+
+.section.dark .best-pick-eyebrow {
+  color: #ff8a99;
+}
+
+.section.dark .best-pick-headline {
+  color: var(--color-white, #fff);
+}
+
+.section.dark .best-pick-rationale {
+  color: rgb(255 255 255 / 85%);
+}
+
+.section.dark .best-pick-price {
+  color: var(--color-white, #fff);
+}
+
+.section.dark .best-pick-warranty {
+  color: rgb(255 255 255 / 70%);
+}
+
+/* Responsive */
+@media (width < 900px) {
+  .best-pick-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl, 2rem);
+  }
+
+  .best-pick-image {
+    order: -1;
+  }
+
+  .best-pick-image picture {
+    max-width: 300px;
+  }
+}
+
+@media (width < 600px) {
+  .best-pick {
+    padding: var(--spacing-section-sm, 3rem) var(--spacing-md, 1rem);
+  }
+
+  .best-pick-headline {
+    font-size: var(--font-size-3xl, 1.875rem);
+  }
+
+  .best-pick-image picture {
+    max-width: 250px;
+  }
+}

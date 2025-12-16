@@ -272,6 +272,19 @@ export function escapeHtml(str: string): string {
 }
 
 /**
+ * Unescape HTML entities back to their characters
+ * This is the inverse of escapeHtml - used when extracting text from HTML
+ */
+export function unescapeHtml(str: string): string {
+  return str
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&gt;/g, '>')
+    .replace(/&lt;/g, '<')
+    .replace(/&amp;/g, '&');
+}
+
+/**
  * Build HTML page from blocks for DA persistence
  */
 export function buildPageHtml(

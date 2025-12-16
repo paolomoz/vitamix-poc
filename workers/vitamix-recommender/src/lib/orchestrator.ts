@@ -770,6 +770,50 @@ Generate allergen safety content. Structure:
 <div>
   <div><ul><li>All containers BPA-free</li><li>Tritan plastic is non-porous</li><li>Stainless steel blades sanitize with heat</li><li>Inspect gaskets for wear regularly</li></ul></div>
 </div>`,
+
+    'best-pick': `
+## HTML Template - Prominent "Our Top Pick" callout
+
+Generate a visually prominent "Best Pick" recommendation that appears BEFORE comparison tables.
+Use the best-matching product based on the user's specific use case.
+
+CRITICAL: THE IMAGE IS REQUIRED!
+You MUST include the product image from the context below. Look for the "Image:" field in the product data.
+Do NOT output an empty image div. The image URL must be included.
+
+Pick the BEST single product that matches the user's needs. Do NOT list multiple products.
+
+FOR SOUP QUERIES:
+- The best pick MUST be a product with Hot Soup Program
+- Products with Hot Soup Program: Ascent X3, Ascent X4, Ascent X5, Propel 750, A3500, A2500
+- Mention Hot Soup Program in the rationale
+
+FOR SMOOTHIE QUERIES:
+- Emphasize variable speed control and power
+
+OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual values from context):
+<div class="best-pick-wrapper">
+  <div class="best-pick-badge">OUR TOP PICK</div>
+  <div class="best-pick-container">
+    <div class="best-pick-content">
+      <p class="best-pick-eyebrow">BEST FOR [USE CASE FROM QUERY]</p>
+      <h2 class="best-pick-headline">[Product Name from Context]</h2>
+      <p class="best-pick-rationale">[1-2 sentences explaining WHY this is the best choice for their specific need]</p>
+      <div class="best-pick-details">
+        <span class="best-pick-price">$[PRICE]</span>
+        <span class="best-pick-warranty">[WARRANTY]</span>
+      </div>
+      <div class="best-pick-cta">
+        <a href="[PRODUCT_URL_FROM_CONTEXT]" class="button primary" target="_blank">View on Vitamix</a>
+      </div>
+    </div>
+    <div class="best-pick-image">
+      <picture><img src="[PRODUCT_IMAGE_URL_FROM_CONTEXT]" alt="[Product Name]"></picture>
+    </div>
+  </div>
+</div>
+
+REMEMBER: The rationale must explain WHY this specific product is best for their query.`,
   };
 
   return templates[blockType] || '';
@@ -789,7 +833,7 @@ async function generateBlockContent(
   let dataContext = '';
   let specsTableProductName: string | undefined;
 
-  if (['product-cards', 'product-recommendation', 'comparison-table'].includes(block.type)) {
+  if (['product-cards', 'product-recommendation', 'comparison-table', 'best-pick'].includes(block.type)) {
     dataContext = `\n\n## Available Products (USE THESE EXACT IMAGE URLs):\n${buildProductContext(ragContext.relevantProducts)}`;
   } else if (['specs-table'].includes(block.type)) {
     // For specs-table, provide the first/main product's specifications
@@ -925,10 +969,12 @@ function wrapBlockHTML(type: string, content: string, variant?: string): string 
 
 function getSectionStyle(blockType: string): string {
   const darkBlocks = ['hero', 'product-hero'];
-  const highlightBlocks = ['reasoning', 'reasoning-user', 'testimonials'];
+  const highlightBlocks = ['reasoning', 'reasoning-user', 'testimonials', 'recipe-cards'];
+  const accentBlocks = ['best-pick'];
 
   if (darkBlocks.includes(blockType)) return 'dark';
   if (highlightBlocks.includes(blockType)) return 'highlight';
+  if (accentBlocks.includes(blockType)) return 'accent';
   return 'default';
 }
 

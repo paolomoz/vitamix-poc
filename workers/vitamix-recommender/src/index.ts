@@ -11,7 +11,7 @@
 
 import type { Env, SessionContext, SSEEvent, IntentClassification } from './types';
 import { orchestrate } from './lib/orchestrator';
-import { persistAndPublish, buildPageHtml } from './lib/da-client';
+import { persistAndPublish, buildPageHtml, unescapeHtml } from './lib/da-client';
 import { classifyCategory, generateSemanticSlug, buildCategorizedPath } from './lib/category-classifier';
 
 // ============================================
@@ -177,7 +177,8 @@ async function handlePersist(request: Request, env: Env): Promise<Response> {
       for (const block of blocks) {
         const h1Match = block.html.match(/<h1[^>]*>([^<]+)<\/h1>/i);
         if (h1Match) {
-          pageTitle = h1Match[1];
+          // Unescape HTML entities since the extracted text may contain &amp; etc.
+          pageTitle = unescapeHtml(h1Match[1]);
           break;
         }
       }
