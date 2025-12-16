@@ -152,10 +152,21 @@ export default function decorate(block) {
   rows.slice(1).forEach((row) => {
     const firstCell = row.children[0];
     const firstCellText = firstCell ? firstCell.textContent.trim().toLowerCase() : '';
+    const cells = [...row.children];
 
-    // Check if this is a recommendation row
-    if (firstCellText.startsWith('best for') || firstCellText.startsWith('recommended')
-        || firstCellText.startsWith('our pick') || firstCellText.startsWith('winner')) {
+    // Check if this looks like a recommendation row
+    const isRecommendationKeyword = firstCellText.startsWith('best for')
+      || firstCellText.startsWith('recommended')
+      || firstCellText.startsWith('our pick')
+      || firstCellText.startsWith('winner');
+
+    // Only treat as recommendation if it's a single-cell format with colon
+    // (e.g., "Best for smoothies: A3500") OR if other cells are empty.
+    // If other cells have content, it's a multi-column spec row showing "Best For" per product.
+    const hasContentInOtherCells = cells.slice(1).some((cell) => cell.textContent.trim().length > 0);
+    const hasColonFormat = firstCellText.includes(':');
+
+    if (isRecommendationKeyword && (hasColonFormat || !hasContentInOtherCells)) {
       recommendationRows.push(row);
     } else {
       specRows.push(row);
