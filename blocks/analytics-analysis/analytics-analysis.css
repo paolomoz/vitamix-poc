@@ -189,10 +189,80 @@
 
 .analytics-analysis .actionable-content {
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.5rem;
   flex: 1;
   min-width: 0;
+}
+
+.analytics-analysis .actionable-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.analytics-analysis .order-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-color, #c41230);
+  min-width: 24px;
+}
+
+.analytics-analysis .actionable-metrics {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.analytics-analysis .metric-badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.1875rem 0.5rem;
+  border-radius: 3px;
+  text-transform: capitalize;
+}
+
+.analytics-analysis .metric-badge .metric-label {
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Impact badges */
+.analytics-analysis .metric-badge.impact-high {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.analytics-analysis .metric-badge.impact-medium {
+  background: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.analytics-analysis .metric-badge.impact-low {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+/* Effort badges */
+.analytics-analysis .metric-badge.effort-high {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.analytics-analysis .metric-badge.effort-medium {
+  background: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.analytics-analysis .metric-badge.effort-low {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
 }
 
 .analytics-analysis .category-badge {
@@ -305,6 +375,11 @@
   background: var(--error-color, #ef4444);
 }
 
+.analytics-notification.warning {
+  background: var(--warning-color, #eab308);
+  color: #1a1a1a;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .analytics-analysis .scores-section {
@@ -324,6 +399,10 @@
   .analytics-analysis .actionable-item {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .analytics-analysis .actionable-metrics {
+    flex-wrap: wrap;
   }
 
   .analytics-analysis .execute-btn {

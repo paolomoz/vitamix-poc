@@ -59,6 +59,12 @@ interface DailyStats {
   sessionIds: string[];
 }
 
+interface Suggestion {
+  text: string;
+  impact: 'low' | 'medium' | 'high';
+  effort: 'low' | 'medium' | 'high';
+}
+
 interface AnalysisResult {
   timestamp: number;
   overallScore: number;
@@ -67,9 +73,9 @@ interface AnalysisResult {
   conversionScore: number;
   topIssues: string[];
   suggestions: {
-    content: string[];
-    layout: string[];
-    conversion: string[];
+    content: Suggestion[];
+    layout: Suggestion[];
+    conversion: Suggestion[];
   };
   exemplaryPages: { url: string; query: string; reason: string }[];
   problematicPages: { url: string; query: string; reason: string }[];
@@ -111,7 +117,8 @@ export default {
       }
 
       if (url.pathname === '/api/analytics/analyze' && request.method === 'POST') {
-        return handleAnalyze(env);
+        const force = url.searchParams.get('force') === 'true';
+        return handleAnalyze(env, force);
       }
 
       if (url.pathname === '/api/analytics/queries/recent' && request.method === 'GET') {
@@ -693,11 +700,13 @@ Return ONLY valid JSON with the synthesized result (no markdown, no code blocks,
 
 /**
  * Run AI analysis on recent queries and generated pages
+ * @param env - Environment variables
+ * @param force - If true, bypass rate limiting (for development)
  */
-async function handleAnalyze(env: Env): Promise<Response> {
-  // Check rate limiting - only allow once per hour
+async function handleAnalyze(env: Env, force = false): Promise<Response> {
+  // Check rate limiting - only allow once per hour (unless force=true)
   const lastAnalysis: AnalysisResult | null = await env.ANALYTICS.get('analysis:latest', 'json');
-  if (lastAnalysis && Date.now() - lastAnalysis.timestamp < 60 * 60 * 1000) {
+  if (!force && lastAnalysis && Date.now() - lastAnalysis.timestamp < 60 * 60 * 1000) {
     return jsonResponse({
       cached: true,
       analysis: lastAnalysis,
@@ -809,6 +818,10 @@ C. CONVERSION OPTIMIZATION
 
 ${pagesDescription}
 
+For each suggestion, evaluate:
+- IMPACT: How much will this improvement affect user experience/conversions? (low/medium/high)
+- EFFORT: How much development work is needed to implement? (low/medium/high)
+
 Return ONLY valid JSON with this exact structure (no markdown, no code blocks):
 {
   "overallScore": <0-100>,
@@ -817,9 +830,15 @@ Return ONLY valid JSON with this exact structure (no markdown, no code blocks):
   "conversionScore": <0-100>,
   "topIssues": ["issue1", "issue2", "issue3"],
   "suggestions": {
-    "content": ["suggestion1", "suggestion2"],
-    "layout": ["suggestion1", "suggestion2"],
-    "conversion": ["suggestion1", "suggestion2"]
+    "content": [
+      {"text": "suggestion text", "impact": "low|medium|high", "effort": "low|medium|high"}
+    ],
+    "layout": [
+      {"text": "suggestion text", "impact": "low|medium|high", "effort": "low|medium|high"}
+    ],
+    "conversion": [
+      {"text": "suggestion text", "impact": "low|medium|high", "effort": "low|medium|high"}
+    ]
   },
   "exemplaryPages": [{"url": "...", "query": "...", "reason": "..."}],
   "problematicPages": [{"url": "...", "query": "...", "reason": "..."}]

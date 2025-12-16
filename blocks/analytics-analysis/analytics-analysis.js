@@ -112,6 +112,39 @@ async function handleExecuteClick(button, suggestion, category, problematicPages
 }
 
 /**
+ * Normalize a suggestion to ensure it has text, impact, and effort
+ * Handles both old format (string) and new format (object with text/impact/effort)
+ */
+function normalizeSuggestion(suggestion, category) {
+  // New format: suggestion is an object with text, impact, effort
+  if (typeof suggestion === 'object' && suggestion.text) {
+    return {
+      text: suggestion.text,
+      impact: suggestion.impact || 'medium',
+      effort: suggestion.effort || 'medium',
+      category,
+    };
+  }
+  // Old format (backwards compatibility): suggestion is a string, use defaults
+  return {
+    text: String(suggestion),
+    impact: 'medium',
+    effort: 'medium',
+    category,
+  };
+}
+
+/**
+ * Calculate priority score for sorting (higher = do first)
+ * Priority matrix: High Impact + Low Effort = best
+ */
+function calculatePriority(impact, effort) {
+  const impactScore = { high: 3, medium: 2, low: 1 };
+  const effortScore = { low: 3, medium: 2, high: 1 }; // Inverted: low effort = high score
+  return impactScore[impact] * 2 + effortScore[effort]; // Impact weighted more
+}
+
+/**
  * Create actionable improvements section
  */
 function createActionableImprovements(analysis) {
@@ -120,43 +153,83 @@ function createActionableImprovements(analysis) {
 
   const allSuggestions = [];
 
-  // Collect all suggestions with their categories
+  // Collect all suggestions with their categories (using API-provided impact/effort)
   if (analysis.suggestions?.content) {
-    analysis.suggestions.content.forEach((s) => allSuggestions.push({ text: s, category: 'content' }));
+    analysis.suggestions.content.forEach((s) => {
+      allSuggestions.push(normalizeSuggestion(s, 'content'));
+    });
   }
   if (analysis.suggestions?.layout) {
-    analysis.suggestions.layout.forEach((s) => allSuggestions.push({ text: s, category: 'layout' }));
+    analysis.suggestions.layout.forEach((s) => {
+      allSuggestions.push(normalizeSuggestion(s, 'layout'));
+    });
   }
   if (analysis.suggestions?.conversion) {
-    analysis.suggestions.conversion.forEach((s) => allSuggestions.push({ text: s, category: 'conversion' }));
+    analysis.suggestions.conversion.forEach((s) => {
+      allSuggestions.push(normalizeSuggestion(s, 'conversion'));
+    });
   }
 
   if (allSuggestions.length === 0) {
     return null;
   }
 
-  container.innerHTML = '<h4>Actionable Improvements</h4><p class="section-description">Click Execute to generate a Claude Code prompt for each improvement</p>';
+  // Sort by priority (high impact + low effort first)
+  allSuggestions.sort((a, b) => {
+    const priorityA = calculatePriority(a.impact, a.effort);
+    const priorityB = calculatePriority(b.impact, b.effort);
+    return priorityB - priorityA;
+  });
+
+  container.innerHTML = '<h4>Actionable Improvements</h4><p class="section-description">Sorted by recommended priority (AI-assessed). Click Execute to generate a Claude Code prompt.</p>';
 
   const list = document.createElement('ul');
   list.className = 'actionable-list';
 
-  allSuggestions.forEach(({ text, category }) => {
+  allSuggestions.forEach(({
+    text, category, impact, effort,
+  }, index) => {
     const item = document.createElement('li');
     item.className = 'actionable-item';
 
     const content = document.createElement('div');
     content.className = 'actionable-content';
 
+    const header = document.createElement('div');
+    header.className = 'actionable-header';
+
+    const orderBadge = document.createElement('span');
+    orderBadge.className = 'order-badge';
+    orderBadge.textContent = `#${index + 1}`;
+
     const badge = document.createElement('span');
     badge.className = `category-badge ${category}`;
     badge.textContent = category;
+
+    header.appendChild(orderBadge);
+    header.appendChild(badge);
 
     const textSpan = document.createElement('span');
     textSpan.className = 'actionable-text';
     textSpan.textContent = text;
 
-    content.appendChild(badge);
+    const metrics = document.createElement('div');
+    metrics.className = 'actionable-metrics';
+
+    const impactBadge = document.createElement('span');
+    impactBadge.className = `metric-badge impact-${impact}`;
+    impactBadge.innerHTML = `<span class="metric-label">Impact:</span> ${impact}`;
+
+    const effortBadge = document.createElement('span');
+    effortBadge.className = `metric-badge effort-${effort}`;
+    effortBadge.innerHTML = `<span class="metric-label">Effort:</span> ${effort}`;
+
+    metrics.appendChild(impactBadge);
+    metrics.appendChild(effortBadge);
+
+    content.appendChild(header);
     content.appendChild(textSpan);
+    content.appendChild(metrics);
 
     const executeBtn = document.createElement('button');
     executeBtn.className = 'execute-btn';
@@ -276,17 +349,22 @@ async function loadAnalysisInfo(block) {
 
 /**
  * Run AI analysis
+ * @param {HTMLElement} block - The block element
+ * @param {boolean} force - If true, bypass rate limiting (dev mode)
  */
-async function runAnalysis(block) {
+async function runAnalysis(block, force = false) {
   const analysisButton = block.querySelector('.run-analysis-btn');
   const analysisResults = block.querySelector('.analysis-results');
 
   analysisButton.disabled = true;
-  analysisButton.textContent = 'Analyzing...';
+  analysisButton.textContent = force ? 'Analyzing (forced)...' : 'Analyzing...';
   analysisResults.innerHTML = '<div class="loading">Running AI analysis on recent pages... This may take 30-60 seconds.</div>';
 
   try {
-    const response = await fetch(`${ANALYTICS_ENDPOINT}/api/analytics/analyze`, {
+    const url = force
+      ? `${ANALYTICS_ENDPOINT}/api/analytics/analyze?force=true`
+      : `${ANALYTICS_ENDPOINT}/api/analytics/analyze`;
+    const response = await fetch(url, {
       method: 'POST',
     });
 
@@ -296,6 +374,16 @@ async function runAnalysis(block) {
     }
 
     const data = await response.json();
+
+    // Show feedback based on whether result was cached or fresh
+    if (data.cached) {
+      const nextAvailable = data.nextAvailable ? new Date(data.nextAvailable) : null;
+      const waitTime = nextAvailable ? Math.ceil((nextAvailable - Date.now()) / 60000) : 60;
+      showNotification(`Returning cached result. New analysis available in ${waitTime} minutes.`, 'warning');
+    } else {
+      showNotification('Analysis completed successfully!', 'success');
+    }
+
     displayAnalysisResults(block, data.analysis, data.cached);
   } catch (error) {
     console.error('[Analytics] Analysis failed:', error);
@@ -328,5 +416,7 @@ export default async function decorate(block) {
   await loadAnalysisInfo(block);
 
   const analysisButton = block.querySelector('.run-analysis-btn');
-  analysisButton.addEventListener('click', () => runAnalysis(block));
+  // Shift+click to force a new analysis (bypass rate limit for dev)
+  analysisButton.addEventListener('click', (e) => runAnalysis(block, e.shiftKey));
+  analysisButton.title = 'Shift+click to force new analysis (bypass rate limit)';
 }
