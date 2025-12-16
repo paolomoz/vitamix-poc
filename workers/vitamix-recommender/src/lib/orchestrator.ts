@@ -294,6 +294,15 @@ CRITICAL RULES:
 - Use EXACT image URLs and product URLs from the context below
 - Do NOT include star ratings - we don't have rating data
 - Do NOT invent product names - use exact names from context
+- CTA TEXT MUST BE VALUE-DRIVEN based on product's "Best for" data (NOT generic "View Details")
+
+CTA TEXT GUIDELINES (pick the most relevant):
+- If product is best for smoothies: "Perfect for Your Smoothies"
+- If product is best for soups: "Great for Hot Soups"
+- If product is best for families: "Ideal for Family Meals"
+- For premium products: "Explore the [Product Name]"
+- Generic fallback: "See Why It's Right for You"
+NEVER use generic CTAs like "View Details", "Learn More", or "Shop Now"
 
 THEN output 3-4 product cards (each card is a ROW with two CELLS - image cell and content cell):
 <div class="product-card">
@@ -304,7 +313,7 @@ THEN output 3-4 product cards (each card is a ROW with two CELLS - image cell an
     <h3><a href="EXACT_PRODUCT_URL_FROM_CONTEXT" target="_blank">Exact Product Name</a></h3>
     <p>Brief tagline from context</p>
     <p>$XXX.XX</p>
-    <p><a href="EXACT_PRODUCT_URL_FROM_CONTEXT" class="button" target="_blank">View Details</a></p>
+    <p><a href="EXACT_PRODUCT_URL_FROM_CONTEXT" class="button" target="_blank">[VALUE-DRIVEN CTA TEXT]</a></p>
   </div>
 </div>
 
@@ -359,6 +368,14 @@ If the user mentions kids, family, picky eaters, or hiding vegetables:
 - Eyebrow can reference their challenge
 - Description should highlight both soup-making for hiding veggies AND smoothies for fruit-loving kids
 
+CTA TEXT MUST BE VALUE-DRIVEN (NOT generic):
+- For smoothie queries: "Find Your Perfect Smoothie Blender"
+- For soup queries: "Discover Restaurant-Quality Soups"
+- For families: "Explore Blenders for Your Family"
+- For health-focused: "Start Your Wellness Journey"
+- Generic: "Find the Right Blender for You"
+NEVER use "Shop Now", "Buy Now", or "Learn More"
+
 OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual content):
 <div>
   <div>
@@ -369,7 +386,7 @@ OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual content):
   <div>
     <h1>Your Headline Here</h1>
     <p>Your description text here explaining the value proposition.</p>
-    <p><a href="#" class="button">Shop Now</a></p>
+    <p><a href="#" class="button">[VALUE-DRIVEN CTA - e.g., "Find Your Perfect Smoothie Blender"]</a></p>
   </div>
 </div>
 
@@ -464,10 +481,22 @@ If the user mentions kids, family, picky eaters, or hiding vegetables:
   5. Warranty - families need long-term reliability
 - Add a row note: "Best for hiding veggies in soups: [product with hot soup program]"
 
+REQUIRED: PRICING VALUE SUMMARY ROW
+After the header, include a "Value Proposition" row that summarizes what each product is best for:
+- For budget products: "Best Value - Great entry point"
+- For mid-range: "Most Popular - Best balance of features"
+- For premium: "Top Features - Maximum versatility"
+This helps users quickly understand which product matches their priorities.
+
 <div>
   <div></div>
   <div><strong><a href="EXACT_PRODUCT_A_URL" target="_blank">Product A Name</a></strong></div>
   <div><strong><a href="EXACT_PRODUCT_B_URL" target="_blank">Product B Name</a></strong></div>
+</div>
+<div>
+  <div><strong>Value Proposition</strong></div>
+  <div>Best Value - Great for beginners</div>
+  <div>Top Features - Maximum versatility</div>
 </div>
 <div>
   <div><strong>Price</strong></div>
@@ -475,11 +504,21 @@ If the user mentions kids, family, picky eaters, or hiding vegetables:
   <div>$YYY</div>
 </div>
 <div>
+  <div><strong>Price Difference</strong></div>
+  <div>-</div>
+  <div>$ZZZ more for [key additional feature]</div>
+</div>
+<div>
   <div><strong>Motor</strong></div>
   <div>2.2 HP</div>
   <div>2.0 HP</div>
 </div>
-<!-- Add more spec rows as needed -->`,
+<!-- Add more spec rows as needed -->
+<div>
+  <div><strong>Best For</strong></div>
+  <div>[Use case this product excels at]</div>
+  <div>[Use case this product excels at]</div>
+</div>`,
 
     'product-recommendation': `
 ## HTML Template - Generate ONE primary product recommendation.
@@ -495,6 +534,14 @@ If the user mentions kids, family, picky eaters, or hiding vegetables:
 - Eyebrow should reference their family situation
 - Body should mention Hot Soup Program, smoothie capabilities, self-cleaning, large container
 
+CTA TEXT MUST BE VALUE-DRIVEN (NOT generic):
+- For smoothie users: "Get the [Product] for Perfect Smoothies"
+- For soup lovers: "Start Making Restaurant-Quality Soups"
+- For families: "Get the [Product] for Your Family"
+- For health-focused: "Start Your Wellness Journey"
+- Generic: "See Why It's Perfect for You"
+NEVER use "View on Vitamix", "Learn More", or "View Details"
+
 OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual values from context):
 <div class="product-recommendation">
   <div>
@@ -506,7 +553,7 @@ OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual values from contex
       <h2 class="product-recommendation-headline">Product Name from Context</h2>
       <p class="product-recommendation-body">Why this product is the best choice. Be specific about features.</p>
       <p class="product-recommendation-price">$XXX.XX · Warranty from context</p>
-      <p><a href="PRODUCT_URL_FROM_CONTEXT" class="button primary" target="_blank">View on Vitamix</a></p>
+      <p><a href="PRODUCT_URL_FROM_CONTEXT" class="button primary" target="_blank">[VALUE-DRIVEN CTA - e.g., "Get the A3500 for Your Family"]</a></p>
     </div>
   </div>
 </div>
@@ -791,6 +838,14 @@ FOR SOUP QUERIES:
 FOR SMOOTHIE QUERIES:
 - Emphasize variable speed control and power
 
+CTA TEXT MUST BE VALUE-DRIVEN AND PERSONALIZED:
+- For smoothie users: "Get the [Product] for Silky Smoothies"
+- For soup lovers: "Get the [Product] for Perfect Soups"
+- For families: "Perfect for Your Family - Explore the [Product]"
+- For budget-conscious: "Best Value - See the [Product]"
+- Generic: "See Why We Recommend This"
+NEVER use "View on Vitamix", "Learn More", or "View Details"
+
 OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual values from context):
 <div class="best-pick-wrapper">
   <div class="best-pick-badge">OUR TOP PICK</div>
@@ -804,7 +859,7 @@ OUTPUT THIS EXACT STRUCTURE (replace placeholders with actual values from contex
         <span class="best-pick-warranty">[WARRANTY]</span>
       </div>
       <div class="best-pick-cta">
-        <a href="[PRODUCT_URL_FROM_CONTEXT]" class="button primary" target="_blank">View on Vitamix</a>
+        <a href="[PRODUCT_URL_FROM_CONTEXT]" class="button primary" target="_blank">[VALUE-DRIVEN CTA - e.g., "Get the A3500 for Silky Smoothies"]</a>
       </div>
     </div>
     <div class="best-pick-image">

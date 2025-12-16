@@ -66,6 +66,54 @@ Please implement this improvement across the affected components.`;
 }
 
 /**
+ * Generate a Claude Code prompt for multiple improvement suggestions
+ */
+async function generateMultiPrompt(items, problematicPages) {
+  const pagesContext = problematicPages && problematicPages.length > 0
+    ? `\n\nAffected pages that may need improvements:\n${problematicPages.map((p) => `- ${p.url} (${p.reason})`).join('\n')}`
+    : '';
+
+  const categoryContext = {
+    content: 'content quality, relevance, and information completeness',
+    layout: 'visual hierarchy, formatting, and page structure',
+    conversion: 'CTAs, product links, and conversion optimization',
+  };
+
+  // Group items by category
+  const byCategory = items.reduce((acc, item) => {
+    if (!acc[item.category]) acc[item.category] = [];
+    acc[item.category].push(item.text);
+    return acc;
+  }, {});
+
+  const improvementsList = Object.entries(byCategory)
+    .map(([cat, texts]) => `### ${cat.charAt(0).toUpperCase() + cat.slice(1)} (${categoryContext[cat] || cat})\n${texts.map((t, i) => `${i + 1}. ${t}`).join('\n')}`)
+    .join('\n\n');
+
+  const prompt = `# Improvement Task: Multiple Improvements (${items.length} total)
+
+## Issues to Address
+${improvementsList}
+${pagesContext}
+
+## Instructions
+1. Analyze the relevant blocks and templates in this AEM Edge Delivery Services project
+2. Identify the specific code changes needed to address each improvement
+3. Implement the changes following existing code patterns and styles
+4. Test the changes locally before committing
+5. Address improvements in priority order (they are listed by recommended priority)
+
+## Project Context
+- This is a Vitamix product recommendation site built on AEM Edge Delivery Services
+- Generated pages are created dynamically based on user queries
+- Focus on improving the user experience and conversion rate
+
+Please implement these improvements across the affected components.`;
+
+  return prompt;
+}
+
+/**
  * Handle execute button click
  */
 async function handleExecuteClick(button, suggestion, category, problematicPages) {
@@ -181,16 +229,51 @@ function createActionableImprovements(analysis) {
     return priorityB - priorityA;
   });
 
-  container.innerHTML = '<h4>Actionable Improvements</h4><p class="section-description">Sorted by recommended priority (AI-assessed). Click Execute to generate a Claude Code prompt.</p>';
+  container.innerHTML = '<h4>Actionable Improvements</h4><p class="section-description">Sorted by recommended priority (AI-assessed). Select improvements and click Execute Selected, or execute individually.</p>';
+
+  // Select all controls
+  const selectControls = document.createElement('div');
+  selectControls.className = 'select-controls';
+
+  const selectAllLabel = document.createElement('label');
+  selectAllLabel.className = 'select-all-label';
+
+  const selectAllCheckbox = document.createElement('input');
+  selectAllCheckbox.type = 'checkbox';
+  selectAllCheckbox.className = 'select-all-checkbox';
+
+  selectAllLabel.appendChild(selectAllCheckbox);
+  selectAllLabel.appendChild(document.createTextNode(' Select All'));
+
+  const executeSelectedBtn = document.createElement('button');
+  executeSelectedBtn.className = 'execute-selected-btn';
+  executeSelectedBtn.textContent = 'Execute Selected';
+  executeSelectedBtn.disabled = true;
+
+  selectControls.appendChild(selectAllLabel);
+  selectControls.appendChild(executeSelectedBtn);
+  container.appendChild(selectControls);
 
   const list = document.createElement('ul');
   list.className = 'actionable-list';
+
+  // Track checkboxes for select all functionality
+  const checkboxes = [];
 
   allSuggestions.forEach(({
     text, category, impact, effort,
   }, index) => {
     const item = document.createElement('li');
     item.className = 'actionable-item';
+
+    // Checkbox for selection
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'item-checkbox';
+    checkbox.dataset.index = index;
+    checkbox.dataset.text = text;
+    checkbox.dataset.category = category;
+    checkboxes.push(checkbox);
 
     const content = document.createElement('div');
     content.className = 'actionable-content';
@@ -209,13 +292,6 @@ function createActionableImprovements(analysis) {
     header.appendChild(orderBadge);
     header.appendChild(badge);
 
-    const textSpan = document.createElement('span');
-    textSpan.className = 'actionable-text';
-    textSpan.textContent = text;
-
-    const metrics = document.createElement('div');
-    metrics.className = 'actionable-metrics';
-
     const impactBadge = document.createElement('span');
     impactBadge.className = `metric-badge impact-${impact}`;
     impactBadge.innerHTML = `<span class="metric-label">Impact:</span> ${impact}`;
@@ -224,24 +300,111 @@ function createActionableImprovements(analysis) {
     effortBadge.className = `metric-badge effort-${effort}`;
     effortBadge.innerHTML = `<span class="metric-label">Effort:</span> ${effort}`;
 
-    metrics.appendChild(impactBadge);
-    metrics.appendChild(effortBadge);
+    header.appendChild(impactBadge);
+    header.appendChild(effortBadge);
+
+    const textSpan = document.createElement('span');
+    textSpan.className = 'actionable-text';
+    textSpan.textContent = text;
 
     content.appendChild(header);
     content.appendChild(textSpan);
-    content.appendChild(metrics);
 
     const executeBtn = document.createElement('button');
     executeBtn.className = 'execute-btn';
     executeBtn.innerHTML = 'Execute';
     executeBtn.addEventListener('click', () => handleExecuteClick(executeBtn, text, category, analysis.problematicPages));
 
+    item.appendChild(checkbox);
     item.appendChild(content);
     item.appendChild(executeBtn);
     list.appendChild(item);
   });
 
   container.appendChild(list);
+
+  // Update execute selected button state based on selections
+  const updateExecuteSelectedState = () => {
+    const selectedCount = checkboxes.filter((cb) => cb.checked).length;
+    executeSelectedBtn.disabled = selectedCount === 0;
+    executeSelectedBtn.textContent = selectedCount > 0
+      ? `Execute Selected (${selectedCount})`
+      : 'Execute Selected';
+
+    // Update select all checkbox state
+    if (selectedCount === 0) {
+      selectAllCheckbox.checked = false;
+      selectAllCheckbox.indeterminate = false;
+    } else if (selectedCount === checkboxes.length) {
+      selectAllCheckbox.checked = true;
+      selectAllCheckbox.indeterminate = false;
+    } else {
+      selectAllCheckbox.checked = false;
+      selectAllCheckbox.indeterminate = true;
+    }
+  };
+
+  // Add change listeners to all checkboxes
+  checkboxes.forEach((cb) => {
+    cb.addEventListener('change', updateExecuteSelectedState);
+  });
+
+  // Select all functionality
+  selectAllCheckbox.addEventListener('change', () => {
+    const newState = selectAllCheckbox.checked;
+    checkboxes.forEach((cb) => {
+      cb.checked = newState;
+    });
+    updateExecuteSelectedState();
+  });
+
+  // Execute selected functionality
+  executeSelectedBtn.addEventListener('click', async () => {
+    const selectedItems = checkboxes
+      .filter((cb) => cb.checked)
+      .map((cb) => ({
+        text: cb.dataset.text,
+        category: cb.dataset.category,
+      }));
+
+    if (selectedItems.length === 0) return;
+
+    const originalContent = executeSelectedBtn.textContent;
+    executeSelectedBtn.disabled = true;
+    executeSelectedBtn.innerHTML = '<span class="spinner"></span>';
+    executeSelectedBtn.classList.add('loading');
+
+    try {
+      const prompt = await generateMultiPrompt(selectedItems, analysis.problematicPages);
+      await navigator.clipboard.writeText(prompt);
+
+      executeSelectedBtn.innerHTML = '✓';
+      executeSelectedBtn.classList.remove('loading');
+      executeSelectedBtn.classList.add('success');
+      showNotification(`Prompt for ${selectedItems.length} improvement(s) copied to clipboard!`);
+
+      setTimeout(() => {
+        executeSelectedBtn.textContent = originalContent;
+        executeSelectedBtn.classList.remove('success');
+        executeSelectedBtn.disabled = false;
+        updateExecuteSelectedState();
+      }, 2000);
+    } catch (error) {
+      console.error('[Analytics] Failed to generate prompt:', error);
+      executeSelectedBtn.innerHTML = '✗';
+      executeSelectedBtn.classList.remove('loading');
+      executeSelectedBtn.classList.add('error');
+      showNotification('Failed to copy prompt', 'error');
+
+      setTimeout(() => {
+        executeSelectedBtn.textContent = originalContent;
+        executeSelectedBtn.classList.remove('error');
+        executeSelectedBtn.disabled = false;
+        updateExecuteSelectedState();
+      }, 2000);
+    }
+  });
+
   return container;
 }
 

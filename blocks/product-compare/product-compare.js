@@ -271,7 +271,9 @@ function createComparisonModal(products) {
       const btn = document.createElement('a');
       btn.href = product.link || '#';
       btn.className = 'comparison-modal-view-btn';
-      btn.textContent = 'VIEW DETAILS';
+      // Use value-driven CTA text based on product name
+      const shortName = product.name.replace(/^Vitamix\s*/i, '');
+      btn.textContent = `Explore the ${shortName}`;
       cta.appendChild(btn);
     }
 

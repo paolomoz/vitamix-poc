@@ -6,16 +6,41 @@
  */
 
 /**
- * Purchase-related terms to replace
+ * Purchase-related terms to replace (ONLY when used alone, not in value-driven context)
  */
 const PURCHASE_REPLACEMENTS = {
   'add to cart': 'View Details',
   'buy now': 'Learn More',
   'shop now': 'View on Vitamix',
-  'purchase': 'Explore',
-  'checkout': 'Continue',
-  'buy': 'View',
+  purchase: 'Explore',
+  checkout: 'Continue',
+  buy: 'View',
 };
+
+/**
+ * Patterns that indicate a value-driven CTA (should be preserved)
+ * These CTAs are personalized and provide context about the product/use case
+ */
+const VALUE_DRIVEN_PATTERNS = [
+  /perfect for/i,
+  /great for/i,
+  /ideal for/i,
+  /best for/i,
+  /get the .+ for/i, // "Get the X5 for Your Family"
+  /explore the/i,
+  /see why/i,
+  /start your/i,
+  /start making/i,
+  /right for you/i,
+  /we recommend/i,
+  /your family/i,
+  /your smoothies/i,
+  /your soups/i,
+  /silky smoothies/i,
+  /restaurant-quality/i,
+  /wellness journey/i,
+  /best value/i,
+];
 
 /**
  * Classify a link based on its href
@@ -48,12 +73,29 @@ export function classifyLink(href) {
 }
 
 /**
+ * Check if CTA text is value-driven (personalized with context)
+ * Value-driven CTAs should be preserved, not sanitized
+ * @param {string} text - CTA text to check
+ * @returns {boolean} - True if value-driven
+ */
+export function isValueDrivenCTA(text) {
+  if (!text) return false;
+  return VALUE_DRIVEN_PATTERNS.some((pattern) => pattern.test(text));
+}
+
+/**
  * Sanitize CTA text to remove purchase-intent language
+ * Preserves value-driven CTAs that contain product/use-case context
  * @param {string} text - Original CTA text
  * @returns {string} - Sanitized text
  */
 export function sanitizeCTAText(text) {
   if (!text) return text;
+
+  // Preserve value-driven CTAs (personalized with context)
+  if (isValueDrivenCTA(text)) {
+    return text;
+  }
 
   let sanitized = text;
   const lowerText = text.toLowerCase();
@@ -175,6 +217,7 @@ export function decorateCTA(link) {
 export default {
   classifyLink,
   sanitizeCTAText,
+  isValueDrivenCTA,
   hasPurchaseIntent,
   createCTAIcon,
   decorateLinkWithIcon,

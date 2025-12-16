@@ -475,7 +475,12 @@ export interface Env {
   // DA (Document Authoring) Configuration
   DA_ORG: string;
   DA_REPO: string;
-  DA_TOKEN: string;
+  // S2S Authentication (preferred)
+  DA_CLIENT_ID?: string;
+  DA_CLIENT_SECRET?: string;
+  DA_SERVICE_TOKEN?: string;
+  // Legacy static token (fallback)
+  DA_TOKEN?: string;
 
   // Configuration
   MODEL_PRESET?: string;

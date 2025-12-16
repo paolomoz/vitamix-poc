@@ -10,13 +10,20 @@ compatibility_flags = ["nodejs_compat"]
 # 1. Set API secrets:
 #    wrangler secret put ANTHROPIC_API_KEY
 #    wrangler secret put CEREBRAS_API_KEY
+#
+# 2. Set DA (Document Authoring) S2S credentials (preferred):
+#    wrangler secret put DA_CLIENT_ID
+#    wrangler secret put DA_CLIENT_SECRET
+#    wrangler secret put DA_SERVICE_TOKEN
+#
+#    OR use legacy static token (fallback):
 #    wrangler secret put DA_TOKEN
 #
-# 2. Create KV namespace (if not exists):
+# 3. Create KV namespace (if not exists):
 #    wrangler kv:namespace create SESSIONS
 #    Then update the id below with the returned ID
 #
-# 3. Create Vectorize index (if not exists):
+# 4. Create Vectorize index (if not exists):
 #    wrangler vectorize create vitamix-content --dimensions=768 --metric=cosine
 # ============================================
 

@@ -169,6 +169,67 @@
   margin-bottom: 1rem;
 }
 
+.analytics-analysis .select-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--section-bg, #f9f9f9);
+  border-radius: 6px;
+}
+
+.analytics-analysis .select-all-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-color, #333);
+}
+
+.analytics-analysis .select-all-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--primary-color, #c41230);
+}
+
+.analytics-analysis .execute-selected-btn {
+  background: var(--primary-color, #c41230);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 140px;
+}
+
+.analytics-analysis .execute-selected-btn:hover:not(:disabled) {
+  background: var(--primary-color-dark, #a00f28);
+}
+
+.analytics-analysis .execute-selected-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.analytics-analysis .execute-selected-btn.loading {
+  background: var(--text-color-muted, #666);
+}
+
+.analytics-analysis .execute-selected-btn.success {
+  background: var(--success-color, #22c55e);
+}
+
+.analytics-analysis .execute-selected-btn.error {
+  background: var(--error-color, #ef4444);
+}
+
 .analytics-analysis .actionable-list {
   list-style: none;
   padding: 0;
@@ -178,13 +239,20 @@
 .analytics-analysis .actionable-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   padding: 0.75rem;
   border: 1px solid var(--border-color, #e5e5e5);
   border-radius: 6px;
   margin-bottom: 0.5rem;
   background: var(--card-bg, #fff);
+}
+
+.analytics-analysis .item-checkbox {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--primary-color, #c41230);
 }
 
 .analytics-analysis .actionable-content {
@@ -205,13 +273,8 @@
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--primary-color, #c41230);
-  min-width: 24px;
-}
-
-.analytics-analysis .actionable-metrics {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 0.25rem;
+  min-width: 28px;
+  text-align: center;
 }
 
 .analytics-analysis .metric-badge {
@@ -220,6 +283,8 @@
   padding: 0.1875rem 0.5rem;
   border-radius: 3px;
   text-transform: capitalize;
+  min-width: 88px;
+  text-align: center;
 }
 
 .analytics-analysis .metric-badge .metric-label {
@@ -227,42 +292,42 @@
   opacity: 0.8;
 }
 
-/* Impact badges */
+/* Impact badges - shades of green (higher = darker green) */
 .analytics-analysis .metric-badge.impact-high {
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
+  background: #4ade80;
+  color: #14532d;
+  border: 1px solid #22c55e;
 }
 
 .analytics-analysis .metric-badge.impact-medium {
-  background: #fffbeb;
-  color: #d97706;
-  border: 1px solid #fde68a;
+  background: #bbf7d0;
+  color: #166534;
+  border: 1px solid #86efac;
 }
 
 .analytics-analysis .metric-badge.impact-low {
   background: #f0fdf4;
   color: #16a34a;
-  border: 1px solid #bbf7d0;
+  border: 1px solid #dcfce7;
 }
 
-/* Effort badges */
+/* Effort badges - shades of red (higher = darker red) */
 .analytics-analysis .metric-badge.effort-high {
-  background: #fef2f2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
+  background: #f87171;
+  color: #7f1d1d;
+  border: 1px solid #ef4444;
 }
 
 .analytics-analysis .metric-badge.effort-medium {
-  background: #fffbeb;
-  color: #d97706;
-  border: 1px solid #fde68a;
+  background: #fecaca;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
 }
 
 .analytics-analysis .metric-badge.effort-low {
-  background: #f0fdf4;
-  color: #16a34a;
-  border: 1px solid #bbf7d0;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
 }
 
 .analytics-analysis .category-badge {
@@ -273,21 +338,10 @@
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   letter-spacing: 0.025em;
-}
-
-.analytics-analysis .category-badge.content {
-  background: #dbeafe;
-  color: #1e40af;
-}
-
-.analytics-analysis .category-badge.layout {
-  background: #fae8ff;
-  color: #86198f;
-}
-
-.analytics-analysis .category-badge.conversion {
-  background: #dcfce7;
-  color: #166534;
+  background: #e5e5e5;
+  color: #525252;
+  min-width: 70px;
+  text-align: center;
 }
 
 .analytics-analysis .actionable-text {
@@ -401,7 +455,7 @@
     align-items: stretch;
   }
 
-  .analytics-analysis .actionable-metrics {
+  .analytics-analysis .actionable-header {
     flex-wrap: wrap;
   }
 

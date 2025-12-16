@@ -1,21 +1,30 @@
 import type { Env } from '../types';
+import { getDAToken, clearCachedToken } from './da-token-service';
 
 /**
  * DA (Document Authoring) API Client
  *
- * Handles creating and publishing pages in AEM's Document Authoring system
+ * Handles creating and publishing pages in AEM's Document Authoring system.
+ * Uses S2S token authentication with automatic refresh on 401 errors.
  */
 
 export class DAClient {
   private baseUrl = 'https://admin.da.live';
   private org: string;
   private repo: string;
-  private token: string;
+  private env: Env;
 
   constructor(env: Env) {
     this.org = env.DA_ORG;
     this.repo = env.DA_REPO;
-    this.token = env.DA_TOKEN;
+    this.env = env;
+  }
+
+  /**
+   * Get authentication token (fetched dynamically via S2S or fallback)
+   */
+  private async getToken(): Promise<string> {
+    return getDAToken(this.env);
   }
 
   /**
@@ -23,7 +32,8 @@ export class DAClient {
    */
   async exists(path: string): Promise<boolean> {
     try {
-      const response = await this.request('HEAD', `/source/${this.org}/${this.repo}${path}.html`);
+      const token = await this.getToken();
+      const response = await this.requestWithToken('HEAD', `/source/${this.org}/${this.repo}${path}.html`, token);
       return response.ok;
     } catch {
       return false;
@@ -32,42 +42,58 @@ export class DAClient {
 
   /**
    * Create a new page with HTML content
+   * Includes retry logic for 401 errors (token refresh)
    */
   async createPage(path: string, htmlContent: string): Promise<{ success: boolean; error?: string }> {
-    const formData = new FormData();
-    formData.append('data', new Blob([htmlContent], { type: 'text/html' }), 'index.html');
-
     const url = `${this.baseUrl}/source/${this.org}/${this.repo}${path}.html`;
     console.log(`[DAClient] Creating page at: ${url}`);
-    console.log(`[DAClient] Token present: ${!!this.token}, length: ${this.token?.length || 0}`);
     console.log(`[DAClient] HTML content length: ${htmlContent.length}`);
 
-    try {
-      const response = await fetch(url, {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${this.token}`,
-        },
-        body: formData,
-      });
+    // Try up to 2 times (initial + retry on 401)
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const token = await this.getToken();
+        console.log(`[DAClient] Token obtained, length: ${token?.length || 0} (attempt ${attempt + 1})`);
 
-      const responseText = await response.text();
-      console.log(`[DAClient] Response status: ${response.status}`);
-      console.log(`[DAClient] Response body: ${responseText.substring(0, 500)}`);
+        const formData = new FormData();
+        formData.append('data', new Blob([htmlContent], { type: 'text/html' }), 'index.html');
 
-      if (!response.ok) {
-        return { success: false, error: `Failed to create page: ${response.status} - ${responseText}` };
+        const response = await fetch(url, {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
+
+        const responseText = await response.text();
+        console.log(`[DAClient] Response status: ${response.status}`);
+        console.log(`[DAClient] Response body: ${responseText.substring(0, 500)}`);
+
+        // On 401, clear cache and retry
+        if (response.status === 401 && attempt === 0) {
+          console.log('[DAClient] Got 401, clearing token cache and retrying...');
+          clearCachedToken();
+          continue;
+        }
+
+        if (!response.ok) {
+          return { success: false, error: `Failed to create page: ${response.status} - ${responseText}` };
+        }
+
+        return { success: true };
+      } catch (error) {
+        console.error(`[DAClient] Fetch error:`, error);
+        return { success: false, error: (error as Error).message };
       }
-
-      return { success: true };
-    } catch (error) {
-      console.error(`[DAClient] Fetch error:`, error);
-      return { success: false, error: (error as Error).message };
     }
+
+    return { success: false, error: 'Failed after retry' };
   }
 
   /**
    * Upload a media file (image)
+   * Includes retry logic for 401 errors (token refresh)
    */
   async uploadMedia(
     hash: string,
@@ -78,42 +104,54 @@ export class DAClient {
   ): Promise<{ success: boolean; url?: string; error?: string }> {
     // Media files use ./media_<hash>.<ext> naming convention
     const filename = `media_${hash}.${ext}`;
-    const formData = new FormData();
-    formData.append('data', new Blob([buffer], { type: contentType }), filename);
 
     // Build full path including folder
     const fullPath = `${folderPath}${filename}`.replace(/\/+/g, '/');
+    const uploadUrl = `${this.baseUrl}/source/${this.org}/${this.repo}${fullPath}`;
     console.log(`[DAClient] Uploading media to: ${fullPath}`);
+    console.log(`[DAClient] Upload URL: ${uploadUrl}`);
 
-    try {
-      const uploadUrl = `${this.baseUrl}/source/${this.org}/${this.repo}${fullPath}`;
-      console.log(`[DAClient] Upload URL: ${uploadUrl}`);
+    // Try up to 2 times (initial + retry on 401)
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const token = await this.getToken();
+        const formData = new FormData();
+        formData.append('data', new Blob([buffer], { type: contentType }), filename);
 
-      // Upload to same folder as the page
-      const response = await fetch(uploadUrl, {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${this.token}`,
-        },
-        body: formData,
-      });
+        const response = await fetch(uploadUrl, {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        });
 
-      const responseText = await response.text();
-      console.log(`[DAClient] Upload response: ${response.status} - ${responseText.substring(0, 200)}`);
+        const responseText = await response.text();
+        console.log(`[DAClient] Upload response: ${response.status} - ${responseText.substring(0, 200)}`);
 
-      if (!response.ok) {
-        return { success: false, error: `Failed to upload media: ${response.status} - ${responseText}` };
+        // On 401, clear cache and retry
+        if (response.status === 401 && attempt === 0) {
+          console.log('[DAClient] Got 401, clearing token cache and retrying...');
+          clearCachedToken();
+          continue;
+        }
+
+        if (!response.ok) {
+          return { success: false, error: `Failed to upload media: ${response.status} - ${responseText}` };
+        }
+
+        // Return simple relative path - media is in same folder as page
+        console.log(`[DAClient] Media upload successful, URL: ./${filename}`);
+        return {
+          success: true,
+          url: `./${filename}`,
+        };
+      } catch (error) {
+        return { success: false, error: (error as Error).message };
       }
-
-      // Return simple relative path - media is in same folder as page
-      console.log(`[DAClient] Media upload successful, URL: ./${filename}`);
-      return {
-        success: true,
-        url: `./${filename}`,
-      };
-    } catch (error) {
-      return { success: false, error: (error as Error).message };
     }
+
+    return { success: false, error: 'Failed after retry' };
   }
 
   /**
@@ -121,7 +159,8 @@ export class DAClient {
    */
   async deletePage(path: string): Promise<boolean> {
     try {
-      const response = await this.request('DELETE', `/source/${this.org}/${this.repo}${path}.html`);
+      const token = await this.getToken();
+      const response = await this.requestWithToken('DELETE', `/source/${this.org}/${this.repo}${path}.html`, token);
       return response.ok;
     } catch {
       return false;
@@ -129,13 +168,13 @@ export class DAClient {
   }
 
   /**
-   * Make an authenticated request to the DA API
+   * Make an authenticated request to the DA API with a specific token
    */
-  private async request(method: string, endpoint: string): Promise<Response> {
+  private async requestWithToken(method: string, endpoint: string, token: string): Promise<Response> {
     return fetch(`${this.baseUrl}${endpoint}`, {
       method,
       headers: {
-        Authorization: `Bearer ${this.token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
   }
@@ -144,72 +183,108 @@ export class DAClient {
 /**
  * AEM Admin API Client
  *
- * Handles preview/publish operations
+ * Handles preview/publish operations.
+ * Uses S2S token authentication with automatic refresh on 401 errors.
  */
 export class AEMAdminClient {
   private baseUrl = 'https://admin.hlx.page';
   private org: string;
   private site: string;
   private ref: string;
-  private token: string;
+  private env: Env;
 
   constructor(env: Env, ref: string = 'main') {
     this.org = env.DA_ORG;
     this.site = env.DA_REPO;
     this.ref = ref;
-    this.token = env.DA_TOKEN;
+    this.env = env;
+  }
+
+  /**
+   * Get authentication token (fetched dynamically via S2S or fallback)
+   */
+  private async getToken(): Promise<string> {
+    return getDAToken(this.env);
   }
 
   /**
    * Trigger preview for a path
+   * Includes retry logic for 401 errors (token refresh)
    */
   async preview(path: string): Promise<{ success: boolean; url?: string; error?: string }> {
     const endpoint = `/preview/${this.org}/${this.site}/${this.ref}${path}`;
     console.log(`[AEMAdmin] Preview request: ${this.baseUrl}${endpoint}`);
 
-    try {
-      const response = await this.request('POST', endpoint);
-      const responseText = await response.text();
-      console.log(`[AEMAdmin] Preview response: ${response.status} - ${responseText.substring(0, 200)}`);
+    // Try up to 2 times (initial + retry on 401)
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const token = await this.getToken();
+        const response = await this.requestWithToken('POST', endpoint, token);
+        const responseText = await response.text();
+        console.log(`[AEMAdmin] Preview response: ${response.status} - ${responseText.substring(0, 200)}`);
 
-      if (!response.ok) {
-        return { success: false, error: `Preview failed: ${response.status} - ${responseText}` };
+        // On 401, clear cache and retry
+        if (response.status === 401 && attempt === 0) {
+          console.log('[AEMAdmin] Got 401, clearing token cache and retrying...');
+          clearCachedToken();
+          continue;
+        }
+
+        if (!response.ok) {
+          return { success: false, error: `Preview failed: ${response.status} - ${responseText}` };
+        }
+
+        return {
+          success: true,
+          url: `https://${this.ref}--${this.site}--${this.org}.aem.page${path}`,
+        };
+      } catch (error) {
+        console.error(`[AEMAdmin] Preview error:`, error);
+        return { success: false, error: (error as Error).message };
       }
-
-      return {
-        success: true,
-        url: `https://${this.ref}--${this.site}--${this.org}.aem.page${path}`,
-      };
-    } catch (error) {
-      console.error(`[AEMAdmin] Preview error:`, error);
-      return { success: false, error: (error as Error).message };
     }
+
+    return { success: false, error: 'Failed after retry' };
   }
 
   /**
    * Publish to live
+   * Includes retry logic for 401 errors (token refresh)
    */
   async publish(path: string): Promise<{ success: boolean; url?: string; error?: string }> {
     const endpoint = `/live/${this.org}/${this.site}/${this.ref}${path}`;
     console.log(`[AEMAdmin] Publish request: ${this.baseUrl}${endpoint}`);
 
-    try {
-      const response = await this.request('POST', endpoint);
-      const responseText = await response.text();
-      console.log(`[AEMAdmin] Publish response: ${response.status} - ${responseText.substring(0, 200)}`);
+    // Try up to 2 times (initial + retry on 401)
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const token = await this.getToken();
+        const response = await this.requestWithToken('POST', endpoint, token);
+        const responseText = await response.text();
+        console.log(`[AEMAdmin] Publish response: ${response.status} - ${responseText.substring(0, 200)}`);
 
-      if (!response.ok) {
-        return { success: false, error: `Publish failed: ${response.status} - ${responseText}` };
+        // On 401, clear cache and retry
+        if (response.status === 401 && attempt === 0) {
+          console.log('[AEMAdmin] Got 401, clearing token cache and retrying...');
+          clearCachedToken();
+          continue;
+        }
+
+        if (!response.ok) {
+          return { success: false, error: `Publish failed: ${response.status} - ${responseText}` };
+        }
+
+        return {
+          success: true,
+          url: `https://${this.ref}--${this.site}--${this.org}.aem.live${path}`,
+        };
+      } catch (error) {
+        console.error(`[AEMAdmin] Publish error:`, error);
+        return { success: false, error: (error as Error).message };
       }
-
-      return {
-        success: true,
-        url: `https://${this.ref}--${this.site}--${this.org}.aem.live${path}`,
-      };
-    } catch (error) {
-      console.error(`[AEMAdmin] Publish error:`, error);
-      return { success: false, error: (error as Error).message };
     }
+
+    return { success: false, error: 'Failed after retry' };
   }
 
   /**
@@ -217,7 +292,8 @@ export class AEMAdminClient {
    */
   async purgeCache(path: string): Promise<boolean> {
     try {
-      const response = await this.request('POST', `/cache/${this.org}/${this.site}/${this.ref}${path}`);
+      const token = await this.getToken();
+      const response = await this.requestWithToken('POST', `/cache/${this.org}/${this.site}/${this.ref}${path}`, token);
       return response.ok;
     } catch {
       return false;
@@ -247,13 +323,13 @@ export class AEMAdminClient {
   }
 
   /**
-   * Make an authenticated request to the Admin API
+   * Make an authenticated request to the Admin API with a specific token
    */
-  private async request(method: string, endpoint: string): Promise<Response> {
+  private async requestWithToken(method: string, endpoint: string, token: string): Promise<Response> {
     return fetch(`${this.baseUrl}${endpoint}`, {
       method,
       headers: {
-        Authorization: `Bearer ${this.token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
   }
